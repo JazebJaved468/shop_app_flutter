@@ -27,27 +27,27 @@ class CustomHeading extends StatelessWidget {
         children: [
           Text(
             textLine1,
-            style: ConstantStyles.headingStyle,
+            style: ConstantStyles_Screen1.headingStyle,
           ),
           Text(
             textLine2,
-            style: ConstantStyles.headingStyle,
+            style: ConstantStyles_Screen1.headingStyle,
           ),
           Text(
             textLine3,
-            style: ConstantStyles.headingStyle,
+            style: ConstantStyles_Screen1.headingStyle,
           ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 textLine4,
-                style: ConstantStyles.headingStyle,
+                style: ConstantStyles_Screen1.headingStyle,
               ),
               SizedBox(
                 width: 40,
               ),
-              SvgPicture.asset(svgPath ?? ConstantSVGPaths.headingSVG),
+              SvgPicture.asset(svgPath ?? ConstantSVGPaths_Screen1.headingSVG),
             ],
           ),
         ],

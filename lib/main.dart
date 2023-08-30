@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/screens/screen1/screen1.dart';
+import 'package:shopping_app/screens/screen2/screen2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "Manrope",
         useMaterial3: true,
       ),
-      home: const Screen1(),
+      home: const Screen2(),
     );
   }
 }

@@ -17,7 +17,7 @@ class CustomDescription extends StatelessWidget {
         text,
         style: TextStyle(
             fontSize: textSize ?? 18,
-            color: textColor ?? ConstantColors.descriptionColor,
+            color: textColor ?? ConstantColors_Screen1.descriptionColor,
             fontWeight: textWeight ?? FontWeight.w400,),
       ),
     );

@@ -21,7 +21,7 @@ class CustomImage extends StatelessWidget {
         clipBehavior: Clip.hardEdge,
         borderRadius: BorderRadius.circular(20),
         child: Image(
-          fit: BoxFit.fill,
+          fit: BoxFit.cover,
           width: imgWidth ?? 200,
           height: imgHeight,
           image: AssetImage(imgPath),

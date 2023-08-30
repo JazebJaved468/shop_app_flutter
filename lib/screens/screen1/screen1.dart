@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/constants/global_constants.dart';
 import 'package:shopping_app/screens/screen1/constants/screen1_constants.dart';
 import 'package:shopping_app/screens/screen1/widgets/custom_button.dart';
 import 'package:shopping_app/screens/screen1/widgets/custom_description.dart';
@@ -16,8 +17,8 @@ class Screen1 extends StatelessWidget {
         children: [
           // 1st Page of Screen 1
           Container(
-            padding: EdgeInsets.all(40),
-            color: ConstantColors.background,
+            padding: const EdgeInsets.all(40),
+            color: GlobalColors.primaryBackground,
             child: SafeArea(
               child: Column(
                 children: [
@@ -27,11 +28,11 @@ class Screen1 extends StatelessWidget {
                     textLine2: "shopping",
                     textLine3: "delivered to screen",
                     textLine4: "one",
-                    svgPath: ConstantSVGPaths.headingSVG,
+                    svgPath: ConstantSVGPaths_Screen1.headingSVG,
                   ),
 
                   // Description
-                  CustomDescription(text: ConstantTexts.descriptionText),
+                  CustomDescription(text: ConstantTexts_Screen1.descriptionText),
 
                   //Slider
                   Row(
@@ -39,16 +40,16 @@ class Screen1 extends StatelessWidget {
                       CustomSlidingLine(
                         lineWidth: 25,
                         lineHeight: 4,
-                        lineColor: ConstantColors.sliderPrimaryColor,
+                        lineColor: ConstantColors_Screen1.sliderPrimaryColor,
                         lineBorderRadius: 30,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 8,
                       ),
                       CustomSlidingLine(
                         lineWidth: 40,
                         lineHeight: 4,
-                        lineColor: ConstantColors.sliderSecondaryColor,
+                        lineColor: ConstantColors_Screen1.sliderSecondaryColor,
                         lineBorderRadius: 30,
                       ),
                     ],
@@ -56,7 +57,7 @@ class Screen1 extends StatelessWidget {
 
                   // Image
                   CustomImage(
-                    imgPath: ConstantImagePaths.imagePage1,
+                    imgPath: ConstantImagePaths_Screen1.imagePage1,
                     imgWidth: 165,
                     imgHeight: 165,
                     borderRadius: 20,
@@ -67,9 +68,9 @@ class Screen1 extends StatelessWidget {
 
                   // Get started Button
                   CustomButton(
-                    text: ConstantTexts.buttonText,
-                    backgroundColor: ConstantColors.buttonBackground,
-                    textColor: ConstantColors.buttonText,
+                    text: ConstantTexts_Screen1.buttonText,
+                    backgroundColor: ConstantColors_Screen1.buttonBackground,
+                    textColor: ConstantColors_Screen1.buttonText,
                     horizontalPadding: 10,
                     verticalPadding: 0,
                     svgSize: 16,
@@ -82,22 +83,22 @@ class Screen1 extends StatelessWidget {
 
           // 2nd Page of Screen 1
           Container(
-            padding: EdgeInsets.all(40),
-            color: ConstantColors.background,
+            padding: const EdgeInsets.all(40),
+            color: GlobalColors.primaryBackground,
             child: SafeArea(
               child: Column(
                 children: [
                   //Heading
                   CustomHeading(
-                    textLine1: ConstantTexts.headingTextLine1_page1,
-                    textLine2: ConstantTexts.headingTextLine2_page1,
-                    textLine3: ConstantTexts.headingTextLine3_page1,
-                    textLine4: ConstantTexts.headingTextLine4_page1,
-                    svgPath: ConstantSVGPaths.headingSVG,
+                    textLine1: ConstantTexts_Screen1.headingTextLine1_page1,
+                    textLine2: ConstantTexts_Screen1.headingTextLine2_page1,
+                    textLine3: ConstantTexts_Screen1.headingTextLine3_page1,
+                    textLine4: ConstantTexts_Screen1.headingTextLine4_page1,
+                    svgPath: ConstantSVGPaths_Screen1.headingSVG,
                   ),
 
                   // Description
-                  CustomDescription(text: ConstantTexts.descriptionText),
+                  CustomDescription(text: ConstantTexts_Screen1.descriptionText),
 
                   //Slider
                   Row(
@@ -105,16 +106,16 @@ class Screen1 extends StatelessWidget {
                       CustomSlidingLine(
                         lineWidth: 40,
                         lineHeight: 4,
-                        lineColor: ConstantColors.sliderSecondaryColor,
+                        lineColor: ConstantColors_Screen1.sliderSecondaryColor,
                         lineBorderRadius: 30,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 8,
                       ),
                       CustomSlidingLine(
                         lineWidth: 25,
                         lineHeight: 4,
-                        lineColor: ConstantColors.sliderPrimaryColor,
+                        lineColor: ConstantColors_Screen1.sliderPrimaryColor,
                         lineBorderRadius: 30,
                       ),
                     ],
@@ -122,7 +123,7 @@ class Screen1 extends StatelessWidget {
 
                   // Image
                   CustomImage(
-                    imgPath: ConstantImagePaths.imagePage2,
+                    imgPath: ConstantImagePaths_Screen1.imagePage2,
                     imgWidth: 165,
                     borderRadius: 20,
                     imgHeight: 165,
@@ -133,9 +134,9 @@ class Screen1 extends StatelessWidget {
 
                   // Get started Button
                   CustomButton(
-                    text: ConstantTexts.buttonText,
-                    backgroundColor: ConstantColors.buttonBackground,
-                    textColor: ConstantColors.buttonText,
+                    text: ConstantTexts_Screen1.buttonText,
+                    backgroundColor: ConstantColors_Screen1.buttonBackground,
+                    textColor: ConstantColors_Screen1.buttonText,
                     horizontalPadding: 10,
                     verticalPadding: 0,
                     svgSize: 16,
