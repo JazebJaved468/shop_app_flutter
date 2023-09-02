@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "Manrope",
         useMaterial3: true,
       ),
-      home: const Screen2(),
+      home: const Screen1(),
     );
   }
 }

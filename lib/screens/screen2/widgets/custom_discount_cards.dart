@@ -36,7 +36,7 @@ class CustomDiscountCards extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(
-                        width: 35,
+                        width: 25,
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
