@@ -1,34 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_app/constants/global_constants.dart';
-import 'package:shopping_app/screens/screen2/constants/screen2_constants.dart';
-import 'package:shopping_app/screens/screen2/widgets/custom_discount_cards.dart';
-import 'package:shopping_app/screens/screen2/widgets/custom_drop_down.dart';
-import 'package:shopping_app/screens/screen2/widgets/custom_recommended_products.dart';
+import 'package:shopping_app/screens/homeScreen/constants/home_constants.dart';
+import 'package:shopping_app/screens/homeScreen/widgets/custom_discount_cards.dart';
+import 'package:shopping_app/screens/homeScreen/widgets/custom_drop_down.dart';
+import 'package:shopping_app/screens/homeScreen/widgets/custom_recommended_products.dart';
+import 'package:shopping_app/widgets/custom_cart_icon.dart';
 
-class Screen2 extends StatefulWidget {
-  const Screen2({super.key});
+class HomeBody extends StatefulWidget {
+  const HomeBody({super.key});
 
   @override
-  State<Screen2> createState() => _Screen2State();
+  State<HomeBody> createState() => _HomeBodyState();
 }
 
-class _Screen2State extends State<Screen2> {
+class _HomeBodyState extends State<HomeBody> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 80,
-        backgroundColor: GlobalColors.primaryBackground,
-        title: Text(ConstantTexts_Screen2.greeting,
-            style: ConstantStyles_Screen2.appbarTitle),
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: SvgPicture.asset(ConstantSVGPaths_Screen2.appbarIconSVG)),
-        ],
-      ),
-      body: Column(children: [
+    return Column(
+      children: [
+        // greetings
+        Container(
+          height: 80,
+          padding: EdgeInsets.only(left: 14, right: 5),
+          color: GlobalColors.primaryBackground,
+          child: Row(children: [
+            Text(ConstantTexts_Home.greeting,
+                style: ConstantStyles_Home.appbarTitle),
+            Expanded(
+              child: Container(
+                height: 2,
+                color: Colors.transparent,
+              ),
+            ),
+
+            //cart icon
+            CustomCartIcon(),
+          ]),
+        ),
+
+        // search bar and drop downs
         Container(
           padding:
               const EdgeInsets.only(top: 10, left: 25, right: 25, bottom: 10),
@@ -36,17 +47,20 @@ class _Screen2State extends State<Screen2> {
           color: GlobalColors.primaryBackground,
           child: Column(
             children: [
+              //Search
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.9,
                 child: TextField(
                     style: TextStyle(
                       color: GlobalColors.primaryHeading,
                     ), // Text color
-                    decoration: ConstantStyles_Screen2.searchInput),
+                    decoration: ConstantStyles_Home.searchInput),
               ),
               const SizedBox(
                 height: 40,
               ),
+
+              // Drop down
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -54,8 +68,8 @@ class _Screen2State extends State<Screen2> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        ConstantTexts_Screen2.dropDownDeliveryLabel,
-                        style: ConstantStyles_Screen2.dropDownLabel,
+                        ConstantTexts_Home.dropDownDeliveryLabel,
+                        style: ConstantStyles_Home.dropDownLabel,
                       ),
                       CustomDropDownMenu(
                           defaultValue: Dropdown.deliveryDefaultValue,
@@ -65,8 +79,8 @@ class _Screen2State extends State<Screen2> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(ConstantTexts_Screen2.dropDownTimeLabel,
-                          style: ConstantStyles_Screen2.dropDownLabel),
+                      Text(ConstantTexts_Home.dropDownTimeLabel,
+                          style: ConstantStyles_Home.dropDownLabel),
                       CustomDropDownMenu(
                           defaultValue: Dropdown.timeDefaultValue,
                           optionsList: Dropdown.timeOptions)
@@ -77,11 +91,14 @@ class _Screen2State extends State<Screen2> {
             ],
           ),
         ),
-        Container(
-          padding: const EdgeInsets.only(top: 25, left: 25),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+
+        // discount cards and recommended products
+        Expanded(
+          child: Container(
+            padding: const EdgeInsets.only(left: 25),
+            child: ListView(
+              // crossAxisAlignment: CrossAxisAlignment.start,
+              shrinkWrap: true,
               children: [
                 // Discount Cards
                 const CustomDiscountCards(),
@@ -104,11 +121,13 @@ class _Screen2State extends State<Screen2> {
 
                 // Recommended Products
                 const CustomRcommendedProducts(),
+
+                //extrass  //extrass  //extrass  //extrass  //extrass  //extrass
               ],
             ),
           ),
         ),
-      ]),
+      ],
     );
   }
 }

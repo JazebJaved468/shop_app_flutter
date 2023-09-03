@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/screens/screen1/constants/screen1_constants.dart';
+import 'package:shopping_app/screens/introScreen/constants/intro_constants.dart';
 
 class CustomDescription extends StatelessWidget {
   final String text;
@@ -17,7 +17,7 @@ class CustomDescription extends StatelessWidget {
         text,
         style: TextStyle(
             fontSize: textSize ?? 18,
-            color: textColor ?? ConstantColors_Screen1.descriptionColor,
+            color: textColor ?? ConstantColors_Intro.descriptionColor,
             fontWeight: textWeight ?? FontWeight.w400,),
       ),
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:shopping_app/screens/screen1/constants/screen1_constants.dart';
-import 'package:shopping_app/screens/screen2/screen2.dart';
+import 'package:shopping_app/screens/introScreen/constants/intro_constants.dart';
+import 'package:shopping_app/screens/homeScreen/home.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
@@ -37,7 +37,7 @@ class CustomButton extends StatelessWidget {
         onPressed: () {
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (context) => const Screen2()),
+            MaterialPageRoute(builder: (context) => const HomeScreen()),
           );
         },
         child: Wrap(
@@ -51,7 +51,7 @@ class CustomButton extends StatelessWidget {
               width: 30,
             ),
             SvgPicture.asset(
-              svgPath ?? ConstantSVGPaths_Screen1.buttonSVG,
+              svgPath ?? ConstantSVGPaths_Intro.buttonSVG,
               width: svgSize ?? 16,
             ),
           ],

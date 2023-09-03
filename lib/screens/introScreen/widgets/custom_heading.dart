@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/screens/screen1/constants/screen1_constants.dart';
+import 'package:shopping_app/screens/introScreen/constants/intro_constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomHeading extends StatelessWidget {
@@ -27,27 +27,27 @@ class CustomHeading extends StatelessWidget {
         children: [
           Text(
             textLine1,
-            style: ConstantStyles_Screen1.headingStyle,
+            style: ConstantStyles_Intro.headingStyle,
           ),
           Text(
             textLine2,
-            style: ConstantStyles_Screen1.headingStyle,
+            style: ConstantStyles_Intro.headingStyle,
           ),
           Text(
             textLine3,
-            style: ConstantStyles_Screen1.headingStyle,
+            style: ConstantStyles_Intro.headingStyle,
           ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 textLine4,
-                style: ConstantStyles_Screen1.headingStyle,
+                style: ConstantStyles_Intro.headingStyle,
               ),
               SizedBox(
                 width: 40,
               ),
-              SvgPicture.asset(svgPath ?? ConstantSVGPaths_Screen1.headingSVG),
+              SvgPicture.asset(svgPath ?? ConstantSVGPaths_Intro.headingSVG),
             ],
           ),
         ],

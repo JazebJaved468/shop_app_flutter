@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/constants/global_constants.dart';
-import 'package:shopping_app/screens/screen2/constants/screen2_constants.dart';
+import 'package:shopping_app/screens/homeScreen/constants/home_constants.dart';
 
+// ignore: must_be_immutable
 class CustomDropDownMenu extends StatefulWidget {
   late String defaultValue;
   final List<String> optionsList;
@@ -17,7 +18,7 @@ class _CustomDropDownMenuState extends State<CustomDropDownMenu> {
   @override
   Widget build(BuildContext context) {
     return DropdownButton(
-      dropdownColor: ConstantColors_Screen2.dropDownBackground,
+      dropdownColor: ConstantColors_Home.dropDownBackground,
       style: TextStyle(color: GlobalColors.primaryHeading, fontSize: 14),
       borderRadius: BorderRadius.circular(10),
       alignment: Alignment.bottomLeft,

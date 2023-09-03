@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/constants/global_constants.dart';
-import 'package:shopping_app/screens/screen2/constants/screen2_constants.dart';
+import 'package:shopping_app/screens/homeScreen/constants/home_constants.dart';
 
 class CustomDiscountCards extends StatelessWidget {
   const CustomDiscountCards({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      margin: EdgeInsets.only(top: 25),
       height: 130,
       child: ListView.separated(
           shrinkWrap: true,
@@ -17,8 +18,8 @@ class CustomDiscountCards extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               child: Container(
                 color: (index % 2) == 0
-                    ? ConstantColors_Screen2.cardPrimaryBackground
-                    : ConstantColors_Screen2.cardSecondaryBackground,
+                    ? ConstantColors_Home.cardPrimaryBackground
+                    : ConstantColors_Home.cardSecondaryBackground,
                 width: 270,
                 child: Container(
                   padding: const EdgeInsets.all(20),
@@ -28,7 +29,7 @@ class CustomDiscountCards extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(10),
                         child: Image(
-                          image: AssetImage(ConstantTexts_Screen2
+                          image: AssetImage(ConstantTexts_Home
                               .discountCardsData[index]['image']),
                           width: 85,
                           height: 85,
@@ -51,7 +52,7 @@ class CustomDiscountCards extends StatelessWidget {
                                 fontWeight: FontWeight.w100),
                           ),
                           Text(
-                            "${ConstantTexts_Screen2.discountCardsData[index]['discount']}% OFF ",
+                            "${ConstantTexts_Home.discountCardsData[index]['discount']}% OFF ",
                             style: TextStyle(
                               color: (index % 2) == 0
                                   ? GlobalColors.primaryHeading
@@ -61,7 +62,7 @@ class CustomDiscountCards extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            "On first ${ConstantTexts_Screen2.discountCardsData[index]['products']} order",
+                            "On first ${ConstantTexts_Home.discountCardsData[index]['products']} order",
                             style: TextStyle(
                                 color: (index % 2) == 0
                                     ? GlobalColors.primaryHeading
