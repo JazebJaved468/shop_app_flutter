@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/constants/global_constants.dart';
 import 'package:shopping_app/screens/shopScreen/constants/shop_screen_constants.dart';
-
 
 import '../shop_items_screen.dart';
 
@@ -24,6 +24,8 @@ class _CustomFilterOptionState extends State<CustomFilterOption> {
   bool istapped = false;
   updateSelectedFilterIndex(index) {
     ConstantTexts_ShopScreen.selectedFilterIndex = index;
+    ConstantTexts_ShopScreen.selectedtype =
+        ConstantTexts_ShopScreen.itemData[index]['type'];
   }
 
   updateTempListData(String type) {
@@ -74,7 +76,14 @@ class _CustomFilterOptionState extends State<CustomFilterOption> {
                 ? const Color(0xffF9B023)
                 : Colors.transparent,
           ),
-          child: Text(widget.type),
+          child: Text(
+            widget.type,
+            style: TextStyle(
+                fontSize: 16,
+                color: widget.index == widget.selectedFilterIndex
+                    ? GlobalColors.primaryHeading
+                    : GlobalColors.secondaryBackground),
+          ),
         ),
       ),
     ]);
