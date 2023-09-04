@@ -5,7 +5,12 @@ import 'package:shopping_app/screens/homeScreen/constants/home_constants.dart';
 import 'package:shopping_app/screens/homeScreen/widgets/custom_discount_cards.dart';
 import 'package:shopping_app/screens/homeScreen/widgets/custom_drop_down.dart';
 import 'package:shopping_app/screens/homeScreen/widgets/custom_recommended_products.dart';
+import 'package:shopping_app/screens/shopScreen/constants/shop_screen_constants.dart';
+import 'package:shopping_app/screens/shopScreen/shop_items_screen.dart';
 import 'package:shopping_app/widgets/custom_cart_icon.dart';
+import 'package:shopping_app/widgets/custom_search_icon.dart';
+
+import '../../../functions.dart';
 
 class CategoryBody extends StatefulWidget {
   const CategoryBody({super.key});
@@ -36,10 +41,7 @@ class _CategoryBodyState extends State<CategoryBody> {
               ),
 
               // search icon
-              IconButton(
-                onPressed: () {},
-                icon: SvgPicture.asset(ConstantSVGPaths_Home.searchIconSVG),
-              ),
+              CustomSearchIcon(),
 
               //cart icon
               CustomCartIcon(),
@@ -51,7 +53,7 @@ class _CategoryBodyState extends State<CategoryBody> {
         Container(
           width: double.infinity,
           padding: const EdgeInsets.only(left: 14, right: 25, bottom: 20),
-          margin: const EdgeInsets.all(0),
+          margin: EdgeInsets.zero,
           color: GlobalColors.primaryBackground,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -83,7 +85,7 @@ class _CategoryBodyState extends State<CategoryBody> {
 
             // color: Colors.red,
             child: GridView.builder(
-              // itemCount: 2,
+              itemCount: ConstantTexts_ShopScreen.shopNames.length,
               // shrinkWrap: true,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
@@ -92,9 +94,19 @@ class _CategoryBodyState extends State<CategoryBody> {
                 mainAxisExtent: 180,
               ),
               itemBuilder: ((context, index) {
+                String shopName =
+                    toSentenceCase(ConstantTexts_ShopScreen.shopNames[index]);
                 return GestureDetector(
                   onTap: () {
-                    print("$index");
+                    print("$shopName");
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ShopScreen(
+                    
+                                shopName: shopName,
+                              )),
+                    );
                   },
                   child: ClipRRect(
                       borderRadius: BorderRadius.circular(16),
@@ -139,7 +151,7 @@ class _CategoryBodyState extends State<CategoryBody> {
                                   children: [
                                     //title
                                     Text(
-                                      "Fresh Lemon",
+                                      "${shopName}",
                                       style: TextStyle(
                                           color: GlobalColors.primaryTitle,
                                           fontSize: 14,
@@ -148,7 +160,7 @@ class _CategoryBodyState extends State<CategoryBody> {
 
                                     //type
                                     Text(
-                                      "Organic",
+                                      "Restaurant",
                                       style: TextStyle(
                                         color: GlobalColors.primaryTitle,
                                         fontSize: 12,
