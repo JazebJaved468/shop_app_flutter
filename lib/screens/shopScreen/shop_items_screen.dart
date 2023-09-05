@@ -91,6 +91,7 @@ class _ShopScreenState extends State<ShopScreen> {
                   return GestureDetector(
                     onTap: () {
                       print("${ConstantTexts_ShopScreen.selectedFilterIndex}");
+
                       Navigator.push(
                         context,
                         MaterialPageRoute(

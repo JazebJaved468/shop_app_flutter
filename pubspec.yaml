@@ -37,6 +37,7 @@ dependencies:
   flutter_svg: ^2.0.5
   font_awesome_flutter: ^10.5.0
   circular_bottom_navigation: ^2.3.0
+  smooth_page_indicator: ^1.1.0
 
 dev_dependencies:
   flutter_test:
