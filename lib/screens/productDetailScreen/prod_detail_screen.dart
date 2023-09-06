@@ -118,9 +118,9 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
           Expanded(
             child: Container(
               width: mediaWidth * 1,
-              decoration: const BoxDecoration(
-                  color: Color.fromARGB(255, 224, 224, 225),
-                  borderRadius: BorderRadius.only(
+              decoration: BoxDecoration(
+                  color: ConstantColors_ProdDetail.bottomSheet,
+                  borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30))),
               margin: const EdgeInsets.symmetric(horizontal: 10),
@@ -271,7 +271,7 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
                         // Details
                         Container(
                           // color: Colors.red,
-                          margin: EdgeInsets.only(bottom: 14),
+                          margin:const  EdgeInsets.only(bottom: 14),
                           child: Theme(
                             data: Theme.of(context)
                                 .copyWith(dividerColor: Colors.transparent),
@@ -299,7 +299,7 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
                         // Nutritional Facts
                         Container(
                           // color: Colors.red,
-                          margin: EdgeInsets.only(bottom: 14),
+                          margin: const EdgeInsets.only(bottom: 14),
 
                           child: Theme(
                             data: Theme.of(context)
@@ -311,18 +311,18 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
 
                               expandedAlignment: Alignment.centerLeft,
                               tilePadding: EdgeInsets.zero,
-                              title: Text(
+                              title: const Text(
                                 "Nutritional Facts",
                                 style: TextStyle(),
                               ),
-                              children: [
+                              children: const [
                                 Text(
                                   "calories: 41,\ncarbohydrates: 10,\nfat: 0.2,\nprotein: 1,\nfiber: 2.8",
                                   style: TextStyle(
                                       color: Color(0xff8891A5), fontSize: 16),
                                 ),
                               ],
-                              initiallyExpanded: false,
+                          
                             ),
                           ),
                         ),
@@ -330,7 +330,7 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
                         // Reviews
                         Container(
                           // color: Colors.red,
-                          margin: EdgeInsets.only(bottom: 14),
+                          margin: const EdgeInsets.only(bottom: 14),
                           child: Theme(
                             data: Theme.of(context)
                                 .copyWith(dividerColor: Colors.transparent),
@@ -341,20 +341,21 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
 
                               expandedAlignment: Alignment.centerLeft,
                               tilePadding: EdgeInsets.zero,
-                              title: Text(
+                              initiallyExpanded: false,
+                              title: const Text(
                                 "Reviews",
                                 style: TextStyle(),
                               ),
                               children: [
                                 Container(
-                                  color: Color.fromARGB(255, 231, 231, 236),
+                                  color: const Color.fromARGB(255, 231, 231, 236),
                                   height: 200,
                                   child: ListView.builder(
                                     shrinkWrap: true,
                                     itemCount: 7,
                                     itemBuilder: (context, index) {
                                       return Container(
-                                        padding: EdgeInsets.only(bottom: 10),
+                                        padding: const EdgeInsets.only(bottom: 10),
                                         child: ListTile(
                                           leading: CircleAvatar(
                                               backgroundColor: GlobalColors
@@ -366,7 +367,7 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
                                                 color: GlobalColors
                                                     .secondaryBackground,
                                               )),
-                                          title: Text(
+                                          title: const Text(
                                             "Comment",
                                             style: TextStyle(
                                                 fontWeight: FontWeight.w500,
@@ -374,7 +375,7 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
                                           ),
                                           subtitle: Text(
                                             "By Person $index",
-                                            style: TextStyle(fontSize: 12),
+                                            style:const  TextStyle(fontSize: 12),
                                           ),
                                           trailing: Text(
                                             "09/05/23",
@@ -389,7 +390,7 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
                                   ),
                                 )
                               ],
-                              initiallyExpanded: false,
+                              
                             ),
                           ),
                         ),
@@ -402,7 +403,7 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
                     bottom: 0,
                     child: Container(
                       width: mediaWidth * 0.85,
-                      color: Color.fromARGB(255, 224, 224, 225),
+                      color: ConstantColors_ProdDetail.bottomSheet,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -420,10 +421,10 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
                             child: TextButton(
                               style: TextButton.styleFrom(
                                 backgroundColor: Colors.transparent,
-                                shape: RoundedRectangleBorder(),
+                                shape: const RoundedRectangleBorder(),
                               ),
                               onPressed: () {},
-                              child: Text("Add To Cart"),
+                              child: const Text("Add To Cart"),
                             ),
                           ),
                           Container(
