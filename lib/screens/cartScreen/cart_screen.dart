@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shopping_app/constants/global_constants.dart';
 import 'package:shopping_app/screens/cartScreen/constants/cart_constants.dart';
+import 'package:shopping_app/screens/cartScreen/widgets/custom_cart_items.dart';
 import 'package:shopping_app/widgets/custom_back_button.dart';
+import 'package:shopping_app/widgets/custom_cart_icon.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
@@ -14,6 +16,34 @@ class CartScreen extends StatefulWidget {
 class _CartScreenState extends State<CartScreen> {
   // cart items number sample
   int cartItemsQuantity = 5;
+
+  // cart items sample
+  List<Map> cartItems = [
+    {
+      'name': "Bananas",
+      'price': 7.90,
+      'imgPath': 'assets/images/discount1.jpg',
+      'quantity': 2,
+    },
+    {
+      'name': "Apple",
+      'price': 5.60,
+      'imgPath': 'assets/images/discount2.jpg',
+      'quantity': 2,
+    },
+    {
+      'name': "Mango",
+      'price': 3.80,
+      'imgPath': 'assets/images/discount3.jpg',
+      'quantity': 2,
+    },
+    {
+      'name': "Graeps",
+      'price': 7.90,
+      'imgPath': 'assets/images/discount1.jpg',
+      'quantity': 2,
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +68,6 @@ class _CartScreenState extends State<CartScreen> {
                   child: Text(
                     "#",
                     style: TextStyle(
-                      // inherit: false,
                       fontSize: 300,
 
                       color: ConstantColors_Cart.darkYellow,
@@ -130,123 +159,186 @@ class _CartScreenState extends State<CartScreen> {
           // cart items list
           Container(
             width: mediaWidth * 1,
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-            color: Colors.red,
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            height: 250,
+            // color: Colors.white,
+            child: ListView.builder(
+              padding: EdgeInsets.only(top: 15, bottom: 0),
+              shrinkWrap: true,
+              itemCount: cartItemsQuantity > 3 ? 3 : 3,
+              itemBuilder: (context, index) {
+                return CustomCartItem(
+                  name: cartItems[index]['name'],
+                  price: cartItems[index]['price'],
+                  imgPath: cartItems[index]['imgPath'],
+                  quantity: cartItems[index]['quantity'],
+                );
+              },
+            ),
+          ),
+
+          //edit show more buttons
+          Container(
+            // width: mediaWidth * 1,
+            height: 30,
+            // color: Colors.yellow,
+            padding: EdgeInsets.zero,
+            margin: EdgeInsets.symmetric(horizontal: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "+ ${cartItemsQuantity - 3} More",
+                    style: TextStyle(
+                      color: Color(0xff2A4BA0),
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Edit",
+                    style: TextStyle(
+                      color: Color(0xff2A4BA0),
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: Container(
+                // color: Colors.red,
+                ),
+          ),
+
+          // Calculation
+          Container(
+            padding:
+                const EdgeInsets.only(left: 15, right: 15, top: 0, bottom: 15),
+            margin: const EdgeInsets.symmetric(horizontal: 10),
+            decoration: BoxDecoration(
+                color: ConstantColors_Cart.bottomSheet,
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  topRight: Radius.circular(30),
+                )),
+            width: mediaWidth * 1,
             child: Column(
               children: [
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 15),
-                  height: 200,
-                  color: Colors.white,
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: cartItemsQuantity > 3 ? 3 : 3,
-                    itemBuilder: (context, index) {
-                      return Container(
-                        margin: EdgeInsets.only(bottom: 10),
-                        // width: 50,
-                        // height: 40,
-
-                        decoration: BoxDecoration(
-                            color: Colors.grey,
-                            border: Border(
-                                bottom: BorderSide(
-                              color: ConstantColors_Cart.cartItemBorder,
-                              width: 1,
-                            ))),
-                        child: ListTile(
-                          // Product Image
-                          leading: Container(
-                            margin: EdgeInsets.only(right: 15),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
-                              child: Image.asset(
-                                "assets/images/discount1.jpg",
-                                fit: BoxFit.cover,
-                                width: 40,
-                                height: 40,
-                              ),
-                            ),
-                          ),
-
-                          // Product Name
-                          title: Text(
-                            "Bananas",
+                  padding: const EdgeInsets.only(
+                      left: 38, right: 38, top: 16, bottom: 35),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Subtotal",
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize: 14,
                               fontWeight: FontWeight.w500,
+                              color: ConstantColors_Cart.amountLabel,
                             ),
                           ),
-
-                          // Product Cost
-                          subtitle: Text(
-                            "\$7.90",
+                          Text(
+                            "\$35.96",
                             style: TextStyle(
-                              fontSize: 15,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: GlobalColors.secondaryBackground,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Delivery",
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: ConstantColors_Cart.amountLabel,
+                            ),
+                          ),
+                          Text(
+                            "\$2.00",
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: GlobalColors.secondaryBackground,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Total",
+                            style: TextStyle(
+                              fontSize: 14,
                               fontWeight: FontWeight.w400,
+                              color: ConstantColors_Cart.amountLabel,
                             ),
                           ),
-
-                          // Quantity Increase Decrease Buttons
-                          trailing: Container(
-                            // color: Colors.red,
-                            width: 110,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                // Subtract
-                                CircleAvatar(
-                                  backgroundColor:
-                                      GlobalColors.productCardBackground,
-                                  foregroundColor:
-                                      GlobalColors.secondaryBackground,
-                                  radius: 18,
-                                  child: IconButton(
-                                    onPressed: () {},
-                                    icon: Icon(
-                                      Icons.horizontal_rule_rounded,
-                                      size: 14,
-                                      color: GlobalColors.secondaryBackground,
-                                    ),
-                                  ),
-                                ),
-
-                                //value
-                                Text(
-                                  "2",
-                                  style: TextStyle(
-                                      color: GlobalColors.secondaryBackground,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w500),
-                                ),
-
-                                // add
-                                CircleAvatar(
-                                  backgroundColor:
-                                      GlobalColors.productCardBackground,
-                                  foregroundColor:
-                                      GlobalColors.secondaryBackground,
-                                  radius: 18,
-                                  child: IconButton(
-                                    onPressed: () {},
-                                    icon: Icon(
-                                      Icons.add,
-                                      size: 14,
-                                      color: GlobalColors.secondaryBackground,
-                                    ),
-                                  ),
-                                ),
-                              ],
+                          Text(
+                            "\$38.98",
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700,
+                              color: GlobalColors.secondaryBackground,
                             ),
                           ),
-                        ),
-                      );
-                    },
+                        ],
+                      ),
+                    ],
                   ),
-                )
+                ),
+
+                //Checkout Button
+                Container(
+                  width: mediaWidth * 1,
+                  height: 60,
+                  clipBehavior: Clip.hardEdge,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                      color: GlobalColors.primaryBackground,
+                      width: 1,
+                    ),
+                  ),
+                  child: TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: GlobalColors.primaryBackground,
+                      shape: const RoundedRectangleBorder(),
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      "Proceed To checkout",
+                      style: TextStyle(
+                        color: GlobalColors.primaryHeading,
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
