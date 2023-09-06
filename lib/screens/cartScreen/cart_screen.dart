@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shopping_app/constants/global_constants.dart';
 import 'package:shopping_app/screens/cartScreen/constants/cart_constants.dart';
+import 'package:shopping_app/screens/cartScreen/full_cart_screen.dart';
 import 'package:shopping_app/screens/cartScreen/widgets/custom_cart_items.dart';
-import 'package:shopping_app/widgets/custom_back_button.dart';
-import 'package:shopping_app/widgets/custom_cart_icon.dart';
+
+
+import 'package:shopping_app/widgets/custom_bill_sheet.dart';
+
+
+
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
@@ -14,36 +19,6 @@ class CartScreen extends StatefulWidget {
 }
 
 class _CartScreenState extends State<CartScreen> {
-  // cart items number sample
-  int cartItemsQuantity = 5;
-
-  // cart items sample
-  List<Map> cartItems = [
-    {
-      'name': "Bananas",
-      'price': 7.90,
-      'imgPath': 'assets/images/discount1.jpg',
-      'quantity': 2,
-    },
-    {
-      'name': "Apple",
-      'price': 5.60,
-      'imgPath': 'assets/images/discount2.jpg',
-      'quantity': 2,
-    },
-    {
-      'name': "Mango",
-      'price': 3.80,
-      'imgPath': 'assets/images/discount3.jpg',
-      'quantity': 2,
-    },
-    {
-      'name': "Graeps",
-      'price': 7.90,
-      'imgPath': 'assets/images/discount1.jpg',
-      'quantity': 2,
-    },
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -119,6 +94,49 @@ class _CartScreenState extends State<CartScreen> {
                     ],
                   ),
                 ),
+
+                Positioned(
+                  top: 50,
+                  left: 20,
+                  child: Row(
+                    children: [
+                      //back button
+                      CircleAvatar(
+                        backgroundColor: const Color(0xffF8F9FB),
+                        radius: 18,
+                        child: IconButton(
+                          icon: const Icon(
+                            Icons.arrow_back_ios_new,
+                            size: 14,
+                          ),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Text(
+                        "Shopping Cart (${CartData.data.length})",
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                //           AppBar(
+                //   leading: CustomBackButton(),
+                //   title: Text(
+                //     "Shopping Cart (${CartData.data.length})",
+                //     style: const TextStyle(
+                //       fontSize: 18,
+                //       fontWeight: FontWeight.w500,
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ),
@@ -165,13 +183,14 @@ class _CartScreenState extends State<CartScreen> {
             child: ListView.builder(
               padding: EdgeInsets.only(top: 15, bottom: 0),
               shrinkWrap: true,
-              itemCount: cartItemsQuantity > 3 ? 3 : 3,
+              itemCount: // cart items number sample
+                  CartData.data.length > 3 ? 3 : 3,
               itemBuilder: (context, index) {
                 return CustomCartItem(
-                  name: cartItems[index]['name'],
-                  price: cartItems[index]['price'],
-                  imgPath: cartItems[index]['imgPath'],
-                  quantity: cartItems[index]['quantity'],
+                  name: CartData.data[index]['name'],
+                  price: CartData.data[index]['price'],
+                  imgPath: CartData.data[index]['imgPath'],
+                  quantity: CartData.data[index]['quantity'],
                 );
               },
             ),
@@ -188,9 +207,17 @@ class _CartScreenState extends State<CartScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const FullCartScreen(),
+                      ),
+                    );
+                  },
                   child: Text(
-                    "+ ${cartItemsQuantity - 3} More",
+                    "+ ${ // cart items number sample
+                    CartData.data.length - 3} More",
                     style: TextStyle(
                       color: Color(0xff2A4BA0),
                       fontSize: 12,
@@ -218,140 +245,13 @@ class _CartScreenState extends State<CartScreen> {
                 ),
           ),
 
-          // Calculation
-          Container(
-            padding:
-                const EdgeInsets.only(left: 15, right: 15, top: 0, bottom: 15),
-            margin: const EdgeInsets.symmetric(horizontal: 10),
-            decoration: BoxDecoration(
-                color: ConstantColors_Cart.bottomSheet,
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(30),
-                  topRight: Radius.circular(30),
-                )),
-            width: mediaWidth * 1,
-            child: Column(
-              children: [
-                Container(
-                  padding: const EdgeInsets.only(
-                      left: 38, right: 38, top: 16, bottom: 35),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Subtotal",
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                              color: ConstantColors_Cart.amountLabel,
-                            ),
-                          ),
-                          Text(
-                            "\$35.96",
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                              color: GlobalColors.secondaryBackground,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 15,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Delivery",
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                              color: ConstantColors_Cart.amountLabel,
-                            ),
-                          ),
-                          Text(
-                            "\$2.00",
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                              color: GlobalColors.secondaryBackground,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 15,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Total",
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                              color: ConstantColors_Cart.amountLabel,
-                            ),
-                          ),
-                          Text(
-                            "\$38.98",
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w700,
-                              color: GlobalColors.secondaryBackground,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-
-                //Checkout Button
-                Container(
-                  width: mediaWidth * 1,
-                  height: 60,
-                  clipBehavior: Clip.hardEdge,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(
-                      color: GlobalColors.primaryBackground,
-                      width: 1,
-                    ),
-                  ),
-                  child: TextButton(
-                    style: TextButton.styleFrom(
-                      backgroundColor: GlobalColors.primaryBackground,
-                      shape: const RoundedRectangleBorder(),
-                    ),
-                    onPressed: () {},
-                    child: Text(
-                      "Proceed To checkout",
-                      style: TextStyle(
-                        color: GlobalColors.primaryHeading,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
+          // Bottom Sheet (Bill)
+          CustomBill(
+              subtotalAmount: 35.96,
+              deliveryAmount: 2.00,
+              buttonText: "Proceed To checkout")
         ],
       ),
     );
   }
 }
-
-// AppBar(
-//         leading: CustomBackButton(),
-//         title: Text(
-//           "Shopping Cart (5)",
-//           style: const TextStyle(
-//             fontSize: 18,
-//             fontWeight: FontWeight.w500,
-//           ),
-//         ),
-//       ),

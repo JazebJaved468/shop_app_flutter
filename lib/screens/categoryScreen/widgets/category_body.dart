@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_app/constants/global_constants.dart';
 import 'package:shopping_app/screens/homeScreen/constants/home_constants.dart';
-import 'package:shopping_app/screens/homeScreen/widgets/custom_discount_cards.dart';
-import 'package:shopping_app/screens/homeScreen/widgets/custom_drop_down.dart';
-import 'package:shopping_app/screens/homeScreen/widgets/custom_recommended_products.dart';
+// import 'package:shopping_app/screens/homeScreen/widgets/custom_discount_cards.dart';
+// import 'package:shopping_app/screens/homeScreen/widgets/custom_drop_down.dart';
+// import 'package:shopping_app/screens/homeScreen/widgets/custom_recommended_products.dart';
 import 'package:shopping_app/screens/shopScreen/constants/shop_screen_constants.dart';
 import 'package:shopping_app/screens/shopScreen/shop_items_screen.dart';
 import 'package:shopping_app/widgets/custom_cart_icon.dart';

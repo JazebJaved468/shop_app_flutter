@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shopping_app/screens/productDetailScreen/constants/prod_detail_screen_constants.dart';
 
 import '../../constants/global_constants.dart';
@@ -41,7 +40,7 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
   Widget build(BuildContext context) {
     // Media Queries
     var mediaWidth = MediaQuery.of(context).size.width;
-    var mediaHeight = MediaQuery.of(context).size.height;
+    // var mediaHeight = MediaQuery.of(context).size.height;
     final pages = List.generate(
         3,
         (index) => Container(

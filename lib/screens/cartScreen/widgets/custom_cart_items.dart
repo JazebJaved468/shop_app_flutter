@@ -24,8 +24,8 @@ class _CustomCartItemState extends State<CustomCartItem> {
   @override
   Widget build(BuildContext context) {
     // Media Queries
-    var mediaWidth = MediaQuery.of(context).size.width;
-    var mediaHeight = MediaQuery.of(context).size.height;
+    // var mediaWidth = MediaQuery.of(context).size.width;
+    // var mediaHeight = MediaQuery.of(context).size.height;
     return Container(
       margin: EdgeInsets.only(bottom: 5),
       // width: 50,

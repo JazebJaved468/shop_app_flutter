@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants/global_constants.dart';
+// import '../constants/global_constants.dart';
 import 'custom_cart_icon.dart';
 import 'custom_search_icon.dart';
 

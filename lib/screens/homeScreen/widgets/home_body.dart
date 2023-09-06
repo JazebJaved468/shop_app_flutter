@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_app/constants/global_constants.dart';
 import 'package:shopping_app/screens/homeScreen/constants/home_constants.dart';
 import 'package:shopping_app/screens/homeScreen/widgets/custom_discount_cards.dart';

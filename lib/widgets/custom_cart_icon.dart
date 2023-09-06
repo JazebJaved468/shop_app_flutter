@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../constants/global_constants.dart';
+import '../screens/cartScreen/full_cart_screen.dart';
 import '../screens/homeScreen/constants/home_constants.dart';
 
 class CustomCartIcon extends StatelessWidget {
@@ -14,16 +15,24 @@ class CustomCartIcon extends StatelessWidget {
     return //cart icon
         Stack(
       children: [
-        Container(
+        const SizedBox(
           width: 40,
           height: 40,
           // color: Colors.green,
         ),
         IconButton(
           alignment: Alignment.centerRight,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const FullCartScreen(),
+              ),
+            );
+          },
           icon: SvgPicture.asset(
             ConstantSVGPaths_Home.cartIconSVG,
+            // ignore: deprecated_member_use
             color: iconColor ?? GlobalColors.primaryHeading,
           ),
         ),
@@ -34,10 +43,10 @@ class CustomCartIcon extends StatelessWidget {
             backgroundColor: strokeColor ?? GlobalColors.primaryBackground,
             radius: 9,
             child: CircleAvatar(
-              backgroundColor: Color(0xffF9B023),
+              backgroundColor: GlobalColors.yellow,
               foregroundColor: GlobalColors.primaryHeading,
               radius: 8,
-              child: Center(
+              child: const Center(
                 child: Text(
                   "1",
                   style: TextStyle(fontSize: 10, fontWeight: FontWeight.w700),
