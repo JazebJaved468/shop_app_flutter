@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../constants/global_constants.dart';
+import '../data/data.dart';
+import '../screens/cartScreen/cart_screen.dart';
 import '../screens/cartScreen/full_cart_screen.dart';
 import '../screens/homeScreen/constants/home_constants.dart';
 
@@ -26,7 +28,7 @@ class CustomCartIcon extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const FullCartScreen(),
+                builder: (context) => const CartScreen(),
               ),
             );
           },
@@ -46,10 +48,11 @@ class CustomCartIcon extends StatelessWidget {
               backgroundColor: GlobalColors.yellow,
               foregroundColor: GlobalColors.primaryHeading,
               radius: 8,
-              child: const Center(
+              child: Center(
                 child: Text(
-                  "1",
-                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.w700),
+                  "${CartData.data.length}",
+                  style: const TextStyle(
+                      fontSize: 10, fontWeight: FontWeight.w700),
                 ),
               ),
             ),

@@ -7,6 +7,7 @@ class CustomMainButton extends StatelessWidget {
   final Color textColor;
   final double width;
   final double? height;
+  final void Function()? onPressed;
 
   const CustomMainButton(
       {super.key,
@@ -15,7 +16,8 @@ class CustomMainButton extends StatelessWidget {
       this.borderColor,
       required this.textColor,
       required this.width,
-      this.height});
+      this.height,
+      this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class CustomMainButton extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: borderColor ?? Colors.transparent,
+          color: borderColor ?? backgroundColor,
           width: 1,
         ),
       ),
@@ -38,7 +40,7 @@ class CustomMainButton extends StatelessWidget {
           backgroundColor: backgroundColor,
           shape: const RoundedRectangleBorder(),
         ),
-        onPressed: () {},
+        onPressed: onPressed,
         child: Text(
           text,
           style: TextStyle(

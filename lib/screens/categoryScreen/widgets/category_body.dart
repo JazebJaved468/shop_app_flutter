@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_app/constants/global_constants.dart';
+import 'package:shopping_app/data/data.dart';
 import 'package:shopping_app/screens/homeScreen/constants/home_constants.dart';
 // import 'package:shopping_app/screens/homeScreen/widgets/custom_discount_cards.dart';
 // import 'package:shopping_app/screens/homeScreen/widgets/custom_drop_down.dart';
 // import 'package:shopping_app/screens/homeScreen/widgets/custom_recommended_products.dart';
-import 'package:shopping_app/screens/shopScreen/constants/shop_screen_constants.dart';
+// import 'package:shopping_app/screens/shopScreen/constants/shop_screen_constants.dart';
 import 'package:shopping_app/screens/shopScreen/shop_items_screen.dart';
 import 'package:shopping_app/widgets/custom_cart_icon.dart';
 import 'package:shopping_app/widgets/custom_search_icon.dart';
@@ -67,11 +68,12 @@ class _CategoryBodyState extends State<CategoryBody> {
                 ),
               ),
               Text(
-                "By Category",
+                "By Restaurants",
                 style: TextStyle(
                   color: GlobalColors.primaryHeading,
                   fontSize: 50,
                   fontWeight: FontWeight.w700,
+                  wordSpacing: 1,
                 ),
               ),
             ],
@@ -81,11 +83,12 @@ class _CategoryBodyState extends State<CategoryBody> {
         //grid view
         Expanded(
           child: Container(
-            padding: EdgeInsets.only(left: 30, right: 30),
+            padding: EdgeInsets.only(left: 30, right: 30, top: 10),
 
             // color: Colors.red,
             child: GridView.builder(
-              itemCount: ConstantTexts_ShopScreen.shopNames.length,
+              itemCount: ApiData.data.length,
+              // ConstantTexts_ShopScreen.shopNames.length
               // shrinkWrap: true,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
@@ -94,18 +97,19 @@ class _CategoryBodyState extends State<CategoryBody> {
                 mainAxisExtent: 180,
               ),
               itemBuilder: ((context, index) {
-                String shopName =
-                    toSentenceCase(ConstantTexts_ShopScreen.shopNames[index]);
+                String shopName = toSentenceCase(
+                  ApiData.data[index]['name'],
+                );
+                // ConstantTexts_ShopScreen.shopNames[index]
                 return GestureDetector(
                   onTap: () {
                     print("$shopName");
+
+                    // Taking shop index to another separate file that is been clicked
+                    Selection.shopIndex = index;
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => ShopScreen(
-                    
-                                shopName: shopName,
-                              )),
+                      MaterialPageRoute(builder: (context) => ShopScreen()),
                     );
                   },
                   child: ClipRRect(
@@ -125,8 +129,9 @@ class _CategoryBodyState extends State<CategoryBody> {
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(10),
                                   child: Image(
-                                    image: AssetImage(
-                                        'assets/images/discount1.jpg'),
+                                    image: NetworkImage(
+                                      ApiData.data[index]['image'],
+                                    ),
                                     width: 70,
                                     height: 70,
                                     fit: BoxFit.cover,

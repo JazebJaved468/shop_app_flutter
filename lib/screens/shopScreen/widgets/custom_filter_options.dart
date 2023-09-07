@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/constants/global_constants.dart';
-import 'package:shopping_app/screens/shopScreen/constants/shop_screen_constants.dart';
+import 'package:shopping_app/screens/shopScreen/constants/shop_items_screen_constants.dart';
 
+import '../../../data/data.dart';
 import '../shop_items_screen.dart';
 
 class CustomFilterOption extends StatefulWidget {
   final int index;
   final int selectedFilterIndex;
   final String shopName;
-  final String type;
+  // final String type;
   const CustomFilterOption(
       {super.key,
-      required this.type,
+      // required this.type,
       required this.shopName,
       required this.index,
       required this.selectedFilterIndex});
@@ -23,28 +24,31 @@ class CustomFilterOption extends StatefulWidget {
 class _CustomFilterOptionState extends State<CustomFilterOption> {
   bool istapped = false;
   updateSelectedFilterIndex(index) {
-    ConstantTexts_ShopScreen.selectedFilterIndex = index;
-    ConstantTexts_ShopScreen.selectedtype =
-        ConstantTexts_ShopScreen.itemData[index]['type'];
+    Selection.filterIndex = index;
+    // ConstantTexts_ShopScreen.selectedFilterIndex = index;
+    // ConstantTexts_ShopScreen.selectedtype =
+    //     ConstantTexts_ShopScreen.itemData[index]['type'];
   }
 
-  updateTempListData(String type) {
-    print(type);
+  updateTempListData() {
+    // print(type);
     ConstantTexts_ShopScreen.itemData.forEach((product) {
-      if (product['type'] == type) {
-        // print(product);
-        // ConstantTexts_ShopScreen.tempData.clear();
-        ConstantTexts_ShopScreen.tempData = product['items'];
-        print(ConstantTexts_ShopScreen.tempData);
-        setState(() {});
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-              builder: (context) => ShopScreen(
-                    shopName: widget.shopName,
-                  )),
-        );
-      }
+      // if (product['type'] == type) {
+      // print(product);
+      // ConstantTexts_ShopScreen.tempData.clear();
+      // ConstantTexts_ShopScreen.tempData = product['items'];
+      Selection.tempFilterData = ApiData.data[Selection.shopIndex]['products']
+          [Selection.filterIndex]['items'];
+      print(ConstantTexts_ShopScreen.tempData);
+      setState(() {});
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+            builder: (context) => ShopScreen(
+                
+                )),
+      );
+      // }
     });
   }
 
@@ -62,7 +66,7 @@ class _CustomFilterOptionState extends State<CustomFilterOption> {
           // ignore: avoid_print
           print("${widget.index} tapped");
           updateSelectedFilterIndex(widget.index);
-          updateTempListData(widget.type);
+          updateTempListData();
         },
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
@@ -77,7 +81,8 @@ class _CustomFilterOptionState extends State<CustomFilterOption> {
                 : Colors.transparent,
           ),
           child: Text(
-            widget.type,
+            // widget.type,
+            "${ApiData.data[Selection.shopIndex]['products'][widget.index]['type']}",
             style: TextStyle(
                 fontSize: 16,
                 color: widget.index == widget.selectedFilterIndex

@@ -1,9 +1,15 @@
 class ConstantTexts_ShopScreen {
-
   static int selectedFilterIndex = 0;
   static String selectedtype = itemData[0]['type'];
-  static List shopNames = ["Kaybees", "KFC", "Ginsoy" , "Dynasty", "Kolachi" , "Sakura"];
-  static List itemData =  [
+  static List shopNames = [
+    "Kaybees",
+    "KFC",
+    "Ginsoy",
+    "Dynasty",
+    "Kolachi",
+    "Sakura"
+  ];
+  static List itemData = [
     {
       'type': 'Popular',
       'items': [

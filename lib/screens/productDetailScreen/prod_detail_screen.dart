@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/screens/cartScreen/cart_screen.dart';
 import 'package:shopping_app/screens/productDetailScreen/constants/prod_detail_screen_constants.dart';
+import 'package:shopping_app/widgets/custom_main_button.dart';
 
 import '../../constants/global_constants.dart';
+import '../../data/data.dart';
 import '../../functions.dart';
 import '../../widgets/custom_appbar_actions.dart';
 import '../../widgets/custom_back_button.dart';
-import '../shopScreen/constants/shop_screen_constants.dart';
+import '../shopScreen/constants/shop_items_screen_constants.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class ProdDetailScreen extends StatefulWidget {
-  final int? itemIndex;
+  final int itemIndex;
   const ProdDetailScreen({super.key, required this.itemIndex});
 
   @override
@@ -20,16 +23,6 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
   //controller
   final controller = PageController(viewportFraction: 0.8, keepPage: true);
 
-  //rating sample
-  num rating = 4.5;
-
-  // images sample
-  List images = [
-    'assets/images/discount1.jpg',
-    'assets/images/discount2.jpg',
-    'assets/images/discount3.jpg',
-  ];
-
   //favourite
   bool isFavourite = false;
 
@@ -38,6 +31,17 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
   int typeIndex = ConstantTexts_ShopScreen.selectedFilterIndex;
   @override
   Widget build(BuildContext context) {
+    // Setting (Saving) Selected Product Index
+    Selection.productIndex = widget.itemIndex;
+
+    // Setting Variables
+    var shop = ApiData.data[Selection.shopIndex];
+    var filter = shop['products'][Selection.filterIndex];
+    var product = filter['items'][Selection.productIndex];
+    num rating = product['rating'];
+
+    // ignore: avoid_print
+    // print("${Selection.productIndex}");
     // Media Queries
     var mediaWidth = MediaQuery.of(context).size.width;
     // var mediaHeight = MediaQuery.of(context).size.height;
@@ -53,11 +57,13 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
               child: Center(
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
-                  child: Image.asset(
-                    images[index],
-                    fit: BoxFit.cover,
+                  child: Image(
+                    image: NetworkImage(
+                      product['image'],
+                    ),
                     width: 160,
                     height: 160,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
@@ -67,7 +73,7 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
       appBar: AppBar(
         leading: const CustomBackButton(),
         title: Text(
-          "${toSentenceCase(itemData[typeIndex]['items'][widget.itemIndex]['name'])}",
+          "${toSentenceCase(product['name'])}",
           style: const TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w500,
@@ -140,10 +146,12 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
                               // color: Colors.yellow,
                               width: mediaWidth * 0.5,
                               margin: const EdgeInsets.only(bottom: 16),
-                              child: const Text(
-                                "Thin Choise Top Orange",
+                              child: Text(
+                                "${toSentenceCase(product['name'])}",
                                 style: TextStyle(
-                                    fontWeight: FontWeight.w700, fontSize: 24),
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 24,
+                                    wordSpacing: 2),
                               ),
                             ),
                             // favourite button
@@ -175,7 +183,7 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
                                 child: Wrap(
                                   children: [
                                     Text(
-                                      "\$34.70",
+                                      "\$${product['price']}",
                                       style: TextStyle(
                                         color: GlobalColors.primaryBackground,
                                         fontWeight: FontWeight.w700,
@@ -198,7 +206,7 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 14, vertical: 2),
                                       child: Text(
-                                        "\$22.04 OFF",
+                                        "\$${((product['price']) * (product['discount'] / 100)).toStringAsFixed(2)} OFF",
                                         style: TextStyle(
                                           backgroundColor:
                                               GlobalColors.primaryBackground,
@@ -212,7 +220,7 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
                                 ),
                               ),
                               Text(
-                                "Reg: \$56.70 USD",
+                                "Reg: \$${product['reg'].toStringAsFixed(2)} USD",
                                 style: TextStyle(
                                   color: ConstantColors_ProdDetail.description,
                                   fontWeight: FontWeight.w200,
@@ -256,7 +264,7 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
 
                               // No. of reviews
                               Text(
-                                "110 Reviews",
+                                "${product['reviews'].length} Reviews",
                                 style: TextStyle(
                                   color: ConstantColors_ProdDetail.description,
                                   fontWeight: FontWeight.w200,
@@ -270,7 +278,7 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
                         // Details
                         Container(
                           // color: Colors.red,
-                          margin:const  EdgeInsets.only(bottom: 14),
+                          margin: const EdgeInsets.only(bottom: 14),
                           child: Theme(
                             data: Theme.of(context)
                                 .copyWith(dividerColor: Colors.transparent),
@@ -284,10 +292,10 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
                                 "Details",
                                 style: TextStyle(),
                               ),
-                              children: const [
+                              children: [
                                 Text(
-                                  "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo.",
-                                  style: TextStyle(
+                                  "${product['details']}",
+                                  style: const TextStyle(
                                       color: Color(0xff8891A5), fontSize: 16),
                                 ),
                               ],
@@ -314,14 +322,13 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
                                 "Nutritional Facts",
                                 style: TextStyle(),
                               ),
-                              children: const [
+                              children: [
                                 Text(
-                                  "calories: 41,\ncarbohydrates: 10,\nfat: 0.2,\nprotein: 1,\nfiber: 2.8",
-                                  style: TextStyle(
+                                  "${product['nutrition']}",
+                                  style: const TextStyle(
                                       color: Color(0xff8891A5), fontSize: 16),
                                 ),
                               ],
-                          
                             ),
                           ),
                         ),
@@ -329,7 +336,7 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
                         // Reviews
                         Container(
                           // color: Colors.red,
-                          margin: const EdgeInsets.only(bottom: 14),
+                          margin: const EdgeInsets.only(bottom: 100),
                           child: Theme(
                             data: Theme.of(context)
                                 .copyWith(dividerColor: Colors.transparent),
@@ -347,14 +354,16 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
                               ),
                               children: [
                                 Container(
-                                  color: const Color.fromARGB(255, 231, 231, 236),
-                                  height: 200,
+                                  color:
+                                      const Color.fromARGB(255, 231, 231, 236),
+                                  height: 230,
                                   child: ListView.builder(
                                     shrinkWrap: true,
-                                    itemCount: 7,
+                                    itemCount: product['reviews'].length,
                                     itemBuilder: (context, index) {
                                       return Container(
-                                        padding: const EdgeInsets.only(bottom: 10),
+                                        padding:
+                                            const EdgeInsets.only(bottom: 10),
                                         child: ListTile(
                                           leading: CircleAvatar(
                                               backgroundColor: GlobalColors
@@ -366,18 +375,19 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
                                                 color: GlobalColors
                                                     .secondaryBackground,
                                               )),
-                                          title: const Text(
-                                            "Comment",
-                                            style: TextStyle(
+                                          title: Text(
+                                            "${product['reviews'][index]['comment']}",
+                                            style: const TextStyle(
                                                 fontWeight: FontWeight.w500,
-                                                fontSize: 16),
+                                                fontSize: 14),
                                           ),
                                           subtitle: Text(
-                                            "By Person $index",
-                                            style:const  TextStyle(fontSize: 12),
+                                            "By ${product['reviews'][index]['personName']}",
+                                            style:
+                                                const TextStyle(fontSize: 12),
                                           ),
                                           trailing: Text(
-                                            "09/05/23",
+                                            "${product['reviews'][index]['date']}",
                                             style: TextStyle(
                                               color: ConstantColors_ProdDetail
                                                   .description,
@@ -389,7 +399,6 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
                                   ),
                                 )
                               ],
-                              
                             ),
                           ),
                         ),
@@ -406,50 +415,46 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
+                          CustomMainButton(
+                              text: "Add To Cart",
+                              backgroundColor: Colors.transparent,
+                              textColor: GlobalColors.primaryBackground,
+                              width: mediaWidth * 0.4,
+                              borderColor: GlobalColors.primaryBackground,
+                              onPressed: () {
+                                setState(() {});
+                                addToCart(
+                                    shopIndex: Selection.shopIndex,
+                                    filterIndex: Selection.filterIndex,
+                                    productIndex: Selection.productIndex);
+                                // showing Message
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                    content: Text('Item added to cart...'),
+                                    duration: Duration(
+                                        seconds:
+                                            1), // How long the SnackBar will be displayed
+                                  ),
+                                );
+                              }),
+                          CustomMainButton(
+                            text: "Buy Now",
+                            backgroundColor: GlobalColors.primaryBackground,
+                            textColor: GlobalColors.primaryHeading,
                             width: mediaWidth * 0.4,
-                            height: 60,
-                            clipBehavior: Clip.hardEdge,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              border: Border.all(
-                                color: GlobalColors.primaryBackground,
-                                width: 1,
-                              ),
-                            ),
-                            child: TextButton(
-                              style: TextButton.styleFrom(
-                                backgroundColor: Colors.transparent,
-                                shape: const RoundedRectangleBorder(),
-                              ),
-                              onPressed: () {},
-                              child: const Text("Add To Cart"),
-                            ),
-                          ),
-                          Container(
-                            width: mediaWidth * 0.4,
-                            height: 60,
-                            clipBehavior: Clip.hardEdge,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              border: Border.all(
-                                color: GlobalColors.primaryBackground,
-                                width: 1,
-                              ),
-                            ),
-                            child: TextButton(
-                              style: TextButton.styleFrom(
-                                backgroundColor: GlobalColors.primaryBackground,
-                                shape: RoundedRectangleBorder(),
-                              ),
-                              onPressed: () {},
-                              child: Text(
-                                "Buy Now",
-                                style: TextStyle(
-                                  color: GlobalColors.primaryHeading,
-                                ),
-                              ),
-                            ),
+                            onPressed: () {
+                              setState(() {});
+                              addToCart(
+                                  shopIndex: Selection.shopIndex,
+                                  filterIndex: Selection.filterIndex,
+                                  productIndex: Selection.productIndex);
+                              // Redirecting To Cart Screen
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const CartScreen()),
+                              );
+                            },
                           ),
                         ],
                       ),

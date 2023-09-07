@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/constants/global_constants.dart';
+import 'package:shopping_app/data/data.dart';
 import 'package:shopping_app/screens/productDetailScreen/prod_detail_screen.dart';
 import 'package:shopping_app/screens/shopScreen/widgets/custom_filter_options.dart';
 import 'package:shopping_app/widgets/add_to_cart_custom_button.dart';
@@ -7,38 +8,41 @@ import 'package:shopping_app/widgets/custom_appbar_actions.dart';
 import 'package:shopping_app/widgets/custom_back_button.dart';
 
 import '../../functions.dart';
-import 'constants/shop_screen_constants.dart';
+// import 'constants/shop_items_screen_constants.dart';
 
 class ShopScreen extends StatefulWidget {
-  final String shopName;
+  // final String shopName;
 
-  const ShopScreen({super.key, required this.shopName});
+  const ShopScreen({
+    super.key,
+  });
 
   @override
   State<ShopScreen> createState() => _ShopScreenState();
 }
 
 class _ShopScreenState extends State<ShopScreen> {
-  late List itemList;
+  // late List itemList;
 
   @override
   void initState() {
-    itemList = ConstantTexts_ShopScreen.tempData;
+    // itemList = ConstantTexts_ShopScreen.tempData;
     // TODO: implement initState
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+    String shop = Selection.shopName;
     print("grid build");
-    print(itemList);
+    // print(itemList);
 
     setState(() {});
     return Scaffold(
       //app bar
       appBar: AppBar(
         leading: const CustomBackButton(),
-        title: Text("${widget.shopName}"),
+        title: Text("$shop"),
         actions: [
           CustomAppBarActions(
             showSearchOption: true,
@@ -58,15 +62,18 @@ class _ShopScreenState extends State<ShopScreen> {
             // color: Colors.red,
             padding: EdgeInsets.symmetric(vertical: 15),
             child: ListView.builder(
-              itemCount: 3,
+              itemCount: ApiData.data[Selection.shopIndex]['products'].length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return CustomFilterOption(
                   index: index,
-                  selectedFilterIndex:
-                      ConstantTexts_ShopScreen.selectedFilterIndex,
-                  shopName: widget.shopName,
-                  type: "${ConstantTexts_ShopScreen.itemData[index]['type']}",
+                  selectedFilterIndex: Selection.filterIndex,
+                  // ConstantTexts_ShopScreen.selectedFilterIndex
+                  shopName: Selection.shopName,
+                  // widget.shopName
+                  // type:
+                  //     "${ApiData.data[Selection.shopIndex]['products'][index]['type']}",
+                  // ConstantTexts_ShopScreen.itemData[index]['type']
                 );
               },
             ),
@@ -79,7 +86,8 @@ class _ShopScreenState extends State<ShopScreen> {
 
               // color: Colors.red,
               child: GridView.builder(
-                itemCount: itemList.length,
+                itemCount: Selection.tempFilterData.length,
+
                 // shrinkWrap: true,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
@@ -88,10 +96,11 @@ class _ShopScreenState extends State<ShopScreen> {
                   mainAxisExtent: 183,
                 ),
                 itemBuilder: ((context, index) {
+                  print(Selection.tempFilterData.length);
                   return GestureDetector(
                     onTap: () {
-                      print("${ConstantTexts_ShopScreen.selectedFilterIndex}");
-
+                      print("${Selection.filterIndex}");
+// ConstantTexts_ShopScreen.selectedFilterIndex
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -118,8 +127,10 @@ class _ShopScreenState extends State<ShopScreen> {
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(10),
                                     child: Image(
-                                      image: AssetImage(
-                                          'assets/images/discount1.jpg'),
+                                      image: NetworkImage(
+                                        Selection.tempFilterData[index]
+                                            ['image'],
+                                      ),
                                       width: 70,
                                       height: 70,
                                       fit: BoxFit.cover,
@@ -131,7 +142,27 @@ class _ShopScreenState extends State<ShopScreen> {
                               //add to cart button
                               Align(
                                   alignment: Alignment.centerRight,
-                                  child: AddToCartIcon()),
+                                  child: AddToCartIcon(
+                                    onPressed: () {
+                                      Selection.productIndex = index;
+                                      setState(() {});
+                                      addToCart(
+                                          shopIndex: Selection.shopIndex,
+                                          filterIndex: Selection.filterIndex,
+                                          productIndex: Selection.productIndex);
+                                      // showing Message
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        const SnackBar(
+                                          content:
+                                              Text('Item added to cart...'),
+                                          duration: Duration(
+                                              seconds:
+                                                  1), // How long the SnackBar will be displayed
+                                        ),
+                                      );
+                                    },
+                                  )),
 
                               Container(
                                 // color: Colors.redAccent,
@@ -143,7 +174,10 @@ class _ShopScreenState extends State<ShopScreen> {
                                     children: [
                                       //title
                                       Text(
-                                        "${toSentenceCase(itemList[index]['name'])}",
+                                        "${toSentenceCase(
+                                          Selection.tempFilterData[index]
+                                              ['name'],
+                                        )}",
                                         style: TextStyle(
                                             color: GlobalColors.primaryTitle,
                                             fontSize: 14,

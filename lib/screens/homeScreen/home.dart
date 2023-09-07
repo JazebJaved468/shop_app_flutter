@@ -17,8 +17,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
   List pages = [
-    CategoryBody(),
     HomeBody(),
+    CategoryBody(),
     FavouriteBody(),
     Container(
       color: Colors.pink,

@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import '../constants/global_constants.dart';
 
 class AddToCartIcon extends StatelessWidget {
-  const AddToCartIcon({super.key});
+    // final int itemIndex;
+      final void Function()? onPressed;
+  const AddToCartIcon({super.key, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class AddToCartIcon extends StatelessWidget {
         height: 26,
         child: IconButton(
           padding: EdgeInsets.zero,
-          onPressed: () {},
+          onPressed: onPressed,
           icon: Icon(
             Icons.add,
             size: 14,

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/screens/cartScreen/cart_screen.dart';
 
 import '../../../constants/global_constants.dart';
+import '../../../data/data.dart';
 import '../../../functions.dart';
 import '../constants/cart_constants.dart';
 
@@ -9,12 +11,15 @@ class CustomCartItem extends StatefulWidget {
   final num price;
   final String imgPath;
   final num quantity;
+  final int cartItemIndex;
+  final Widget screen;
   const CustomCartItem(
       {super.key,
       required this.name,
       required this.price,
       required this.imgPath,
-      required this.quantity});
+      required this.quantity,
+      required this.cartItemIndex, required this.screen});
 
   @override
   State<CustomCartItem> createState() => _CustomCartItemState();
@@ -43,14 +48,16 @@ class _CustomCartItemState extends State<CustomCartItem> {
       child: ListTile(
         // Product Image
         leading: Container(
-          margin: EdgeInsets.only(right: 15),
+          margin: const EdgeInsets.only(right: 15),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(10),
-            child: Image.asset(
-              "${widget.imgPath}",
-              fit: BoxFit.cover,
+            child: Image(
+              image: NetworkImage(
+                widget.imgPath,
+              ),
               width: 40,
               height: 40,
+              fit: BoxFit.cover,
             ),
           ),
         ),
@@ -58,7 +65,7 @@ class _CustomCartItemState extends State<CustomCartItem> {
         // Product Name
         title: Text(
           "${toSentenceCase(widget.name)}",
-          style: TextStyle(
+          style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w500,
               overflow: TextOverflow.ellipsis),
@@ -66,8 +73,8 @@ class _CustomCartItemState extends State<CustomCartItem> {
 
         // Product Cost
         subtitle: Text(
-          "\$${widget.price}",
-          style: TextStyle(
+          "\$${(widget.price).toStringAsFixed(2)}",
+          style: const TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.w400,
           ),
@@ -86,7 +93,20 @@ class _CustomCartItemState extends State<CustomCartItem> {
                 foregroundColor: GlobalColors.secondaryBackground,
                 radius: 18,
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Selection.cartItemIndex = widget.cartItemIndex;
+                    var selectedItem = CartData.data[Selection.cartItemIndex];
+                    selectedItem['quantity'] > 1
+                        ? selectedItem['quantity']--
+                        : selectedItem['quantity'];
+                    setState(() {});
+
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>  widget.screen),
+                    );
+                  },
                   icon: Icon(
                     Icons.horizontal_rule_rounded,
                     size: 14,
@@ -97,7 +117,7 @@ class _CustomCartItemState extends State<CustomCartItem> {
 
               //value
               Text(
-                "${widget.quantity}",
+                "${CartData.data[widget.cartItemIndex]['quantity']}",
                 style: TextStyle(
                     color: GlobalColors.secondaryBackground,
                     fontSize: 14,
@@ -110,7 +130,17 @@ class _CustomCartItemState extends State<CustomCartItem> {
                 foregroundColor: GlobalColors.secondaryBackground,
                 radius: 18,
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Selection.cartItemIndex = widget.cartItemIndex;
+                    var selectedItem = CartData.data[Selection.cartItemIndex];
+                    selectedItem['quantity']++;
+                    setState(() {});
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>  widget.screen),
+                    );
+                  },
                   icon: Icon(
                     Icons.add,
                     size: 14,

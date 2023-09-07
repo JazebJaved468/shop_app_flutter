@@ -10,55 +10,55 @@ class ConstantColors_Cart {
   static Color amountLabel = Color(0xff616A7D);
 }
 
-class CartData {
-  static List<Map> data = [
-    {
-      'name': "Bananas",
-      'price': 7.90,
-      'imgPath': 'assets/images/discount1.jpg',
-      'quantity': 2,
-    },
-    {
-      'name': "Apple",
-      'price': 5.60,
-      'imgPath': 'assets/images/discount2.jpg',
-      'quantity': 2,
-    },
-    {
-      'name': "Mango",
-      'price': 3.80,
-      'imgPath': 'assets/images/discount3.jpg',
-      'quantity': 2,
-    },
-    {
-      'name': "Graeps",
-      'price': 7.90,
-      'imgPath': 'assets/images/discount1.jpg',
-      'quantity': 2,
-    },
-    {
-      'name': "Bananas",
-      'price': 7.90,
-      'imgPath': 'assets/images/discount1.jpg',
-      'quantity': 2,
-    },
-    {
-      'name': "Apple",
-      'price': 5.60,
-      'imgPath': 'assets/images/discount2.jpg',
-      'quantity': 2,
-    },
-    {
-      'name': "Mango",
-      'price': 3.80,
-      'imgPath': 'assets/images/discount3.jpg',
-      'quantity': 2,
-    },
-    {
-      'name': "Graeps",
-      'price': 7.90,
-      'imgPath': 'assets/images/discount1.jpg',
-      'quantity': 2,
-    },
-  ];
-}
+// class CartData {
+//   static List<Map> data = [
+//     {
+//       'name': "Bananas",
+//       'price': 7.90,
+//       'imgPath': 'assets/images/discount1.jpg',
+//       'quantity': 2,
+//     },
+//     {
+//       'name': "Apple",
+//       'price': 5.60,
+//       'imgPath': 'assets/images/discount2.jpg',
+//       'quantity': 2,
+//     },
+//     {
+//       'name': "Mango",
+//       'price': 3.80,
+//       'imgPath': 'assets/images/discount3.jpg',
+//       'quantity': 2,
+//     },
+//     {
+//       'name': "Graeps",
+//       'price': 7.90,
+//       'imgPath': 'assets/images/discount1.jpg',
+//       'quantity': 2,
+//     },
+//     {
+//       'name': "Bananas",
+//       'price': 7.90,
+//       'imgPath': 'assets/images/discount1.jpg',
+//       'quantity': 2,
+//     },
+//     {
+//       'name': "Apple",
+//       'price': 5.60,
+//       'imgPath': 'assets/images/discount2.jpg',
+//       'quantity': 2,
+//     },
+//     {
+//       'name': "Mango",
+//       'price': 3.80,
+//       'imgPath': 'assets/images/discount3.jpg',
+//       'quantity': 2,
+//     },
+//     {
+//       'name': "Graeps",
+//       'price': 7.90,
+//       'imgPath': 'assets/images/discount1.jpg',
+//       'quantity': 2,
+//     },
+//   ];
+// }

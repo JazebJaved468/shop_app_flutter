@@ -5,11 +5,9 @@ import 'package:shopping_app/screens/cartScreen/constants/cart_constants.dart';
 import 'package:shopping_app/screens/cartScreen/full_cart_screen.dart';
 import 'package:shopping_app/screens/cartScreen/widgets/custom_cart_items.dart';
 
-
 import 'package:shopping_app/widgets/custom_bill_sheet.dart';
 
-
-
+import '../../data/data.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
@@ -19,6 +17,8 @@ class CartScreen extends StatefulWidget {
 }
 
 class _CartScreenState extends State<CartScreen> {
+  //Setting Variables
+  int noOfItems = CartData.data.length;
 
   @override
   Widget build(BuildContext context) {
@@ -184,13 +184,15 @@ class _CartScreenState extends State<CartScreen> {
               padding: EdgeInsets.only(top: 15, bottom: 0),
               shrinkWrap: true,
               itemCount: // cart items number sample
-                  CartData.data.length > 3 ? 3 : 3,
+                  noOfItems > 3 ? 3 : noOfItems,
               itemBuilder: (context, index) {
                 return CustomCartItem(
                   name: CartData.data[index]['name'],
                   price: CartData.data[index]['price'],
                   imgPath: CartData.data[index]['imgPath'],
                   quantity: CartData.data[index]['quantity'],
+                  cartItemIndex: index,
+                  screen: CartScreen(),
                 );
               },
             ),
@@ -206,22 +208,25 @@ class _CartScreenState extends State<CartScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const FullCartScreen(),
+                Visibility(
+                  visible: noOfItems > 3,
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const FullCartScreen(),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      "+ ${ // cart items number sample
+                      CartData.data.length - 3} More",
+                      style: TextStyle(
+                        color: Color(0xff2A4BA0),
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
                       ),
-                    );
-                  },
-                  child: Text(
-                    "+ ${ // cart items number sample
-                    CartData.data.length - 3} More",
-                    style: TextStyle(
-                      color: Color(0xff2A4BA0),
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
@@ -246,10 +251,7 @@ class _CartScreenState extends State<CartScreen> {
           ),
 
           // Bottom Sheet (Bill)
-          CustomBill(
-              subtotalAmount: 35.96,
-              deliveryAmount: 2.00,
-              buttonText: "Proceed To checkout")
+          CustomBill(buttonText: "Proceed To checkout")
         ],
       ),
     );
