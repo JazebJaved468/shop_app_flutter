@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:shopping_app/screens/cartScreen/cart_screen.dart';
 import 'package:shopping_app/screens/productDetailScreen/constants/prod_detail_screen_constants.dart';
 import 'package:shopping_app/widgets/custom_main_button.dart';
+import 'package:shopping_app/widgets/custom_rating_stars.dart';
 
 import '../../constants/global_constants.dart';
 import '../../data/data.dart';
 import '../../functions.dart';
 import '../../widgets/custom_appbar_actions.dart';
 import '../../widgets/custom_back_button.dart';
-import '../shopScreen/constants/shop_items_screen_constants.dart';
+// import '../shopScreen/constants/shop_items_screen_constants.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class ProdDetailScreen extends StatefulWidget {
@@ -23,16 +24,19 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
   //controller
   final controller = PageController(viewportFraction: 0.8, keepPage: true);
 
-  //favourite
-  bool isFavourite = false;
-
   //getting filterindex and itemdatalist
-  List itemData = ConstantTexts_ShopScreen.itemData;
-  int typeIndex = ConstantTexts_ShopScreen.selectedFilterIndex;
+  // List itemData = ConstantTexts_ShopScreen.itemData;
+  // int typeIndex = ConstantTexts_ShopScreen.selectedFilterIndex;
   @override
   Widget build(BuildContext context) {
     // Setting (Saving) Selected Product Index
     Selection.productIndex = widget.itemIndex;
+
+    //favourite
+    bool isFavourite = isFavouriteAlready(
+        shopIndex: Selection.shopIndex,
+        filterIndex: Selection.filterIndex,
+        productIndex: Selection.productIndex)[0];
 
     // Setting Variables
     var shop = ApiData.data[Selection.shopIndex];
@@ -157,7 +161,44 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
                             // favourite button
                             IconButton(
                               onPressed: () {
-                                isFavourite = !(isFavourite);
+                                // print(FavouriteData.data);
+                                if (isFavourite == false) {
+                                  addToFavourite(
+                                      shopIndex: Selection.shopIndex,
+                                      filterIndex: Selection.filterIndex,
+                                      productIndex: Selection.productIndex);
+                                  // showing Message
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                      content:
+                                          Text('Item added to favourites !'),
+                                      duration: Duration(
+                                          seconds:
+                                              1), // How long the SnackBar will be displayed
+                                    ),
+                                  );
+                                  isFavourite = !(isFavourite);
+
+                                  print(FavouriteData.data);
+                                } else {
+                                  // FavouriteData.data.removeLast();
+                                  removeFromFavourite(
+                                      shopIndex: Selection.shopIndex,
+                                      filterIndex: Selection.filterIndex,
+                                      productIndex: Selection.productIndex);
+                                  // showing Message
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                      content:
+                                          Text('Item removed from favourites.'),
+                                      duration: Duration(
+                                          seconds:
+                                              1), // How long the SnackBar will be displayed
+                                    ),
+                                  );
+                                  isFavourite = !(isFavourite);
+                                  print(FavouriteData.data);
+                                }
 
                                 setState(() {});
                               },
@@ -239,28 +280,7 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
                           child: Row(
                             children: [
                               //Stars
-                              SizedBox(
-                                height: 20,
-                                width: 100,
-                                child: ListView.separated(
-                                  itemCount: 5,
-                                  scrollDirection: Axis.horizontal,
-                                  itemBuilder: (context, index) {
-                                    return Icon(
-                                      Icons.star_rate_rounded,
-                                      size: 15,
-                                      color: index + 1 <= rating
-                                          ? GlobalColors.yellow
-                                          : GlobalColors.secondaryBackground,
-                                    );
-                                  },
-                                  separatorBuilder: (context, index) {
-                                    return const SizedBox(
-                                      width: 3,
-                                    );
-                                  },
-                                ),
-                              ),
+                              CustomRatingStars(rating: rating),
 
                               // No. of reviews
                               Text(
@@ -416,27 +436,28 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           CustomMainButton(
-                              text: "Add To Cart",
-                              backgroundColor: Colors.transparent,
-                              textColor: GlobalColors.primaryBackground,
-                              width: mediaWidth * 0.4,
-                              borderColor: GlobalColors.primaryBackground,
-                              onPressed: () {
-                                setState(() {});
-                                addToCart(
-                                    shopIndex: Selection.shopIndex,
-                                    filterIndex: Selection.filterIndex,
-                                    productIndex: Selection.productIndex);
-                                // showing Message
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                    content: Text('Item added to cart...'),
-                                    duration: Duration(
-                                        seconds:
-                                            1), // How long the SnackBar will be displayed
-                                  ),
-                                );
-                              }),
+                            text: "Add To Cart",
+                            backgroundColor: Colors.transparent,
+                            textColor: GlobalColors.primaryBackground,
+                            width: mediaWidth * 0.4,
+                            borderColor: GlobalColors.primaryBackground,
+                            onPressed: () {
+                              setState(() {});
+                              addToCart(
+                                  shopIndex: Selection.shopIndex,
+                                  filterIndex: Selection.filterIndex,
+                                  productIndex: Selection.productIndex);
+                              // showing Message
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text('Item added to cart...'),
+                                  duration: Duration(
+                                      seconds:
+                                          1), // How long the SnackBar will be displayed
+                                ),
+                              );
+                            },
+                          ),
                           CustomMainButton(
                             text: "Buy Now",
                             backgroundColor: GlobalColors.primaryBackground,

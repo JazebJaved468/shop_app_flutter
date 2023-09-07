@@ -62,6 +62,64 @@ void addToCart({
   }
 }
 
+//add to Favourites Functionality
+void addToFavourite({
+  required int shopIndex,
+  required int filterIndex,
+  required int productIndex,
+}) {
+  FavouriteData.data.add({
+    'shopIndex': shopIndex,
+    'filterIndex': filterIndex,
+    'productIndex': productIndex,
+    'name': ApiData.data[shopIndex]['products'][filterIndex]['items']
+        [productIndex]['name'],
+    'price': ApiData.data[shopIndex]['products'][filterIndex]['items']
+        [productIndex]['price'],
+    'imgPath': ApiData.data[shopIndex]['products'][filterIndex]['items']
+        [productIndex]['image'],
+    'shop': ApiData.data[shopIndex]['name'],
+    'rating': ApiData.data[shopIndex]['products'][filterIndex]['items']
+        [productIndex]['rating'],
+  });
+}
+
+//checking Item already added to favourite or not
+List isFavouriteAlready({
+  required int shopIndex,
+  required int filterIndex,
+  required int productIndex,
+}) {
+  bool result = false;
+  int isFavouriteAlreadyIndex = 0;
+
+  FavouriteData.data.forEach((item) {
+    if (item['shopIndex'] == shopIndex &&
+        item['filterIndex'] == filterIndex &&
+        item['productIndex'] == productIndex) {
+      result = true;
+      isFavouriteAlreadyIndex = FavouriteData.data.indexOf(item);
+    } else {
+      result = false;
+    }
+  });
+
+  return [result, isFavouriteAlreadyIndex];
+}
+
+//remove from Favourites Functionality
+void removeFromFavourite({
+  required int shopIndex,
+  required int filterIndex,
+  required int productIndex,
+}) {
+  int itemToRemoveIndex = isFavouriteAlready(
+      shopIndex: shopIndex,
+      filterIndex: filterIndex,
+      productIndex: productIndex)[1];
+  FavouriteData.data.removeAt(itemToRemoveIndex);
+}
+
 // Calculating Sub-total Amount
 num getSubtotal() {
   num result = 0;
@@ -70,6 +128,7 @@ num getSubtotal() {
   });
   return result;
 }
+
 // Calculating Delivery Amount
 num getDeliveryAmount() {
   num result = 2.00;

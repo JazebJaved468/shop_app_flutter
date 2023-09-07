@@ -23,7 +23,7 @@ class CustomCartIcon extends StatelessWidget {
           // color: Colors.green,
         ),
         IconButton(
-          alignment: Alignment.centerRight,
+          alignment: Alignment.center,
           onPressed: () {
             Navigator.push(
               context,

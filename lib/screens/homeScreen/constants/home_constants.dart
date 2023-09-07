@@ -36,7 +36,7 @@ class ConstantSVGPaths_Home {
 }
 
 class ConstantTexts_Home {
-  static String greeting = "Hey, Halal";
+  static String greeting = "Hey, Jazeb";
   static String dropDownDeliveryLabel = "DELIVERY TO";
   static String dropDownTimeLabel = "WITHIN";
   static String searchHintText = 'Search Products or store';

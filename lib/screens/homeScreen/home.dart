@@ -20,8 +20,11 @@ class _HomeScreenState extends State<HomeScreen> {
     HomeBody(),
     CategoryBody(),
     FavouriteBody(),
-    Container(
-      color: Colors.pink,
+    Center(
+      child: Container(
+        color: Colors.pink,
+        child: Text("Show more"),
+      ),
     )
   ];
 
