@@ -22,13 +22,13 @@ class _FavouriteBodyState extends State<FavouriteBody> {
   Widget build(BuildContext context) {
     // Media Queries
     var mediaWidth = MediaQuery.of(context).size.width;
-    var mediaHeight = MediaQuery.of(context).size.height;
+    // var mediaHeight = MediaQuery.of(context).size.height;
     return Column(
       children: [
         // greetings
         Container(
           height: 80,
-          padding: EdgeInsets.only(left: 14, right: 5),
+          padding: const EdgeInsets.only(left: 14, right: 5),
           color: GlobalColors.primaryBackground,
           child: Row(
             children: [
@@ -84,23 +84,23 @@ class _FavouriteBodyState extends State<FavouriteBody> {
         Visibility(
           visible: FavouriteData.data.isEmpty,
           child: Container(
-            padding: EdgeInsets.only(left: 60, right: 60, top: 170),
+            padding: const EdgeInsets.only(left: 60, right: 60, top: 170),
             // color: Colors.yellow,
             child: Column(
               children: [
                 //Empty Box Image
                 SvgPicture.asset(
                   'assets/icons/emptyBox.svg',
-                  color: Color(0xff8891A5),
-                  width: 70,
-                  height: 70,
+                  color: const Color(0xff8891A5),
+                  width: 60,
+                  height: 60,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
 
                 // Message
-                Text(
+                const Text(
                   "Your Favorite's List is empty. Start adding your favorite items now to easily access them later!",
                   style: TextStyle(
                     color: Color.fromARGB(255, 100, 107, 121),
@@ -116,7 +116,7 @@ class _FavouriteBodyState extends State<FavouriteBody> {
           visible: FavouriteData.data.isNotEmpty,
           child: Expanded(
             child: Container(
-              padding: EdgeInsets.only(left: 30, right: 30),
+              padding: const EdgeInsets.only(left: 30, right: 30),
               // color: Colors.red,
               child: ListView.builder(
                 shrinkWrap: true,
@@ -126,7 +126,7 @@ class _FavouriteBodyState extends State<FavouriteBody> {
                   // int filterIndex = FavouriteData.data[index]['filterIndex'];
                   // int productIndex = FavouriteData.data[index]['productIndex'];
                   return Container(
-                    margin: EdgeInsets.only(top: 24),
+                    margin: const EdgeInsets.only(top: 24),
                     // color: Colors.black,
                     child: InkWell(
                       onTap: () async {
@@ -165,7 +165,7 @@ class _FavouriteBodyState extends State<FavouriteBody> {
 
                           // Product Details
                           Container(
-                            padding: EdgeInsets.only(
+                            padding: const EdgeInsets.only(
                                 top: 16, bottom: 16, left: 20, right: 10),
                             // color: Colors.yellowAccent,
                             width: mediaWidth * 0.4,
@@ -187,7 +187,7 @@ class _FavouriteBodyState extends State<FavouriteBody> {
                                 ),
 
                                 //Gap
-                                SizedBox(
+                                const SizedBox(
                                   height: 38,
                                 ),
 
@@ -203,7 +203,7 @@ class _FavouriteBodyState extends State<FavouriteBody> {
                                 //Shop Name
                                 Text(
                                   "From: ${toSentenceCase(FavouriteData.data[index]['shop'])}",
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       color: Color(0xff8891A5),
                                       fontSize: 12,
                                       fontWeight: FontWeight.w300),

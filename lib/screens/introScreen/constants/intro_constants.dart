@@ -11,8 +11,8 @@ class ConstantColors_Intro {
 
 class ConstantImagePaths_Intro {
   static List paths = [
-    "assets/images/screen1_img1.jpg",
-    "assets/images/screen1_img3.jpg",
+    "assets/images/getStarted/img1.jpg",
+    "assets/images/getStarted/img3.jpg",
   ];
   // static String imagePage1 = "assets/images/screen1_img1.jpg";
   // static String imagePage2 = "assets/images/screen1_img3.jpg";

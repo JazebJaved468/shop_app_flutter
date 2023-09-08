@@ -4,11 +4,11 @@ import 'package:shopping_app/constants/global_constants.dart';
 import 'package:shopping_app/screens/cartScreen/constants/cart_constants.dart';
 import 'package:shopping_app/screens/cartScreen/full_cart_screen.dart';
 
-
 import 'package:shopping_app/widgets/custom_bill_sheet.dart';
 
 import '../../data/data.dart';
 import '../../functions.dart';
+import '../productDetailScreen/prod_detail_screen.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
@@ -147,7 +147,7 @@ class _CartScreenState extends State<CartScreen> {
             width: double.infinity,
             height: 50,
             color: ConstantColors_Cart.darkYellow,
-            child: Row(
+            child: const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
@@ -179,23 +179,24 @@ class _CartScreenState extends State<CartScreen> {
           Visibility(
             visible: CartData.data.isEmpty,
             child: Container(
-              padding: EdgeInsets.only(left: 60, right: 60, top: 80),
+              padding: const EdgeInsets.only(left: 60, right: 60, top: 80),
               // color: Colors.yellow,
               child: Column(
                 children: [
                   //Empty Box Image
                   SvgPicture.asset(
                     'assets/icons/emptyBox.svg',
-                    color: Color(0xff8891A5),
-                    width: 70,
-                    height: 70,
+                    // ignore: deprecated_member_use
+                    color: const Color(0xff8891A5),
+                    width: 60,
+                    height: 60,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
 
                   // Message
-                  Text(
+                  const Text(
                     "Your Cart is empty. Browse our products and start adding items to fill it up!",
                     style: TextStyle(
                       color: Color.fromARGB(255, 100, 107, 121),
@@ -211,128 +212,142 @@ class _CartScreenState extends State<CartScreen> {
             visible: CartData.data.isNotEmpty,
             child: Container(
               width: mediaWidth * 1,
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               height: 250,
               // color: Colors.white,
               child: ListView.builder(
-                padding: EdgeInsets.only(top: 15, bottom: 0),
+                padding: const EdgeInsets.only(top: 15, bottom: 0),
                 shrinkWrap: true,
                 itemCount: // cart items number sample
                     noOfItems > 3 ? 3 : noOfItems,
                 itemBuilder: (context, cartItemIndex) {
-                  return
-                    
-                      Container(
-                    margin: EdgeInsets.only(bottom: 5),
-                
+                  return InkWell(
+                    onTap: () {
+                      Selection.shopIndex =
+                          CartData.data[cartItemIndex]['shopIndex'];
+                      Selection.filterIndex =
+                          CartData.data[cartItemIndex]['filterIndex'];
+                      Selection.productIndex =
+                          CartData.data[cartItemIndex]['productIndex'];
 
-                    decoration: BoxDecoration(
-                      // color: Colors.grey,
-                      border: Border(
-                        bottom: BorderSide(
-                          color: ConstantColors_Cart.cartItemBorder,
-                          width: 1,
-                        ),
-                      ),
-                    ),
-                    child: ListTile(
-                      // Product Image
-                      leading: Container(
-                        margin: const EdgeInsets.only(right: 15),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: Image(
-                            image: NetworkImage(
-                              CartData.data[cartItemIndex]['imgPath'],
-                            ),
-                            width: 40,
-                            height: 40,
-                            fit: BoxFit.cover,
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ProdDetailScreen(
+                                itemIndex: Selection.productIndex)),
+                      );
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.only(bottom: 5),
+                      decoration: BoxDecoration(
+                        // color: Colors.grey,
+                        border: Border(
+                          bottom: BorderSide(
+                            color: ConstantColors_Cart.cartItemBorder,
+                            width: 1,
                           ),
                         ),
                       ),
-
-                      // Product Name
-                      title: Text(
-                        "${toSentenceCase(CartData.data[cartItemIndex]['name'])}",
-                        style: const TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                            overflow: TextOverflow.ellipsis),
-                      ),
-
-                      // Product Cost
-                      subtitle: Text(
-                        "\$${(CartData.data[cartItemIndex]['price']).toStringAsFixed(2)}",
-                        style: const TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w400,
+                      child: ListTile(
+                        // Product Image
+                        leading: Container(
+                          margin: const EdgeInsets.only(right: 15),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image(
+                              image: NetworkImage(
+                                CartData.data[cartItemIndex]['imgPath'],
+                              ),
+                              width: 40,
+                              height: 40,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
                         ),
-                      ),
 
-                      // Quantity Increase Decrease Buttons
-                      trailing: Container(
-                        // color: Colors.red,
-                        width: 110,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            // Subtract
-                            CircleAvatar(
-                              backgroundColor:
-                                  GlobalColors.productCardBackground,
-                              foregroundColor: GlobalColors.secondaryBackground,
-                              radius: 18,
-                              child: IconButton(
-                                onPressed: () {
-                                  Selection.cartItemIndex = cartItemIndex;
-                                  var selectedItem =
-                                      CartData.data[Selection.cartItemIndex];
-                                  selectedItem['quantity'] > 1
-                                      ? selectedItem['quantity']--
-                                      : selectedItem['quantity'];
-                                  setState(() {});
-                                },
-                                icon: Icon(
-                                  Icons.horizontal_rule_rounded,
-                                  size: 14,
-                                  color: GlobalColors.secondaryBackground,
+                        // Product Name
+                        title: Text(
+                          "${toSentenceCase(CartData.data[cartItemIndex]['name'])}",
+                          style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              overflow: TextOverflow.ellipsis),
+                        ),
+
+                        // Product Cost
+                        subtitle: Text(
+                          "\$${(CartData.data[cartItemIndex]['price']).toStringAsFixed(2)}",
+                          style: const TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+
+                        // Quantity Increase Decrease Buttons
+                        trailing: Container(
+                          // color: Colors.red,
+                          width: 110,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              // Subtract
+                              CircleAvatar(
+                                backgroundColor:
+                                    GlobalColors.productCardBackground,
+                                foregroundColor:
+                                    GlobalColors.secondaryBackground,
+                                radius: 18,
+                                child: IconButton(
+                                  onPressed: () {
+                                    Selection.cartItemIndex = cartItemIndex;
+                                    var selectedItem =
+                                        CartData.data[Selection.cartItemIndex];
+                                    selectedItem['quantity'] > 1
+                                        ? selectedItem['quantity']--
+                                        : selectedItem['quantity'];
+                                    setState(() {});
+                                  },
+                                  icon: Icon(
+                                    Icons.horizontal_rule_rounded,
+                                    size: 14,
+                                    color: GlobalColors.secondaryBackground,
+                                  ),
                                 ),
                               ),
-                            ),
 
-                            //value
-                            Text(
-                              "${CartData.data[cartItemIndex]['quantity']}",
-                              style: TextStyle(
-                                  color: GlobalColors.secondaryBackground,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500),
-                            ),
+                              //value
+                              Text(
+                                "${CartData.data[cartItemIndex]['quantity']}",
+                                style: TextStyle(
+                                    color: GlobalColors.secondaryBackground,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500),
+                              ),
 
-                            // add
-                            CircleAvatar(
-                              backgroundColor:
-                                  GlobalColors.productCardBackground,
-                              foregroundColor: GlobalColors.secondaryBackground,
-                              radius: 18,
-                              child: IconButton(
-                                onPressed: () {
-                                  Selection.cartItemIndex = cartItemIndex;
-                                  var selectedItem =
-                                      CartData.data[Selection.cartItemIndex];
-                                  selectedItem['quantity']++;
-                                  setState(() {});
-                                 
-                                },
-                                icon: Icon(
-                                  Icons.add,
-                                  size: 14,
-                                  color: GlobalColors.secondaryBackground,
+                              // add
+                              CircleAvatar(
+                                backgroundColor:
+                                    GlobalColors.productCardBackground,
+                                foregroundColor:
+                                    GlobalColors.secondaryBackground,
+                                radius: 18,
+                                child: IconButton(
+                                  onPressed: () {
+                                    Selection.cartItemIndex = cartItemIndex;
+                                    var selectedItem =
+                                        CartData.data[Selection.cartItemIndex];
+                                    selectedItem['quantity']++;
+                                    setState(() {});
+                                  },
+                                  icon: Icon(
+                                    Icons.add,
+                                    size: 14,
+                                    color: GlobalColors.secondaryBackground,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -348,7 +363,7 @@ class _CartScreenState extends State<CartScreen> {
             height: 30,
             // color: Colors.yellow,
             padding: EdgeInsets.zero,
-            margin: EdgeInsets.symmetric(horizontal: 10),
+            margin: const EdgeInsets.symmetric(horizontal: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -366,7 +381,7 @@ class _CartScreenState extends State<CartScreen> {
                     child: Text(
                       "+ ${ // cart items number sample
                       CartData.data.length - 3} More",
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Color(0xff2A4BA0),
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
@@ -378,7 +393,7 @@ class _CartScreenState extends State<CartScreen> {
                   visible: CartData.data.isNotEmpty,
                   child: TextButton(
                     onPressed: () {},
-                    child: Text(
+                    child: const Text(
                       "Edit",
                       style: TextStyle(
                         color: Color(0xff2A4BA0),
