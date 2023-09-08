@@ -20,12 +20,12 @@ class _HomeScreenState extends State<HomeScreen> {
     HomeBody(),
     CategoryBody(),
     FavouriteBody(),
-    Center(
-      child: Container(
-        color: Colors.pink,
-        child: Text("Show more"),
-      ),
-    )
+    // Center(
+    //   child: Container(
+    //     color: Colors.pink,
+    //     child: Text("Show more"),
+    //   ),
+    // )
   ];
 
   @override
@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
           data: Theme.of(context).copyWith(
             splashColor: Colors.transparent,
             highlightColor: Colors.transparent,
-            canvasColor: GlobalColors.bottomNavbar,
+            // canvasColor: GlobalColors.bottomNavbar,
 
             // Set canvasColor to transparent
           ),
@@ -54,8 +54,9 @@ class _HomeScreenState extends State<HomeScreen> {
               iconSize: 20,
               useLegacyColorScheme: false,
               selectedItemColor: const Color(0xffE0B420),
-              unselectedItemColor: GlobalColors.primaryHeading,
+              unselectedItemColor: GlobalColors.secondaryBackground,
               currentIndex: selectedIndex,
+              unselectedFontSize: 12,
               onTap: (value) {
                 // ignore: avoid_print
                 print(value);
@@ -71,19 +72,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(
-                    Icons.category,
+                    Icons.grid_view_rounded,
                   ),
                   label: "Categories",
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.favorite_outlined),
-                  label: "Favourites",
-                ),
-                BottomNavigationBarItem(
                   icon: Icon(
-                    FontAwesomeIcons.a,
+                    Icons.favorite_outlined,
                   ),
-                  label: "More",
+                  label: "Favourites",
                 ),
               ],
             ),

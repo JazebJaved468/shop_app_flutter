@@ -9,7 +9,7 @@ class CustomRcommendedProducts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 227,
+      height: 229,
       // color: Colors.red,
       child: ListView.separated(
           shrinkWrap: true,

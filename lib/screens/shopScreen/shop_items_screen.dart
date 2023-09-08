@@ -113,7 +113,7 @@ class _ShopScreenState extends State<ShopScreen> {
                         borderRadius: BorderRadius.circular(16),
                         child: Container(
                           padding: EdgeInsets.symmetric(
-                              horizontal: 14, vertical: 22),
+                              horizontal: 14, vertical: 20),
                           color: GlobalColors.productCardBackground,
 
                           //////////////////////////////////////////////

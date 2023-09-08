@@ -174,27 +174,61 @@ class _CartScreenState extends State<CartScreen> {
             ),
           ),
 
+          // show when Empty
+          Visibility(
+            visible: CartData.data.isEmpty,
+            child: Container(
+              padding: EdgeInsets.only(left: 60, right: 60, top: 80),
+              // color: Colors.yellow,
+              child: Column(
+                children: [
+                  //Empty Box Image
+                  SvgPicture.asset(
+                    'assets/icons/emptyBox.svg',
+                    color: Color(0xff8891A5),
+                    width: 70,
+                    height: 70,
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+
+                  // Message
+                  Text(
+                    "Your Cart is empty. Browse our products and start adding items to fill it up!",
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 100, 107, 121),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+
           // cart items list
-          Container(
-            width: mediaWidth * 1,
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            height: 250,
-            // color: Colors.white,
-            child: ListView.builder(
-              padding: EdgeInsets.only(top: 15, bottom: 0),
-              shrinkWrap: true,
-              itemCount: // cart items number sample
-                  noOfItems > 3 ? 3 : noOfItems,
-              itemBuilder: (context, index) {
-                return CustomCartItem(
-                  name: CartData.data[index]['name'],
-                  price: CartData.data[index]['price'],
-                  imgPath: CartData.data[index]['imgPath'],
-                  quantity: CartData.data[index]['quantity'],
-                  cartItemIndex: index,
-                  screen: CartScreen(),
-                );
-              },
+          Visibility(
+            visible: CartData.data.isNotEmpty,
+            child: Container(
+              width: mediaWidth * 1,
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              height: 250,
+              // color: Colors.white,
+              child: ListView.builder(
+                padding: EdgeInsets.only(top: 15, bottom: 0),
+                shrinkWrap: true,
+                itemCount: // cart items number sample
+                    noOfItems > 3 ? 3 : noOfItems,
+                itemBuilder: (context, index) {
+                  return CustomCartItem(
+                    name: CartData.data[index]['name'],
+                    price: CartData.data[index]['price'],
+                    imgPath: CartData.data[index]['imgPath'],
+                    quantity: CartData.data[index]['quantity'],
+                    cartItemIndex: index,
+                    screen: CartScreen(),
+                  );
+                },
+              ),
             ),
           ),
 
@@ -230,14 +264,17 @@ class _CartScreenState extends State<CartScreen> {
                     ),
                   ),
                 ),
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Edit",
-                    style: TextStyle(
-                      color: Color(0xff2A4BA0),
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
+                Visibility(
+                  visible: CartData.data.isNotEmpty,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Edit",
+                      style: TextStyle(
+                        color: Color(0xff2A4BA0),
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
                 ),

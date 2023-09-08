@@ -7,8 +7,8 @@ import 'package:shopping_app/screens/introScreen/widgets/custom_heading.dart';
 import 'package:shopping_app/screens/introScreen/widgets/custom_image.dart';
 import 'package:shopping_app/screens/introScreen/widgets/custom_slider_line.dart';
 
-class IntroScreen extends StatelessWidget {
-  const IntroScreen({super.key});
+class Intro extends StatelessWidget {
+  const Intro({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +39,8 @@ class IntroScreen extends StatelessWidget {
                     children: [
                       CustomSlidingLine(
                         lineWidth: 25,
-                        lineHeight: 4,
-                        lineColor: ConstantColors_Intro.sliderPrimaryColor,
+                        // lineHeight: 4,
+                        // lineColor: ConstantColors_Intro.sliderPrimaryColor,
                         lineBorderRadius: 30,
                       ),
                       const SizedBox(
@@ -49,19 +49,19 @@ class IntroScreen extends StatelessWidget {
                       CustomSlidingLine(
                         lineWidth: 40,
                         lineHeight: 4,
-                        lineColor: ConstantColors_Intro.sliderSecondaryColor,
+                        // lineColor: ConstantColors_Intro.sliderSecondaryColor,
                         lineBorderRadius: 30,
                       ),
                     ],
                   ),
 
                   // Image
-                  CustomImage(
-                    imgPath: ConstantImagePaths_Intro.imagePage1,
-                    imgWidth: 165,
-                    imgHeight: 165,
-                    borderRadius: 20,
-                  ),
+                  // CustomImage(
+                  //   imgPath: ConstantImagePaths_Intro.imagePage1,
+                  //   imgWidth: 165,
+                  //   imgHeight: 165,
+                  //   borderRadius: 20,
+                  // ),
 
                   // using expanded to place the button at bottom
                   Expanded(child: Container()),
@@ -106,7 +106,7 @@ class IntroScreen extends StatelessWidget {
                       CustomSlidingLine(
                         lineWidth: 40,
                         lineHeight: 4,
-                        lineColor: ConstantColors_Intro.sliderSecondaryColor,
+                        // lineColor: ConstantColors_Intro.sliderSecondaryColor,
                         lineBorderRadius: 30,
                       ),
                       const SizedBox(
@@ -115,19 +115,19 @@ class IntroScreen extends StatelessWidget {
                       CustomSlidingLine(
                         lineWidth: 25,
                         lineHeight: 4,
-                        lineColor: ConstantColors_Intro.sliderPrimaryColor,
+                        // lineColor: ConstantColors_Intro.sliderPrimaryColor,
                         lineBorderRadius: 30,
                       ),
                     ],
                   ),
 
                   // Image
-                  CustomImage(
-                    imgPath: ConstantImagePaths_Intro.imagePage2,
-                    imgWidth: 165,
-                    borderRadius: 20,
-                    imgHeight: 165,
-                  ),
+                  // CustomImage(
+                  //   imgPath: ConstantImagePaths_Intro.imagePage2,
+                  //   imgWidth: 165,
+                  //   borderRadius: 20,
+                  //   imgHeight: 165,
+                  // ),
 
                   // using expanded to place the button at bottom
                   Expanded(child: Container()),

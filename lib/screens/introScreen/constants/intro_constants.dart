@@ -5,13 +5,17 @@ class ConstantColors_Intro {
   static Color descriptionColor = Color(0xffB2BBCE);
   static Color buttonBackground = Color(0xffFAFBFD);
   static Color buttonText = Color(0xff1E222B);
-  static Color sliderPrimaryColor = Color.fromARGB(113, 208, 208, 208);
-  static Color sliderSecondaryColor = Color(0xffF8F9FB);
+  static Color sliderInactiveColor = Color.fromARGB(113, 208, 208, 208);
+  static Color sliderActiveColor = Color(0xffF8F9FB);
 }
 
 class ConstantImagePaths_Intro {
-  static String imagePage1 = "assets/images/screen1_img1.jpg";
-  static String imagePage2 = "assets/images/screen1_img3.jpg";
+  static List paths = [
+    "assets/images/screen1_img1.jpg",
+    "assets/images/screen1_img3.jpg",
+  ];
+  // static String imagePage1 = "assets/images/screen1_img1.jpg";
+  // static String imagePage2 = "assets/images/screen1_img3.jpg";
 }
 
 class ConstantSVGPaths_Intro {
@@ -36,4 +40,3 @@ class ConstantStyles_Intro {
       fontWeight: FontWeight.w700,
       fontSize: 30);
 }
-

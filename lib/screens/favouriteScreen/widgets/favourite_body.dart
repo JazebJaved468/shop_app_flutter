@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:shopping_app/data/data.dart';
 import 'package:shopping_app/widgets/custom_rating_stars.dart';
 
@@ -78,64 +79,123 @@ class _FavouriteBodyState extends State<FavouriteBody> {
           ),
         ),
 
-        //List view
-        Expanded(
+        // show when Empty
+        Visibility(
+          visible: FavouriteData.data.isEmpty,
           child: Container(
-            padding: EdgeInsets.only(left: 30, right: 30, top: 10),
-            color: Colors.red,
-            child: ListView.builder(
-              itemCount: FavouriteData.data.length,
-              itemBuilder: (context, index) {
-                int shopIndex = FavouriteData.data[index]['shopIndex'];
-                int filterIndex = FavouriteData.data[index]['filterIndex'];
-                int productIndex = FavouriteData.data[index]['productIndex'];
-                return Container(
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      //Image
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Image(
-                          image: NetworkImage(
-                            FavouriteData.data[index]['imgPath'],
-                          ),
-                          width: 160,
-                          height: 160,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
+            padding: EdgeInsets.only(left: 60, right: 60, top: 170),
+            // color: Colors.yellow,
+            child: Column(
+              children: [
+                //Empty Box Image
+                SvgPicture.asset(
+                  'assets/icons/emptyBox.svg',
+                  color: Color(0xff8891A5),
+                  width: 70,
+                  height: 70,
+                ),
+                SizedBox(
+                  height: 15,
+                ),
 
-                      // Product Details
-                      Container(
-                        padding: EdgeInsets.only(
-                            top: 10, bottom: 10, left: 15, right: 15),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            //name
-                            Text(
-                              "${toSentenceCase(FavouriteData.data[index]['name'])}",
-                              style: TextStyle(
-                                  color: GlobalColors.secondaryBackground,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w700),
-                            ),
-
-                            //stars
-                            CustomRatingStars(
-                 
-                              rating : FavouriteData.data[index]['rating'],
-                            ),
-                            Text("data"),
-                            Text("data"),
-                          ],
-                        ),
-                      )
-                    ],
+                // Message
+                Text(
+                  "Your Favorite's List is empty. Start adding your favorite items now to easily access them later!",
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 100, 107, 121),
                   ),
-                );
-              },
+                ),
+              ],
+            ),
+          ),
+        ),
+
+        //List view
+        Visibility(
+          visible: FavouriteData.data.isNotEmpty,
+          child: Expanded(
+            child: Container(
+              padding: EdgeInsets.only(left: 30, right: 30),
+              // color: Colors.red,
+              child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: FavouriteData.data.length,
+                itemBuilder: (context, index) {
+                  // int shopIndex = FavouriteData.data[index]['shopIndex'];
+                  // int filterIndex = FavouriteData.data[index]['filterIndex'];
+                  // int productIndex = FavouriteData.data[index]['productIndex'];
+                  return Container(
+                    margin: EdgeInsets.only(top: 24),
+                    // color: Colors.black,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        //Image
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Image(
+                            image: NetworkImage(
+                              FavouriteData.data[index]['imgPath'],
+                            ),
+                            width: mediaWidth * 0.4,
+                            height: 140,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+
+                        // Product Details
+                        Container(
+                          padding: EdgeInsets.only(
+                              top: 16, bottom: 16, left: 20, right: 10),
+                          // color: Colors.yellowAccent,
+                          width: mediaWidth * 0.4,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              //name
+                              Text(
+                                "${toSentenceCase(FavouriteData.data[index]['name'])}",
+                                style: TextStyle(
+                                    color: GlobalColors.secondaryBackground,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700),
+                              ),
+
+                              //stars
+                              CustomRatingStars(
+                                rating: FavouriteData.data[index]['rating'],
+                              ),
+
+                              //Gap
+                              SizedBox(
+                                height: 38,
+                              ),
+
+                              //Price
+                              Text(
+                                "\$${FavouriteData.data[index]['price'].toStringAsFixed(2)}",
+                                style: TextStyle(
+                                    color: GlobalColors.primaryBackground,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500),
+                              ),
+
+                              //Shop Name
+                              Text(
+                                "From: ${toSentenceCase(FavouriteData.data[index]['shop'])}",
+                                style: TextStyle(
+                                    color: Color(0xff8891A5),
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w300),
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  );
+                },
+              ),
             ),
           ),
         ),
