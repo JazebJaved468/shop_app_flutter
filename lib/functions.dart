@@ -131,6 +131,6 @@ num getSubtotal() {
 
 // Calculating Delivery Amount
 num getDeliveryAmount() {
-  num result = 2.00;
+  num result = CartData.data.isNotEmpty ? 2.00 : 0.00;
   return result;
 }
