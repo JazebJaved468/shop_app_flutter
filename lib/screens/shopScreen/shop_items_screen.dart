@@ -8,11 +8,10 @@ import 'package:shopping_app/widgets/custom_appbar_actions.dart';
 import 'package:shopping_app/widgets/custom_back_button.dart';
 
 import '../../functions.dart';
+import 'constants/shop_items_screen_constants.dart';
 // import 'constants/shop_items_screen_constants.dart';
 
 class ShopScreen extends StatefulWidget {
-  // final String shopName;
-
   const ShopScreen({
     super.key,
   });
@@ -22,13 +21,24 @@ class ShopScreen extends StatefulWidget {
 }
 
 class _ShopScreenState extends State<ShopScreen> {
-  // late List itemList;
+  updateSelectedFilterIndex(index) {
+    Selection.filterIndex = index;
+  }
 
-  @override
-  void initState() {
-    // itemList = ConstantTexts_ShopScreen.tempData;
-    // TODO: implement initState
-    super.initState();
+  updateTempListData() {
+    //here error (may be resolved)
+
+    // ConstantTexts_ShopScreen.itemData
+    ApiData.data[Selection.shopIndex]['products'].forEach((product) {
+      Selection.tempFilterData = ApiData.data[Selection.shopIndex]['products']
+          [Selection.filterIndex]['items'];
+      print(ConstantTexts_ShopScreen.tempData);
+      setState(() {});
+      // Navigator.push(
+      //   context,
+      //   MaterialPageRoute(builder: (context) => ShopScreen()),
+      // );
+    });
   }
 
   @override
@@ -37,7 +47,7 @@ class _ShopScreenState extends State<ShopScreen> {
     print("grid build");
     // print(itemList);
 
-    setState(() {});
+    // setState(() {});
     return Scaffold(
       //app bar
       appBar: AppBar(
@@ -65,16 +75,45 @@ class _ShopScreenState extends State<ShopScreen> {
               itemCount: ApiData.data[Selection.shopIndex]['products'].length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return CustomFilterOption(
-                  index: index,
-                  selectedFilterIndex: Selection.filterIndex,
-                  // ConstantTexts_ShopScreen.selectedFilterIndex
-                  shopName: Selection.shopName,
-                  // widget.shopName
-                  // type:
-                  //     "${ApiData.data[Selection.shopIndex]['products'][index]['type']}",
-                  // ConstantTexts_ShopScreen.itemData[index]['type']
-                );
+                return Wrap(children: [
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      updateSelectedFilterIndex(index);
+                      updateTempListData();
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 5, horizontal: 15),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: index == Selection.filterIndex
+                                ? const Color(0xffF9B023)
+                                : const Color(0xff616A7D)),
+                        borderRadius: BorderRadius.circular(50),
+                        color: index == Selection.filterIndex
+                            ? const Color(0xffF9B023)
+                            : Colors.transparent,
+                      ),
+                      child: Text(
+                        // type,
+                        "${ApiData.data[Selection.shopIndex]['products'][index]['type']}",
+                        style: TextStyle(
+                            fontSize: 16,
+                            color: index == Selection.filterIndex
+                                ? GlobalColors.primaryHeading
+                                : GlobalColors.secondaryBackground),
+                      ),
+                    ),
+                  ),
+                ]);
+                // CustomFilterOption(
+                //   index: index,
+                //   selectedFilterIndex: Selection.filterIndex,
+                //   // ConstantTexts_ShopScreen.selectedFilterIndex
+                // );
               },
             ),
           ),
@@ -96,18 +135,23 @@ class _ShopScreenState extends State<ShopScreen> {
                   mainAxisExtent: 183,
                 ),
                 itemBuilder: ((context, index) {
+                  // ignore: avoid_print
                   print(Selection.tempFilterData.length);
                   return GestureDetector(
-                    onTap: () {
+                    onTap: () async {
+                      // ignore: avoid_print
                       print("${Selection.filterIndex}");
 // ConstantTexts_ShopScreen.selectedFilterIndex
-                      Navigator.push(
+                      String? refresh = await Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => ProdDetailScreen(
                                   itemIndex: index,
                                 )),
                       );
+                      if (refresh == 'r' || refresh == null) {
+                        setState(() {});
+                      }
                     },
                     child: ClipRRect(
                         borderRadius: BorderRadius.circular(16),

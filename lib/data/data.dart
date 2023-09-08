@@ -543,7 +543,7 @@ class FavouriteData {
 class Selection {
   static int shopIndex = 0;
   static String shopName = ApiData.data[shopIndex]['name'];
-  static int filterIndex = 0;
+  static int filterIndex = 0; /*It is Selected Filter index*/
   static List tempFilterData = ApiData.data[0]['products'][0]['items'];
   static int productIndex = 0;
   static int cartItemIndex = 0;

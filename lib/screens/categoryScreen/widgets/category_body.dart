@@ -102,15 +102,19 @@ class _CategoryBodyState extends State<CategoryBody> {
                 );
                 // ConstantTexts_ShopScreen.shopNames[index]
                 return GestureDetector(
-                  onTap: () {
+                  onTap: () async {
                     print("$shopName");
 
                     // Taking shop index to another separate file that is been clicked
                     Selection.shopIndex = index;
-                    Navigator.push(
+                    String? refresh = await Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => ShopScreen()),
                     );
+
+                    if (refresh == 'r' || refresh == null) {
+                      setState(() {});
+                    }
                   },
                   child: ClipRRect(
                       borderRadius: BorderRadius.circular(16),

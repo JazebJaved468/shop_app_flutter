@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shopping_app/data/data.dart';
+import 'package:shopping_app/screens/productDetailScreen/prod_detail_screen.dart';
 import 'package:shopping_app/widgets/custom_rating_stars.dart';
 
 import '../../../constants/global_constants.dart';
@@ -127,71 +128,91 @@ class _FavouriteBodyState extends State<FavouriteBody> {
                   return Container(
                     margin: EdgeInsets.only(top: 24),
                     // color: Colors.black,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        //Image
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Image(
-                            image: NetworkImage(
-                              FavouriteData.data[index]['imgPath'],
+                    child: InkWell(
+                      onTap: () async {
+                        Selection.shopIndex =
+                            FavouriteData.data[index]['shopIndex'];
+                        Selection.filterIndex =
+                            FavouriteData.data[index]['filterIndex'];
+                        Selection.productIndex =
+                            FavouriteData.data[index]['productIndex'];
+                        String? refresh = await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ProdDetailScreen(
+                                  itemIndex: Selection.productIndex)),
+                        );
+
+                        if (refresh == 'r' || refresh == null) {
+                          setState(() {});
+                        }
+                      },
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          //Image
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Image(
+                              image: NetworkImage(
+                                FavouriteData.data[index]['imgPath'],
+                              ),
+                              width: mediaWidth * 0.4,
+                              height: 140,
+                              fit: BoxFit.cover,
                             ),
+                          ),
+
+                          // Product Details
+                          Container(
+                            padding: EdgeInsets.only(
+                                top: 16, bottom: 16, left: 20, right: 10),
+                            // color: Colors.yellowAccent,
                             width: mediaWidth * 0.4,
-                            height: 140,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                //name
+                                Text(
+                                  "${toSentenceCase(FavouriteData.data[index]['name'])}",
+                                  style: TextStyle(
+                                      color: GlobalColors.secondaryBackground,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w700),
+                                ),
 
-                        // Product Details
-                        Container(
-                          padding: EdgeInsets.only(
-                              top: 16, bottom: 16, left: 20, right: 10),
-                          // color: Colors.yellowAccent,
-                          width: mediaWidth * 0.4,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              //name
-                              Text(
-                                "${toSentenceCase(FavouriteData.data[index]['name'])}",
-                                style: TextStyle(
-                                    color: GlobalColors.secondaryBackground,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w700),
-                              ),
+                                //stars
+                                CustomRatingStars(
+                                  rating: FavouriteData.data[index]['rating'],
+                                ),
 
-                              //stars
-                              CustomRatingStars(
-                                rating: FavouriteData.data[index]['rating'],
-                              ),
+                                //Gap
+                                SizedBox(
+                                  height: 38,
+                                ),
 
-                              //Gap
-                              SizedBox(
-                                height: 38,
-                              ),
+                                //Price
+                                Text(
+                                  "\$${FavouriteData.data[index]['price'].toStringAsFixed(2)}",
+                                  style: TextStyle(
+                                      color: GlobalColors.primaryBackground,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w500),
+                                ),
 
-                              //Price
-                              Text(
-                                "\$${FavouriteData.data[index]['price'].toStringAsFixed(2)}",
-                                style: TextStyle(
-                                    color: GlobalColors.primaryBackground,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500),
-                              ),
-
-                              //Shop Name
-                              Text(
-                                "From: ${toSentenceCase(FavouriteData.data[index]['shop'])}",
-                                style: TextStyle(
-                                    color: Color(0xff8891A5),
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w300),
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
+                                //Shop Name
+                                Text(
+                                  "From: ${toSentenceCase(FavouriteData.data[index]['shop'])}",
+                                  style: TextStyle(
+                                      color: Color(0xff8891A5),
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w300),
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   );
                 },
