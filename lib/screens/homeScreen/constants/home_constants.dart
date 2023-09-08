@@ -66,17 +66,17 @@ class ConstantTexts_Home {
   ];
   static List discountCardsData = [
     {
-      'image': "assets/images/discount1.jpg",
+      'image': "assets/images/discount/img3.jpg",
       'discount': '50',
       'products': '03'
     },
     {
-      'image': "assets/images/discount2.jpg",
+      'image': "assets/images/discount/img2.jpg",
       'discount': '30',
       'products': '02'
     },
     {
-      'image': "assets/images/discount3.jpg",
+      'image': "assets/images/discount/img3.jpg",
       'discount': '10',
       'products': '01'
     },

@@ -12,6 +12,7 @@ class CustomRcommendedProducts extends StatelessWidget {
       height: 229,
       // color: Colors.red,
       child: ListView.separated(
+        itemCount: 3,
           shrinkWrap: true,
           scrollDirection: Axis.horizontal,
           itemBuilder: (BuildContext context, int index) {
@@ -133,7 +134,7 @@ class CustomRcommendedProducts extends StatelessWidget {
               width: 18,
             );
           },
-          itemCount: 3),
+          ),
     );
   }
 }

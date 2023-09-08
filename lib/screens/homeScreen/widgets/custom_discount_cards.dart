@@ -11,6 +11,7 @@ class CustomDiscountCards extends StatelessWidget {
       margin: EdgeInsets.only(top: 25),
       height: 130,
       child: ListView.separated(
+        itemCount: 3,
           shrinkWrap: true,
           scrollDirection: Axis.horizontal,
           itemBuilder: (BuildContext context, int index) {
@@ -83,7 +84,7 @@ class CustomDiscountCards extends StatelessWidget {
               width: 18,
             );
           },
-          itemCount: 3),
+          ),
     );
   }
 }
