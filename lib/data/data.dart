@@ -514,16 +514,16 @@ class ApiData {
       'type': 'Restaurant',
       'image': "assets/images/shops/kfc.png",
       'products': [
-                //popular
+                //Best Seller
         {
-          'type': 'Popular',
+          'type': 'Best Seller',
           'items': [
             {
-              'name': 'CHICKEN MUGHLAI BOTTEE',
-              'price': 914,
+              'name': 'Krunch Burger',
+              'price': 270,
               'rating': 5,
               'image':
-                  'assets/images/products/0_1.webp',
+                  'assets/images/products/1_1.png',
               'discount': 13,
               'reg': 1034.21,
               'details':
@@ -548,12 +548,13 @@ class ApiData {
                 },
               ],
             },
-            {
-              'name': 'SPECIAL CLUB SANDWICH',
-              'price': 587,
+            
+          {
+              'name': 'Mighty Zinger',
+              'price': 700,
               'rating': 4,
                          'image':
-               'assets/images/products/0_2.webp',
+               'assets/images/products/1_2.png',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -583,12 +584,13 @@ class ApiData {
                 },
               ],
             },
+            
             {
-              'name': 'QTR CRISPY BROAST',
-              'price': 519,
+              'name': 'Hot Wings Bucket',
+              'price': 610,
               'rating': 3,
                      'image':
-                 'assets/images/products/0_3.webp',
+                 'assets/images/products/1_3.png',
               'discount': 15,
               'reg': 1034.21,
               'details':
@@ -643,6 +645,67 @@ class ApiData {
                 },
               ],
             },
+            {
+              'name': 'Krunch Combo',
+              'price': 520,
+              'rating': 3,
+                     'image':
+                 'assets/images/products/1_4.png',
+              'discount': 15,
+              'reg': 1034.21,
+              'details':
+                  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo.",
+              'nutrition':
+                  "reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?",
+              'reviews': [
+                {
+                  'personName': "William White",
+                  'comment': "Took a road trip along the Pacific Coast Highway",
+                  'date': "02/22/23",
+                },
+                {
+                  'personName': "Ava Harris",
+                  'comment': "Visited the Vatican City",
+                  'date': "05/28/22",
+                },
+                {
+                  'personName': "James Anderson",
+                  'comment': "Went scuba diving in the Maldives",
+                  'date': "03/10/23",
+                },
+                {
+                  'personName': "Emma Clark",
+                  'comment': "Explored the Amazon Rainforest",
+                  'date': "07/19/22",
+                },
+                {
+                  'personName': "Liam Turner",
+                  'comment': "Attended a food festival in New Orleans",
+                  'date': "09/03/22",
+                },
+                {
+                  'personName': "Mia Parker",
+                  'comment': "Visited the Taj Mahal",
+                  'date': "06/14/22",
+                },
+                {
+                  'personName': "Benjamin Garcia",
+                  'comment': "Hiked in the Swiss Alps",
+                  'date': "04/08/23",
+                },
+                {
+                  'personName': "Charlotte Martinez",
+                  'comment': "Took a hot air balloon ride in Cappadocia",
+                  'date': "08/25/22",
+                },
+                {
+                  'personName': "Emily Wilson",
+                  'comment': "Took a cruise in the Caribbean",
+                  'date': "06/30/22",
+                },
+              ],
+            },
+          
           ],
         },
         
@@ -3128,7 +3191,7 @@ class FavouriteData {
 
 class Selection {
   static int shopIndex = 0;
-  static String shopName = ApiData.data[shopIndex]['name'];
+  // static String shopName = ApiData.data[shopIndex]['name'];
   static int filterIndex = 0; /*It is Selected Filter index*/
   static List tempFilterData = ApiData.data[0]['products'][0]['items'];
   static int productIndex = 0;

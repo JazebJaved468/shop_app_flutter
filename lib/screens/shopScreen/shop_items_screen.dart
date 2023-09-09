@@ -12,8 +12,10 @@ import 'constants/shop_items_screen_constants.dart';
 // import 'constants/shop_items_screen_constants.dart';
 
 class ShopScreen extends StatefulWidget {
+  final int shopIndex;
   const ShopScreen({
     super.key,
+    required this.shopIndex,
   });
 
   @override
@@ -43,16 +45,19 @@ class _ShopScreenState extends State<ShopScreen> {
 
   @override
   Widget build(BuildContext context) {
-    String shop = Selection.shopName;
+    // String shop = Selection.shopName;
     print("grid build");
     // print(itemList);
-
+    print(
+        "ShopIndex = ${Selection.shopIndex} \n FilterIndex = ${Selection.filterIndex} \n ProductIndex = ${Selection.productIndex}");
+    // Selection.shopIndex = widget.shopIndex;
     // setState(() {});
+    updateTempListData();
     return Scaffold(
       //app bar
       appBar: AppBar(
         leading: const CustomBackButton(),
-        title: Text("$shop"),
+        title: Text("${ApiData.data[Selection.shopIndex]['name']}"),
         actions: [
           CustomAppBarActions(
             showSearchOption: true,

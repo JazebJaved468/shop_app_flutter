@@ -109,10 +109,16 @@ class _CategoryBodyState extends State<CategoryBody> {
                     Selection.shopIndex = index;
                     String? refresh = await Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ShopScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => ShopScreen(
+                                shopIndex: index,
+                              )),
                     );
 
                     if (refresh == 'r' || refresh == null) {
+                      Selection.shopIndex = 0;
+                      Selection.filterIndex = 0;
+                      Selection.productIndex = 0;
                       setState(() {});
                     }
                   },
