@@ -133,7 +133,7 @@ class _CategoryBodyState extends State<CategoryBody> {
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(10),
                                   child: Image(
-                                    image: NetworkImage(
+                                    image: AssetImage(
                                       ApiData.data[index]['image'],
                                     ),
                                     width: 70,

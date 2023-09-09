@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "Manrope",
         useMaterial3: true,
       ),
-      home: const IntroScreen(),
+      home: const HomeScreen(),
     );
   }
 }

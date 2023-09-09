@@ -76,7 +76,7 @@ class ConstantTexts_Home {
       'products': '02'
     },
     {
-      'image': "assets/images/discount/img3.jpg",
+      'image': "assets/images/discount/img1.jpg",
       'discount': '10',
       'products': '01'
     },

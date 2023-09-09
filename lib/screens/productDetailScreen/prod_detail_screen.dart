@@ -62,7 +62,7 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Image(
-                    image: NetworkImage(
+                    image: AssetImage(
                       product['image'],
                     ),
                     width: 160,

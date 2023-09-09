@@ -171,7 +171,7 @@ class _ShopScreenState extends State<ShopScreen> {
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(10),
                                     child: Image(
-                                      image: NetworkImage(
+                                      image: AssetImage(
                                         Selection.tempFilterData[index]
                                             ['image'],
                                       ),

@@ -154,7 +154,7 @@ class _FavouriteBodyState extends State<FavouriteBody> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(20),
                             child: Image(
-                              image: NetworkImage(
+                              image: AssetImage(
                                 FavouriteData.data[index]['imgPath'],
                               ),
                               width: mediaWidth * 0.4,

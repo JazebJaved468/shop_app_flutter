@@ -4,8 +4,7 @@ class ApiData {
     {
       'name': 'Kaybees',
       'type': 'Restaurant',
-      'image':
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCGcMjfGiON-64zr0YZw0cjqags4xBLOE8zg&usqp=CAU",
+      'image': "assets/images/shops/kaybees.jpg",
       'products': [
         //popular
         {
@@ -16,7 +15,7 @@ class ApiData {
               'price': 914,
               'rating': 5,
               'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646218633-Mughali-bottee.jpg&w=256&q=75',
+                  'assets/images/products/0_1.webp',
               'discount': 13,
               'reg': 1034.21,
               'details':
@@ -45,8 +44,8 @@ class ApiData {
               'name': 'SPECIAL CLUB SANDWICH',
               'price': 587,
               'rating': 4,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1653037831-Club-Sandwich.jpg&w=256&q=75',
+                         'image':
+               'assets/images/products/0_2.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -80,8 +79,8 @@ class ApiData {
               'name': 'QTR CRISPY BROAST',
               'price': 519,
               'rating': 3,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646219183-Qtr-Crispy-broast.jpg&w=256&q=75',
+                     'image':
+                 'assets/images/products/0_3.webp',
               'discount': 15,
               'reg': 1034.21,
               'details':
@@ -138,14 +137,15 @@ class ApiData {
             },
           ],
         },
+        
         //Noodles
         {
           'type': 'Noodles',
           'items': [
             {
               'name': 'CHICKEN CHOWMEIN',
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646216339-Chicken-Chowmein.jpg&w=640&q=75',
+                         'image':
+                 'assets/images/products/0_4.webp',
               'price': 663,
               'rating': 4,
               'discount': 13,
@@ -175,8 +175,8 @@ class ApiData {
             {
               'name': 'BEEF CHILLI CHOWMEIN',
               'rating': 5,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1652263890-Beef%20Chowmein.jpg&w=640&q=75',
+                     'image':
+         'assets/images/products/0_5.webp',
               'price': 761,
               'discount': 14,
               'reg': 1034.21,
@@ -210,8 +210,8 @@ class ApiData {
             {
               'name': 'Kids Chowmein',
               'rating': 2,
-              'image':
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiXUOIou2vUvuqNXNMlnFBfa5BJvH5xaVC9Q&usqp=CAU',
+                        'image':
+                 'assets/images/products/0_6.jpg',
               'price': 424,
               'discount': 14,
               'reg': 1034.21,
@@ -245,8 +245,8 @@ class ApiData {
             {
               'name': 'VEGETABLE CHOWMEIN',
               'rating': 4,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1652266679-Chicken%20Chowmein.jpg&w=640&q=75',
+                            'image':
+           'assets/images/products/0_7.webp',
               'price': 587,
               'discount': 14,
               'reg': 1034.21,
@@ -312,8 +312,8 @@ class ApiData {
               'name': 'CHEEKO SHAKE',
               'price': 365,
               'rating': 5,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1655800588-Chikoo-Shake-Sapota-Milk-Shake.jpg&w=640&q=75',
+                           'image':
+             'assets/images/products/0_8.webp',
               'discount': 13,
               'reg': 1034.21,
               'details':
@@ -342,8 +342,8 @@ class ApiData {
               'name': 'BOUNTY CHILLER',
               'price': 440,
               'rating': 4,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646216017-Bounty-Chiller.jpg&w=640&q=75',
+                        'image':
+          'assets/images/products/0_9.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -377,8 +377,8 @@ class ApiData {
               'name': 'STRAWBERRY ICECREAM SHAKE',
               'price': 510,
               'rating': 3,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646219367-Strawberry-Shake.jpg&w=640&q=75',
+                           'image':
+                'assets/images/products/0_10.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -412,8 +412,8 @@ class ApiData {
               'name': 'KIT KAT SHAKE',
               'price': 485,
               'rating': 3,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646218480-Kit-kat-Shake.jpg&w=640&q=75',
+                      'image':
+             'assets/images/products/0_11.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -447,8 +447,8 @@ class ApiData {
               'name': 'OREO SHAKE',
               'price': 485,
               'rating': 4,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646218929-Oreo-Shake.jpg&w=640&q=75',
+                        'image':
+            'assets/images/products/0_12.webp',
               'discount': 15,
               'reg': 1034.21,
               'details':
@@ -510,12 +510,11 @@ class ApiData {
 
     // 2nd Shop
     {
-      'name': 'Kaybees',
+      'name': 'KFC',
       'type': 'Restaurant',
-      'image':
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCGcMjfGiON-64zr0YZw0cjqags4xBLOE8zg&usqp=CAU",
+      'image': "assets/images/shops/kfc.png",
       'products': [
-        //popular
+                //popular
         {
           'type': 'Popular',
           'items': [
@@ -524,7 +523,7 @@ class ApiData {
               'price': 914,
               'rating': 5,
               'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646218633-Mughali-bottee.jpg&w=256&q=75',
+                  'assets/images/products/0_1.webp',
               'discount': 13,
               'reg': 1034.21,
               'details':
@@ -553,8 +552,8 @@ class ApiData {
               'name': 'SPECIAL CLUB SANDWICH',
               'price': 587,
               'rating': 4,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1653037831-Club-Sandwich.jpg&w=256&q=75',
+                         'image':
+               'assets/images/products/0_2.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -588,8 +587,8 @@ class ApiData {
               'name': 'QTR CRISPY BROAST',
               'price': 519,
               'rating': 3,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646219183-Qtr-Crispy-broast.jpg&w=256&q=75',
+                     'image':
+                 'assets/images/products/0_3.webp',
               'discount': 15,
               'reg': 1034.21,
               'details':
@@ -646,14 +645,15 @@ class ApiData {
             },
           ],
         },
+        
         //Noodles
         {
           'type': 'Noodles',
           'items': [
             {
               'name': 'CHICKEN CHOWMEIN',
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646216339-Chicken-Chowmein.jpg&w=640&q=75',
+                         'image':
+                 'assets/images/products/0_4.webp',
               'price': 663,
               'rating': 4,
               'discount': 13,
@@ -683,8 +683,8 @@ class ApiData {
             {
               'name': 'BEEF CHILLI CHOWMEIN',
               'rating': 5,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1652263890-Beef%20Chowmein.jpg&w=640&q=75',
+                     'image':
+         'assets/images/products/0_5.webp',
               'price': 761,
               'discount': 14,
               'reg': 1034.21,
@@ -718,8 +718,8 @@ class ApiData {
             {
               'name': 'Kids Chowmein',
               'rating': 2,
-              'image':
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiXUOIou2vUvuqNXNMlnFBfa5BJvH5xaVC9Q&usqp=CAU',
+                        'image':
+                 'assets/images/products/0_6.jpg',
               'price': 424,
               'discount': 14,
               'reg': 1034.21,
@@ -753,8 +753,8 @@ class ApiData {
             {
               'name': 'VEGETABLE CHOWMEIN',
               'rating': 4,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1652266679-Chicken%20Chowmein.jpg&w=640&q=75',
+                            'image':
+           'assets/images/products/0_7.webp',
               'price': 587,
               'discount': 14,
               'reg': 1034.21,
@@ -820,8 +820,8 @@ class ApiData {
               'name': 'CHEEKO SHAKE',
               'price': 365,
               'rating': 5,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1655800588-Chikoo-Shake-Sapota-Milk-Shake.jpg&w=640&q=75',
+                           'image':
+             'assets/images/products/0_8.webp',
               'discount': 13,
               'reg': 1034.21,
               'details':
@@ -850,8 +850,8 @@ class ApiData {
               'name': 'BOUNTY CHILLER',
               'price': 440,
               'rating': 4,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646216017-Bounty-Chiller.jpg&w=640&q=75',
+                        'image':
+          'assets/images/products/0_9.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -885,8 +885,8 @@ class ApiData {
               'name': 'STRAWBERRY ICECREAM SHAKE',
               'price': 510,
               'rating': 3,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646219367-Strawberry-Shake.jpg&w=640&q=75',
+                           'image':
+                'assets/images/products/0_10.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -920,8 +920,8 @@ class ApiData {
               'name': 'KIT KAT SHAKE',
               'price': 485,
               'rating': 3,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646218480-Kit-kat-Shake.jpg&w=640&q=75',
+                      'image':
+             'assets/images/products/0_11.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -955,8 +955,8 @@ class ApiData {
               'name': 'OREO SHAKE',
               'price': 485,
               'rating': 4,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646218929-Oreo-Shake.jpg&w=640&q=75',
+                        'image':
+            'assets/images/products/0_12.webp',
               'discount': 15,
               'reg': 1034.21,
               'details':
@@ -1015,15 +1015,14 @@ class ApiData {
         },
       ],
     },
-  
+
     // 3rd Shop
     {
-      'name': 'Kaybees',
+      'name': 'Pizza Hut',
       'type': 'Restaurant',
-      'image':
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCGcMjfGiON-64zr0YZw0cjqags4xBLOE8zg&usqp=CAU",
+      'image': "assets/images/shops/pizzahut.png",
       'products': [
-        //popular
+             //popular
         {
           'type': 'Popular',
           'items': [
@@ -1032,7 +1031,7 @@ class ApiData {
               'price': 914,
               'rating': 5,
               'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646218633-Mughali-bottee.jpg&w=256&q=75',
+                  'assets/images/products/0_1.webp',
               'discount': 13,
               'reg': 1034.21,
               'details':
@@ -1061,8 +1060,8 @@ class ApiData {
               'name': 'SPECIAL CLUB SANDWICH',
               'price': 587,
               'rating': 4,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1653037831-Club-Sandwich.jpg&w=256&q=75',
+                         'image':
+               'assets/images/products/0_2.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -1096,8 +1095,8 @@ class ApiData {
               'name': 'QTR CRISPY BROAST',
               'price': 519,
               'rating': 3,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646219183-Qtr-Crispy-broast.jpg&w=256&q=75',
+                     'image':
+                 'assets/images/products/0_3.webp',
               'discount': 15,
               'reg': 1034.21,
               'details':
@@ -1154,14 +1153,15 @@ class ApiData {
             },
           ],
         },
+        
         //Noodles
         {
           'type': 'Noodles',
           'items': [
             {
               'name': 'CHICKEN CHOWMEIN',
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646216339-Chicken-Chowmein.jpg&w=640&q=75',
+                         'image':
+                 'assets/images/products/0_4.webp',
               'price': 663,
               'rating': 4,
               'discount': 13,
@@ -1191,8 +1191,8 @@ class ApiData {
             {
               'name': 'BEEF CHILLI CHOWMEIN',
               'rating': 5,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1652263890-Beef%20Chowmein.jpg&w=640&q=75',
+                     'image':
+         'assets/images/products/0_5.webp',
               'price': 761,
               'discount': 14,
               'reg': 1034.21,
@@ -1226,8 +1226,8 @@ class ApiData {
             {
               'name': 'Kids Chowmein',
               'rating': 2,
-              'image':
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiXUOIou2vUvuqNXNMlnFBfa5BJvH5xaVC9Q&usqp=CAU',
+                        'image':
+                 'assets/images/products/0_6.jpg',
               'price': 424,
               'discount': 14,
               'reg': 1034.21,
@@ -1261,8 +1261,8 @@ class ApiData {
             {
               'name': 'VEGETABLE CHOWMEIN',
               'rating': 4,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1652266679-Chicken%20Chowmein.jpg&w=640&q=75',
+                            'image':
+           'assets/images/products/0_7.webp',
               'price': 587,
               'discount': 14,
               'reg': 1034.21,
@@ -1328,8 +1328,8 @@ class ApiData {
               'name': 'CHEEKO SHAKE',
               'price': 365,
               'rating': 5,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1655800588-Chikoo-Shake-Sapota-Milk-Shake.jpg&w=640&q=75',
+                           'image':
+             'assets/images/products/0_8.webp',
               'discount': 13,
               'reg': 1034.21,
               'details':
@@ -1358,8 +1358,8 @@ class ApiData {
               'name': 'BOUNTY CHILLER',
               'price': 440,
               'rating': 4,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646216017-Bounty-Chiller.jpg&w=640&q=75',
+                        'image':
+          'assets/images/products/0_9.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -1393,8 +1393,8 @@ class ApiData {
               'name': 'STRAWBERRY ICECREAM SHAKE',
               'price': 510,
               'rating': 3,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646219367-Strawberry-Shake.jpg&w=640&q=75',
+                           'image':
+                'assets/images/products/0_10.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -1428,8 +1428,8 @@ class ApiData {
               'name': 'KIT KAT SHAKE',
               'price': 485,
               'rating': 3,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646218480-Kit-kat-Shake.jpg&w=640&q=75',
+                      'image':
+             'assets/images/products/0_11.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -1463,8 +1463,8 @@ class ApiData {
               'name': 'OREO SHAKE',
               'price': 485,
               'rating': 4,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646218929-Oreo-Shake.jpg&w=640&q=75',
+                        'image':
+            'assets/images/products/0_12.webp',
               'discount': 15,
               'reg': 1034.21,
               'details':
@@ -1523,15 +1523,14 @@ class ApiData {
         },
       ],
     },
-   
+
     // 4th Shop
     {
-      'name': 'Kaybees',
+      'name': 'Mc Donald',
       'type': 'Restaurant',
-      'image':
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCGcMjfGiON-64zr0YZw0cjqags4xBLOE8zg&usqp=CAU",
+      'image': "assets/images/shops/mcdonald.png",
       'products': [
-        //popular
+             //popular
         {
           'type': 'Popular',
           'items': [
@@ -1540,7 +1539,7 @@ class ApiData {
               'price': 914,
               'rating': 5,
               'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646218633-Mughali-bottee.jpg&w=256&q=75',
+                  'assets/images/products/0_1.webp',
               'discount': 13,
               'reg': 1034.21,
               'details':
@@ -1569,8 +1568,8 @@ class ApiData {
               'name': 'SPECIAL CLUB SANDWICH',
               'price': 587,
               'rating': 4,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1653037831-Club-Sandwich.jpg&w=256&q=75',
+                         'image':
+               'assets/images/products/0_2.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -1604,8 +1603,8 @@ class ApiData {
               'name': 'QTR CRISPY BROAST',
               'price': 519,
               'rating': 3,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646219183-Qtr-Crispy-broast.jpg&w=256&q=75',
+                     'image':
+                 'assets/images/products/0_3.webp',
               'discount': 15,
               'reg': 1034.21,
               'details':
@@ -1662,14 +1661,15 @@ class ApiData {
             },
           ],
         },
+        
         //Noodles
         {
           'type': 'Noodles',
           'items': [
             {
               'name': 'CHICKEN CHOWMEIN',
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646216339-Chicken-Chowmein.jpg&w=640&q=75',
+                         'image':
+                 'assets/images/products/0_4.webp',
               'price': 663,
               'rating': 4,
               'discount': 13,
@@ -1699,8 +1699,8 @@ class ApiData {
             {
               'name': 'BEEF CHILLI CHOWMEIN',
               'rating': 5,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1652263890-Beef%20Chowmein.jpg&w=640&q=75',
+                     'image':
+         'assets/images/products/0_5.webp',
               'price': 761,
               'discount': 14,
               'reg': 1034.21,
@@ -1734,8 +1734,8 @@ class ApiData {
             {
               'name': 'Kids Chowmein',
               'rating': 2,
-              'image':
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiXUOIou2vUvuqNXNMlnFBfa5BJvH5xaVC9Q&usqp=CAU',
+                        'image':
+                 'assets/images/products/0_6.jpg',
               'price': 424,
               'discount': 14,
               'reg': 1034.21,
@@ -1769,8 +1769,8 @@ class ApiData {
             {
               'name': 'VEGETABLE CHOWMEIN',
               'rating': 4,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1652266679-Chicken%20Chowmein.jpg&w=640&q=75',
+                            'image':
+           'assets/images/products/0_7.webp',
               'price': 587,
               'discount': 14,
               'reg': 1034.21,
@@ -1836,8 +1836,8 @@ class ApiData {
               'name': 'CHEEKO SHAKE',
               'price': 365,
               'rating': 5,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1655800588-Chikoo-Shake-Sapota-Milk-Shake.jpg&w=640&q=75',
+                           'image':
+             'assets/images/products/0_8.webp',
               'discount': 13,
               'reg': 1034.21,
               'details':
@@ -1866,8 +1866,8 @@ class ApiData {
               'name': 'BOUNTY CHILLER',
               'price': 440,
               'rating': 4,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646216017-Bounty-Chiller.jpg&w=640&q=75',
+                        'image':
+          'assets/images/products/0_9.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -1901,8 +1901,8 @@ class ApiData {
               'name': 'STRAWBERRY ICECREAM SHAKE',
               'price': 510,
               'rating': 3,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646219367-Strawberry-Shake.jpg&w=640&q=75',
+                           'image':
+                'assets/images/products/0_10.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -1936,8 +1936,8 @@ class ApiData {
               'name': 'KIT KAT SHAKE',
               'price': 485,
               'rating': 3,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646218480-Kit-kat-Shake.jpg&w=640&q=75',
+                      'image':
+             'assets/images/products/0_11.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -1971,8 +1971,8 @@ class ApiData {
               'name': 'OREO SHAKE',
               'price': 485,
               'rating': 4,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646218929-Oreo-Shake.jpg&w=640&q=75',
+                        'image':
+            'assets/images/products/0_12.webp',
               'discount': 15,
               'reg': 1034.21,
               'details':
@@ -2034,12 +2034,11 @@ class ApiData {
 
     // 5th Shop
     {
-      'name': 'Kaybees',
+      'name': 'Burger King',
       'type': 'Restaurant',
-      'image':
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCGcMjfGiON-64zr0YZw0cjqags4xBLOE8zg&usqp=CAU",
+      'image': "assets/images/shops/burgerking.png",
       'products': [
-        //popular
+               //popular
         {
           'type': 'Popular',
           'items': [
@@ -2048,7 +2047,7 @@ class ApiData {
               'price': 914,
               'rating': 5,
               'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646218633-Mughali-bottee.jpg&w=256&q=75',
+                  'assets/images/products/0_1.webp',
               'discount': 13,
               'reg': 1034.21,
               'details':
@@ -2077,8 +2076,8 @@ class ApiData {
               'name': 'SPECIAL CLUB SANDWICH',
               'price': 587,
               'rating': 4,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1653037831-Club-Sandwich.jpg&w=256&q=75',
+                         'image':
+               'assets/images/products/0_2.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -2112,8 +2111,8 @@ class ApiData {
               'name': 'QTR CRISPY BROAST',
               'price': 519,
               'rating': 3,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646219183-Qtr-Crispy-broast.jpg&w=256&q=75',
+                     'image':
+                 'assets/images/products/0_3.webp',
               'discount': 15,
               'reg': 1034.21,
               'details':
@@ -2170,14 +2169,15 @@ class ApiData {
             },
           ],
         },
+        
         //Noodles
         {
           'type': 'Noodles',
           'items': [
             {
               'name': 'CHICKEN CHOWMEIN',
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646216339-Chicken-Chowmein.jpg&w=640&q=75',
+                         'image':
+                 'assets/images/products/0_4.webp',
               'price': 663,
               'rating': 4,
               'discount': 13,
@@ -2207,8 +2207,8 @@ class ApiData {
             {
               'name': 'BEEF CHILLI CHOWMEIN',
               'rating': 5,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1652263890-Beef%20Chowmein.jpg&w=640&q=75',
+                     'image':
+         'assets/images/products/0_5.webp',
               'price': 761,
               'discount': 14,
               'reg': 1034.21,
@@ -2242,8 +2242,8 @@ class ApiData {
             {
               'name': 'Kids Chowmein',
               'rating': 2,
-              'image':
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiXUOIou2vUvuqNXNMlnFBfa5BJvH5xaVC9Q&usqp=CAU',
+                        'image':
+                 'assets/images/products/0_6.jpg',
               'price': 424,
               'discount': 14,
               'reg': 1034.21,
@@ -2277,8 +2277,8 @@ class ApiData {
             {
               'name': 'VEGETABLE CHOWMEIN',
               'rating': 4,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1652266679-Chicken%20Chowmein.jpg&w=640&q=75',
+                            'image':
+           'assets/images/products/0_7.webp',
               'price': 587,
               'discount': 14,
               'reg': 1034.21,
@@ -2344,8 +2344,8 @@ class ApiData {
               'name': 'CHEEKO SHAKE',
               'price': 365,
               'rating': 5,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1655800588-Chikoo-Shake-Sapota-Milk-Shake.jpg&w=640&q=75',
+                           'image':
+             'assets/images/products/0_8.webp',
               'discount': 13,
               'reg': 1034.21,
               'details':
@@ -2374,8 +2374,8 @@ class ApiData {
               'name': 'BOUNTY CHILLER',
               'price': 440,
               'rating': 4,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646216017-Bounty-Chiller.jpg&w=640&q=75',
+                        'image':
+          'assets/images/products/0_9.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -2409,8 +2409,8 @@ class ApiData {
               'name': 'STRAWBERRY ICECREAM SHAKE',
               'price': 510,
               'rating': 3,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646219367-Strawberry-Shake.jpg&w=640&q=75',
+                           'image':
+                'assets/images/products/0_10.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -2444,8 +2444,8 @@ class ApiData {
               'name': 'KIT KAT SHAKE',
               'price': 485,
               'rating': 3,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646218480-Kit-kat-Shake.jpg&w=640&q=75',
+                      'image':
+             'assets/images/products/0_11.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -2479,8 +2479,8 @@ class ApiData {
               'name': 'OREO SHAKE',
               'price': 485,
               'rating': 4,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646218929-Oreo-Shake.jpg&w=640&q=75',
+                        'image':
+            'assets/images/products/0_12.webp',
               'discount': 15,
               'reg': 1034.21,
               'details':
@@ -2542,12 +2542,11 @@ class ApiData {
 
     // 6th Shop
     {
-      'name': 'Kaybees',
+      'name': 'Hardees',
       'type': 'Restaurant',
-      'image':
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCGcMjfGiON-64zr0YZw0cjqags4xBLOE8zg&usqp=CAU",
+      'image': "assets/images/shops/hardees2.png",
       'products': [
-        //popular
+             //popular
         {
           'type': 'Popular',
           'items': [
@@ -2556,7 +2555,7 @@ class ApiData {
               'price': 914,
               'rating': 5,
               'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646218633-Mughali-bottee.jpg&w=256&q=75',
+                  'assets/images/products/0_1.webp',
               'discount': 13,
               'reg': 1034.21,
               'details':
@@ -2585,8 +2584,8 @@ class ApiData {
               'name': 'SPECIAL CLUB SANDWICH',
               'price': 587,
               'rating': 4,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1653037831-Club-Sandwich.jpg&w=256&q=75',
+                         'image':
+               'assets/images/products/0_2.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -2620,8 +2619,8 @@ class ApiData {
               'name': 'QTR CRISPY BROAST',
               'price': 519,
               'rating': 3,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646219183-Qtr-Crispy-broast.jpg&w=256&q=75',
+                     'image':
+                 'assets/images/products/0_3.webp',
               'discount': 15,
               'reg': 1034.21,
               'details':
@@ -2678,14 +2677,15 @@ class ApiData {
             },
           ],
         },
+        
         //Noodles
         {
           'type': 'Noodles',
           'items': [
             {
               'name': 'CHICKEN CHOWMEIN',
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646216339-Chicken-Chowmein.jpg&w=640&q=75',
+                         'image':
+                 'assets/images/products/0_4.webp',
               'price': 663,
               'rating': 4,
               'discount': 13,
@@ -2715,8 +2715,8 @@ class ApiData {
             {
               'name': 'BEEF CHILLI CHOWMEIN',
               'rating': 5,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1652263890-Beef%20Chowmein.jpg&w=640&q=75',
+                     'image':
+         'assets/images/products/0_5.webp',
               'price': 761,
               'discount': 14,
               'reg': 1034.21,
@@ -2750,8 +2750,8 @@ class ApiData {
             {
               'name': 'Kids Chowmein',
               'rating': 2,
-              'image':
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiXUOIou2vUvuqNXNMlnFBfa5BJvH5xaVC9Q&usqp=CAU',
+                        'image':
+                 'assets/images/products/0_6.jpg',
               'price': 424,
               'discount': 14,
               'reg': 1034.21,
@@ -2785,8 +2785,8 @@ class ApiData {
             {
               'name': 'VEGETABLE CHOWMEIN',
               'rating': 4,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1652266679-Chicken%20Chowmein.jpg&w=640&q=75',
+                            'image':
+           'assets/images/products/0_7.webp',
               'price': 587,
               'discount': 14,
               'reg': 1034.21,
@@ -2852,8 +2852,8 @@ class ApiData {
               'name': 'CHEEKO SHAKE',
               'price': 365,
               'rating': 5,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1655800588-Chikoo-Shake-Sapota-Milk-Shake.jpg&w=640&q=75',
+                           'image':
+             'assets/images/products/0_8.webp',
               'discount': 13,
               'reg': 1034.21,
               'details':
@@ -2882,8 +2882,8 @@ class ApiData {
               'name': 'BOUNTY CHILLER',
               'price': 440,
               'rating': 4,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646216017-Bounty-Chiller.jpg&w=640&q=75',
+                        'image':
+          'assets/images/products/0_9.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -2917,8 +2917,8 @@ class ApiData {
               'name': 'STRAWBERRY ICECREAM SHAKE',
               'price': 510,
               'rating': 3,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646219367-Strawberry-Shake.jpg&w=640&q=75',
+                           'image':
+                'assets/images/products/0_10.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -2952,8 +2952,8 @@ class ApiData {
               'name': 'KIT KAT SHAKE',
               'price': 485,
               'rating': 3,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646218480-Kit-kat-Shake.jpg&w=640&q=75',
+                      'image':
+             'assets/images/products/0_11.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -2987,8 +2987,8 @@ class ApiData {
               'name': 'OREO SHAKE',
               'price': 485,
               'rating': 4,
-              'image':
-                  'https://www.kaybees.com.pk/_next/image?url=https%3A%2F%2Fassets.indolj.io%2Fimages%2F1646218929-Oreo-Shake.jpg&w=640&q=75',
+                        'image':
+            'assets/images/products/0_12.webp',
               'discount': 15,
               'reg': 1034.21,
               'details':
@@ -3050,72 +3050,50 @@ class ApiData {
   ];
 }
 
-
-class RecommendedData{
+class RecommendedData {
   static List data = [
     {
       'shopIndex': 0,
       'filterIndex': 0,
       'productIndex': 1,
-      'name': ApiData.data[0]['products'][0]['items']
-          [1]['name'],
-      'price': ApiData.data[0]['products'][0]['items']
-          [1]['price'],
-      'imgPath': ApiData.data[0]['products'][0]['items']
-          [1]['image'],
+      'name': ApiData.data[0]['products'][0]['items'][1]['name'],
+      'price': ApiData.data[0]['products'][0]['items'][1]['price'],
+      'imgPath': ApiData.data[0]['products'][0]['items'][1]['image'],
     },
     {
       'shopIndex': 1,
       'filterIndex': 0,
       'productIndex': 2,
-      'name': ApiData.data[1]['products'][0]['items']
-          [2]['name'],
-      'price': ApiData.data[1]['products'][0]['items']
-          [2]['price'],
-      'imgPath': ApiData.data[1]['products'][0]['items']
-          [2]['image'],
+      'name': ApiData.data[1]['products'][0]['items'][2]['name'],
+      'price': ApiData.data[1]['products'][0]['items'][2]['price'],
+      'imgPath': ApiData.data[1]['products'][0]['items'][2]['image'],
     },
     {
       'shopIndex': 2,
       'filterIndex': 0,
       'productIndex': 1,
-      'name': ApiData.data[2]['products'][0]['items']
-          [1]['name'],
-      'price': ApiData.data[2]['products'][0]['items']
-          [1]['price'],
-      'imgPath': ApiData.data[2]['products'][0]['items']
-          [1]['image'],
+      'name': ApiData.data[2]['products'][0]['items'][1]['name'],
+      'price': ApiData.data[2]['products'][0]['items'][1]['price'],
+      'imgPath': ApiData.data[2]['products'][0]['items'][1]['image'],
     },
     {
       'shopIndex': 3,
       'filterIndex': 0,
       'productIndex': 0,
-      'name': ApiData.data[3]['products'][0]['items']
-          [0]['name'],
-      'price': ApiData.data[3]['products'][0]['items']
-          [0]['price'],
-      'imgPath': ApiData.data[3]['products'][0]['items']
-          [0]['image'],
+      'name': ApiData.data[3]['products'][0]['items'][0]['name'],
+      'price': ApiData.data[3]['products'][0]['items'][0]['price'],
+      'imgPath': ApiData.data[3]['products'][0]['items'][0]['image'],
     },
     {
       'shopIndex': 0,
       'filterIndex': 2,
       'productIndex': 3,
-      'name': ApiData.data[0]['products'][2]['items']
-          [3]['name'],
-      'price': ApiData.data[0]['products'][2]['items']
-          [3]['price'],
-      'imgPath': ApiData.data[0]['products'][2]['items']
-          [3]['image'],
+      'name': ApiData.data[0]['products'][2]['items'][3]['name'],
+      'price': ApiData.data[0]['products'][2]['items'][3]['price'],
+      'imgPath': ApiData.data[0]['products'][2]['items'][3]['image'],
     },
   ];
 }
-
-
-
-
-
-
 
 class CartData {
   static List data = [
