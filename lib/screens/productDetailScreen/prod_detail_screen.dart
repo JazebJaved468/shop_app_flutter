@@ -24,19 +24,22 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
   //controller
   final controller = PageController(viewportFraction: 0.8, keepPage: true);
 
-  //getting filterindex and itemdatalist
-  // List itemData = ConstantTexts_ShopScreen.itemData;
-  // int typeIndex = ConstantTexts_ShopScreen.selectedFilterIndex;
   @override
   Widget build(BuildContext context) {
     // Setting (Saving) Selected Product Index
     Selection.productIndex = widget.itemIndex;
+
+    print("shopIndex = ${Selection.shopIndex}");
+    print("filterIndex = ${Selection.filterIndex}");
+    print("productIndex = ${Selection.productIndex}");
 
     //favourite
     bool isFavourite = isFavouriteAlready(
         shopIndex: Selection.shopIndex,
         filterIndex: Selection.filterIndex,
         productIndex: Selection.productIndex)[0];
+    print("isFAvourite = ${isFavourite}");
+    print("Favourites = ${FavouriteData.data}");
 
     // Setting Variables
     var shop = ApiData.data[Selection.shopIndex];
@@ -44,8 +47,6 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
     var product = filter['items'][Selection.productIndex];
     num rating = product['rating'];
 
-    // ignore: avoid_print
-    // print("${Selection.productIndex}");
     // Media Queries
     var mediaWidth = MediaQuery.of(context).size.width;
     // var mediaHeight = MediaQuery.of(context).size.height;

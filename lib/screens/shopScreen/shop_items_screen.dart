@@ -190,28 +190,27 @@ class _ShopScreenState extends State<ShopScreen> {
 
                               //add to cart button
                               Align(
-                                  alignment: Alignment.centerRight,
-                                  child: AddToCartIcon(
-                                    onPressed: () {
-                                      Selection.productIndex = index;
-                                      setState(() {});
-                                      addToCart(
-                                          shopIndex: Selection.shopIndex,
-                                          filterIndex: Selection.filterIndex,
-                                          productIndex: Selection.productIndex);
-                                      // showing Message
-                                      ScaffoldMessenger.of(context)
-                                          .showSnackBar(
-                                        const SnackBar(
-                                          content:
-                                              Text('Item added to cart...'),
-                                          duration: Duration(
-                                              seconds:
-                                                  1), // How long the SnackBar will be displayed
-                                        ),
-                                      );
-                                    },
-                                  )),
+                                alignment: Alignment.centerRight,
+                                child: AddToCartIcon(
+                                  onPressed: () {
+                                    Selection.productIndex = index;
+                                    setState(() {});
+                                    addToCart(
+                                        shopIndex: Selection.shopIndex,
+                                        filterIndex: Selection.filterIndex,
+                                        productIndex: Selection.productIndex);
+                                    // showing Message
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      const SnackBar(
+                                        content: Text('Item added to cart...'),
+                                        duration: Duration(
+                                            seconds:
+                                                1), // How long the SnackBar will be displayed
+                                      ),
+                                    );
+                                  },
+                                ),
+                              ),
 
                               Container(
                                 // color: Colors.redAccent,

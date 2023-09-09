@@ -92,7 +92,7 @@ class Screen1 extends StatelessWidget {
                   ),
 
                   // Recommended Products
-                  const CustomRcommendedProducts(),
+                  // const CustomRcommendedProducts(),
 
                   //extrass  //extrass  //extrass  //extrass  //extrass  //extrass
                   // Recommended
@@ -109,7 +109,7 @@ class Screen1 extends StatelessWidget {
                   ),
 
                   // Recommended Products
-                  const CustomRcommendedProducts(), // Recommended
+                  // const CustomRcommendedProducts(), // Recommended
                   Text(
                     "Recommended",
                     style: TextStyle(
@@ -123,7 +123,7 @@ class Screen1 extends StatelessWidget {
                   ),
 
                   // Recommended Products
-                  const CustomRcommendedProducts(),
+                  // const CustomRcommendedProducts(),
                 ],
               ),
             ),

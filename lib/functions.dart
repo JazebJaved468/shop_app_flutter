@@ -93,16 +93,27 @@ List isFavouriteAlready({
   bool result = false;
   int isFavouriteAlreadyIndex = 0;
 
-  FavouriteData.data.forEach((item) {
+  // ignore: avoid_print
+  print(
+      "Inside function => shopIndex = ${shopIndex} \n shopIndex = ${shopIndex} \n shopIndex = ${shopIndex} \n");
+
+  for (var item in FavouriteData.data) {
     if (item['shopIndex'] == shopIndex &&
         item['filterIndex'] == filterIndex &&
         item['productIndex'] == productIndex) {
       result = true;
       isFavouriteAlreadyIndex = FavouriteData.data.indexOf(item);
-    } else {
-      result = false;
+      break;
     }
-  });
+  }
+  // FavouriteData.data.forEach((item) {
+  //   if (item['shopIndex'] == shopIndex &&
+  //       item['filterIndex'] == filterIndex &&
+  //       item['productIndex'] == productIndex) {
+  //     result = true;
+  //     isFavouriteAlreadyIndex = FavouriteData.data.indexOf(item);
+  //   }
+  // });
 
   return [result, isFavouriteAlreadyIndex];
 }
