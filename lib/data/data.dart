@@ -14,8 +14,7 @@ class ApiData {
               'name': 'CHICKEN MUGHLAI BOTTEE',
               'price': 914,
               'rating': 5,
-              'image':
-                  'assets/images/products/0_1.webp',
+              'image': 'assets/images/products/0_1.webp',
               'discount': 13,
               'reg': 1034.21,
               'details':
@@ -44,8 +43,7 @@ class ApiData {
               'name': 'SPECIAL CLUB SANDWICH',
               'price': 587,
               'rating': 4,
-                         'image':
-               'assets/images/products/0_2.webp',
+              'image': 'assets/images/products/0_2.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -79,8 +77,7 @@ class ApiData {
               'name': 'QTR CRISPY BROAST',
               'price': 519,
               'rating': 3,
-                     'image':
-                 'assets/images/products/0_3.webp',
+              'image': 'assets/images/products/0_3.webp',
               'discount': 15,
               'reg': 1034.21,
               'details':
@@ -137,15 +134,14 @@ class ApiData {
             },
           ],
         },
-        
+
         //Noodles
         {
           'type': 'Noodles',
           'items': [
             {
               'name': 'CHICKEN CHOWMEIN',
-                         'image':
-                 'assets/images/products/0_4.webp',
+              'image': 'assets/images/products/0_4.webp',
               'price': 663,
               'rating': 4,
               'discount': 13,
@@ -175,8 +171,7 @@ class ApiData {
             {
               'name': 'BEEF CHILLI CHOWMEIN',
               'rating': 5,
-                     'image':
-         'assets/images/products/0_5.webp',
+              'image': 'assets/images/products/0_5.webp',
               'price': 761,
               'discount': 14,
               'reg': 1034.21,
@@ -210,8 +205,7 @@ class ApiData {
             {
               'name': 'Kids Chowmein',
               'rating': 2,
-                        'image':
-                 'assets/images/products/0_6.jpg',
+              'image': 'assets/images/products/0_6.jpg',
               'price': 424,
               'discount': 14,
               'reg': 1034.21,
@@ -245,8 +239,7 @@ class ApiData {
             {
               'name': 'VEGETABLE CHOWMEIN',
               'rating': 4,
-                            'image':
-           'assets/images/products/0_7.webp',
+              'image': 'assets/images/products/0_7.webp',
               'price': 587,
               'discount': 14,
               'reg': 1034.21,
@@ -312,8 +305,7 @@ class ApiData {
               'name': 'CHEEKO SHAKE',
               'price': 365,
               'rating': 5,
-                           'image':
-             'assets/images/products/0_8.webp',
+              'image': 'assets/images/products/0_8.webp',
               'discount': 13,
               'reg': 1034.21,
               'details':
@@ -342,8 +334,7 @@ class ApiData {
               'name': 'BOUNTY CHILLER',
               'price': 440,
               'rating': 4,
-                        'image':
-          'assets/images/products/0_9.webp',
+              'image': 'assets/images/products/0_9.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -377,8 +368,7 @@ class ApiData {
               'name': 'STRAWBERRY ICECREAM SHAKE',
               'price': 510,
               'rating': 3,
-                           'image':
-                'assets/images/products/0_10.webp',
+              'image': 'assets/images/products/0_10.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -412,8 +402,7 @@ class ApiData {
               'name': 'KIT KAT SHAKE',
               'price': 485,
               'rating': 3,
-                      'image':
-             'assets/images/products/0_11.webp',
+              'image': 'assets/images/products/0_11.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -447,8 +436,7 @@ class ApiData {
               'name': 'OREO SHAKE',
               'price': 485,
               'rating': 4,
-                        'image':
-            'assets/images/products/0_12.webp',
+              'image': 'assets/images/products/0_12.webp',
               'discount': 15,
               'reg': 1034.21,
               'details':
@@ -514,7 +502,7 @@ class ApiData {
       'type': 'Restaurant',
       'image': "assets/images/shops/kfc.png",
       'products': [
-                //Best Seller
+        //Best Seller
         {
           'type': 'Best Seller',
           'items': [
@@ -522,8 +510,7 @@ class ApiData {
               'name': 'Krunch Burger',
               'price': 270,
               'rating': 5,
-              'image':
-                  'assets/images/products/1_1.png',
+              'image': 'assets/images/products/1_1.png',
               'discount': 13,
               'reg': 1034.21,
               'details':
@@ -548,13 +535,11 @@ class ApiData {
                 },
               ],
             },
-            
-          {
+            {
               'name': 'Mighty Zinger',
               'price': 700,
               'rating': 4,
-                         'image':
-               'assets/images/products/1_2.png',
+              'image': 'assets/images/products/1_2.png',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -584,13 +569,11 @@ class ApiData {
                 },
               ],
             },
-            
             {
               'name': 'Hot Wings Bucket',
               'price': 610,
               'rating': 3,
-                     'image':
-                 'assets/images/products/1_3.png',
+              'image': 'assets/images/products/1_3.png',
               'discount': 15,
               'reg': 1034.21,
               'details':
@@ -649,8 +632,7 @@ class ApiData {
               'name': 'Krunch Combo',
               'price': 520,
               'rating': 3,
-                     'image':
-                 'assets/images/products/1_4.png',
+              'image': 'assets/images/products/1_4.png',
               'discount': 15,
               'reg': 1034.21,
               'details':
@@ -705,19 +687,17 @@ class ApiData {
                 },
               ],
             },
-          
           ],
         },
-        
-        //Noodles
+
+        //Snacks and Beverages
         {
-          'type': 'Noodles',
+          'type': 'Snacks & Beverages',
           'items': [
             {
-              'name': 'CHICKEN CHOWMEIN',
-                         'image':
-                 'assets/images/products/0_4.webp',
-              'price': 663,
+              'name': 'Dinner Roll',
+              'image': 'assets/images/products/1_5.png',
+              'price': 50,
               'rating': 4,
               'discount': 13,
               'reg': 1034.21,
@@ -744,11 +724,10 @@ class ApiData {
               ],
             },
             {
-              'name': 'BEEF CHILLI CHOWMEIN',
+              'name': 'Mineral Water',
               'rating': 5,
-                     'image':
-         'assets/images/products/0_5.webp',
-              'price': 761,
+              'image': 'assets/images/products/1_6.png',
+              'price': 90,
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -779,11 +758,10 @@ class ApiData {
               ],
             },
             {
-              'name': 'Kids Chowmein',
+              'name': 'Coleslaw',
               'rating': 2,
-                        'image':
-                 'assets/images/products/0_6.jpg',
-              'price': 424,
+              'image': 'assets/images/products/1_7.png',
+              'price': 100,
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -814,11 +792,305 @@ class ApiData {
               ],
             },
             {
-              'name': 'VEGETABLE CHOWMEIN',
+              'name': 'Pepsi Regular',
               'rating': 4,
-                            'image':
-           'assets/images/products/0_7.webp',
-              'price': 587,
+              'image': 'assets/images/products/1_8.png',
+              'price': 140,
+              'discount': 14,
+              'reg': 1034.21,
+              'details':
+                  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo.",
+              'nutrition':
+                  "reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?",
+              'reviews': [
+                {
+                  'personName': "William White",
+                  'comment': "Took a road trip along the Pacific Coast Highway",
+                  'date': "02/22/23",
+                },
+                {
+                  'personName': "Ava Harris",
+                  'comment': "Visited the Vatican City",
+                  'date': "05/28/22",
+                },
+                {
+                  'personName': "James Anderson",
+                  'comment': "Went scuba diving in the Maldives",
+                  'date': "03/10/23",
+                },
+                {
+                  'personName': "Emma Clark",
+                  'comment': "Explored the Amazon Rainforest",
+                  'date': "07/19/22",
+                },
+                {
+                  'personName': "Liam Turner",
+                  'comment': "Attended a food festival in New Orleans",
+                  'date': "09/03/22",
+                },
+                {
+                  'personName': "Mia Parker",
+                  'comment': "Visited the Taj Mahal",
+                  'date': "06/14/22",
+                },
+                {
+                  'personName': "Benjamin Garcia",
+                  'comment': "Hiked in the Swiss Alps",
+                  'date': "04/08/23",
+                },
+                {
+                  'personName': "Charlotte Martinez",
+                  'comment': "Took a hot air balloon ride in Cappadocia",
+                  'date': "08/25/22",
+                },
+                {
+                  'personName': "Emily Wilson",
+                  'comment': "Took a cruise in the Caribbean",
+                  'date': "06/30/22",
+                },
+              ],
+            },
+            {
+              'name': 'Mirinda Regular',
+              'rating': 4,
+              'image': 'assets/images/products/1_9.png',
+              'price': 140,
+              'discount': 14,
+              'reg': 1034.21,
+              'details':
+                  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo.",
+              'nutrition':
+                  "reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?",
+              'reviews': [
+                {
+                  'personName': "William White",
+                  'comment': "Took a road trip along the Pacific Coast Highway",
+                  'date': "02/22/23",
+                },
+                {
+                  'personName': "Ava Harris",
+                  'comment': "Visited the Vatican City",
+                  'date': "05/28/22",
+                },
+                {
+                  'personName': "James Anderson",
+                  'comment': "Went scuba diving in the Maldives",
+                  'date': "03/10/23",
+                },
+                {
+                  'personName': "Emma Clark",
+                  'comment': "Explored the Amazon Rainforest",
+                  'date': "07/19/22",
+                },
+                {
+                  'personName': "Liam Turner",
+                  'comment': "Attended a food festival in New Orleans",
+                  'date': "09/03/22",
+                },
+                {
+                  'personName': "Mia Parker",
+                  'comment': "Visited the Taj Mahal",
+                  'date': "06/14/22",
+                },
+                {
+                  'personName': "Benjamin Garcia",
+                  'comment': "Hiked in the Swiss Alps",
+                  'date': "04/08/23",
+                },
+                {
+                  'personName': "Charlotte Martinez",
+                  'comment': "Took a hot air balloon ride in Cappadocia",
+                  'date': "08/25/22",
+                },
+                {
+                  'personName': "Emily Wilson",
+                  'comment': "Took a cruise in the Caribbean",
+                  'date': "06/30/22",
+                },
+              ],
+            },
+            {
+              'name': 'Mountain Dew Regular',
+              'rating': 4,
+              'image': 'assets/images/products/1_10.png',
+              'price': 140,
+              'discount': 14,
+              'reg': 1034.21,
+              'details':
+                  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo.",
+              'nutrition':
+                  "reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?",
+              'reviews': [
+                {
+                  'personName': "William White",
+                  'comment': "Took a road trip along the Pacific Coast Highway",
+                  'date': "02/22/23",
+                },
+                {
+                  'personName': "Ava Harris",
+                  'comment': "Visited the Vatican City",
+                  'date': "05/28/22",
+                },
+                {
+                  'personName': "James Anderson",
+                  'comment': "Went scuba diving in the Maldives",
+                  'date': "03/10/23",
+                },
+                {
+                  'personName': "Emma Clark",
+                  'comment': "Explored the Amazon Rainforest",
+                  'date': "07/19/22",
+                },
+                {
+                  'personName': "Liam Turner",
+                  'comment': "Attended a food festival in New Orleans",
+                  'date': "09/03/22",
+                },
+                {
+                  'personName': "Mia Parker",
+                  'comment': "Visited the Taj Mahal",
+                  'date': "06/14/22",
+                },
+                {
+                  'personName': "Benjamin Garcia",
+                  'comment': "Hiked in the Swiss Alps",
+                  'date': "04/08/23",
+                },
+                {
+                  'personName': "Charlotte Martinez",
+                  'comment': "Took a hot air balloon ride in Cappadocia",
+                  'date': "08/25/22",
+                },
+                {
+                  'personName': "Emily Wilson",
+                  'comment': "Took a cruise in the Caribbean",
+                  'date': "06/30/22",
+                },
+              ],
+            },
+            {
+              'name': 'Fries Bucket',
+              'rating': 4,
+              'image': 'assets/images/products/1_11.png',
+              'price': 420,
+              'discount': 14,
+              'reg': 1034.21,
+              'details':
+                  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo.",
+              'nutrition':
+                  "reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?",
+              'reviews': [
+                {
+                  'personName': "William White",
+                  'comment': "Took a road trip along the Pacific Coast Highway",
+                  'date': "02/22/23",
+                },
+                {
+                  'personName': "Ava Harris",
+                  'comment': "Visited the Vatican City",
+                  'date': "05/28/22",
+                },
+                {
+                  'personName': "James Anderson",
+                  'comment': "Went scuba diving in the Maldives",
+                  'date': "03/10/23",
+                },
+                {
+                  'personName': "Emma Clark",
+                  'comment': "Explored the Amazon Rainforest",
+                  'date': "07/19/22",
+                },
+                {
+                  'personName': "Liam Turner",
+                  'comment': "Attended a food festival in New Orleans",
+                  'date': "09/03/22",
+                },
+                {
+                  'personName': "Mia Parker",
+                  'comment': "Visited the Taj Mahal",
+                  'date': "06/14/22",
+                },
+                {
+                  'personName': "Benjamin Garcia",
+                  'comment': "Hiked in the Swiss Alps",
+                  'date': "04/08/23",
+                },
+                {
+                  'personName': "Charlotte Martinez",
+                  'comment': "Took a hot air balloon ride in Cappadocia",
+                  'date': "08/25/22",
+                },
+                {
+                  'personName': "Emily Wilson",
+                  'comment': "Took a cruise in the Caribbean",
+                  'date': "06/30/22",
+                },
+              ],
+            },
+            {
+              'name': 'Spicy Nuggets',
+              'rating': 4,
+              'image': 'assets/images/products/1_12.png',
+              'price': 530,
+              'discount': 14,
+              'reg': 1034.21,
+              'details':
+                  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo.",
+              'nutrition':
+                  "reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?",
+              'reviews': [
+                {
+                  'personName': "William White",
+                  'comment': "Took a road trip along the Pacific Coast Highway",
+                  'date': "02/22/23",
+                },
+                {
+                  'personName': "Ava Harris",
+                  'comment': "Visited the Vatican City",
+                  'date': "05/28/22",
+                },
+                {
+                  'personName': "James Anderson",
+                  'comment': "Went scuba diving in the Maldives",
+                  'date': "03/10/23",
+                },
+                {
+                  'personName': "Emma Clark",
+                  'comment': "Explored the Amazon Rainforest",
+                  'date': "07/19/22",
+                },
+                {
+                  'personName': "Liam Turner",
+                  'comment': "Attended a food festival in New Orleans",
+                  'date': "09/03/22",
+                },
+                {
+                  'personName': "Mia Parker",
+                  'comment': "Visited the Taj Mahal",
+                  'date': "06/14/22",
+                },
+                {
+                  'personName': "Benjamin Garcia",
+                  'comment': "Hiked in the Swiss Alps",
+                  'date': "04/08/23",
+                },
+                {
+                  'personName': "Charlotte Martinez",
+                  'comment': "Took a hot air balloon ride in Cappadocia",
+                  'date': "08/25/22",
+                },
+                {
+                  'personName': "Emily Wilson",
+                  'comment': "Took a cruise in the Caribbean",
+                  'date': "06/30/22",
+                },
+              ],
+            },
+            {
+              'name': 'Snack Bucket',
+              'rating': 4,
+              'image': 'assets/images/products/1_13.png',
+              'price': 580,
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -875,20 +1147,19 @@ class ApiData {
             },
           ],
         },
-        // Shakes
+        // Signature-Boxes
         {
-          'type': 'Shakes',
+          'type': 'Signature-Boxes',
           'items': [
             {
-              'name': 'CHEEKO SHAKE',
-              'price': 365,
+              'name': 'Crispy Box',
+              'price': 650,
               'rating': 5,
-                           'image':
-             'assets/images/products/0_8.webp',
+              'image': 'assets/images/products/1_14.png',
               'discount': 13,
               'reg': 1034.21,
               'details':
-                  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo.",
+                  "In mood for something crispy? Get 2 pcs Hot & Crispy Chicken + 1 Regular fries + 1 Regular drink + 1 Coleslaw",
               'nutrition':
                   "reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?",
               'reviews': [
@@ -910,167 +1181,118 @@ class ApiData {
               ],
             },
             {
-              'name': 'BOUNTY CHILLER',
-              'price': 440,
-              'rating': 4,
-                        'image':
-          'assets/images/products/0_9.webp',
-              'discount': 14,
+              'name': 'Boneless Box',
+              'price': 670,
+              'rating': 5,
+              'image': 'assets/images/products/1_15.png',
+              'discount': 13,
               'reg': 1034.21,
               'details':
-                  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo.",
+                  "Hassle free boneless experience with 4 Chicken strips + 1 Coleslaw + 1 Regular fries + 1 Regular drink + 1 Dip + 1 Dinner roll",
               'nutrition':
                   "reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?",
               'reviews': [
                 {
-                  'personName': "Michael Davis",
-                  'comment': "Attended a music festival in Austin",
-                  'date': "09/14/22",
+                  'personName': "John Smith",
+                  'comment': "Visited the Grand Canyon",
+                  'date': "05/12/22",
                 },
                 {
-                  'personName': "Sophia Lee",
-                  'comment': "Visited the Louvre Museum",
-                  'date': "04/25/23",
+                  'personName': "Alice Johnson",
+                  'comment': "Explored the Eiffel Tower",
+                  'date': "03/18/23",
                 },
                 {
-                  'personName': "Daniel Martinez",
-                  'comment': "Went camping in the Rockies",
-                  'date': "08/07/22",
-                },
-                {
-                  'personName': "Olivia Taylor",
-                  'comment': "Explored the Great Wall of China",
-                  'date': "01/05/23",
+                  'personName': "David Brown",
+                  'comment': "Hiked in Yosemite National Park",
+                  'date': "07/02/22",
                 },
               ],
             },
             {
-              'name': 'STRAWBERRY ICECREAM SHAKE',
-              'price': 510,
-              'rating': 3,
-                           'image':
-                'assets/images/products/0_10.webp',
-              'discount': 14,
+              'name': 'Wow  Box',
+              'price': 950,
+              'rating': 5,
+              'image': 'assets/images/products/1_16.png',
+              'discount': 13,
               'reg': 1034.21,
               'details':
-                  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo.",
+                  "Feel good with 1 Signature Zinger + 1 pc Hot & Crispy Chicken + 1 Regular fries + 1 Regular drink + 1 Coleslaw",
               'nutrition':
                   "reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?",
               'reviews': [
                 {
-                  'personName': "Michael Davis",
-                  'comment': "Attended a music festival in Austin",
-                  'date': "09/14/22",
+                  'personName': "John Smith",
+                  'comment': "Visited the Grand Canyon",
+                  'date': "05/12/22",
                 },
                 {
-                  'personName': "Sophia Lee",
-                  'comment': "Visited the Louvre Museum",
-                  'date': "04/25/23",
+                  'personName': "Alice Johnson",
+                  'comment': "Explored the Eiffel Tower",
+                  'date': "03/18/23",
                 },
                 {
-                  'personName': "Daniel Martinez",
-                  'comment': "Went camping in the Rockies",
-                  'date': "08/07/22",
-                },
-                {
-                  'personName': "Olivia Taylor",
-                  'comment': "Explored the Great Wall of China",
-                  'date': "01/05/23",
+                  'personName': "David Brown",
+                  'comment': "Hiked in Yosemite National Park",
+                  'date': "07/02/22",
                 },
               ],
             },
             {
-              'name': 'KIT KAT SHAKE',
-              'price': 485,
-              'rating': 3,
-                      'image':
-             'assets/images/products/0_11.webp',
-              'discount': 14,
+              'name': 'Crispy Duo Box',
+              'price': 1250,
+              'rating': 5,
+              'image': 'assets/images/products/1_17.png',
+              'discount': 13,
               'reg': 1034.21,
               'details':
-                  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo.",
+                  "Turn up the fun with 5 pcs Hot & Crispy Chicken + 1 Large fries + 2 Regular drinks",
               'nutrition':
                   "reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?",
               'reviews': [
                 {
-                  'personName': "Michael Davis",
-                  'comment': "Attended a music festival in Austin",
-                  'date': "09/14/22",
+                  'personName': "John Smith",
+                  'comment': "Visited the Grand Canyon",
+                  'date': "05/12/22",
                 },
                 {
-                  'personName': "Sophia Lee",
-                  'comment': "Visited the Louvre Museum",
-                  'date': "04/25/23",
+                  'personName': "Alice Johnson",
+                  'comment': "Explored the Eiffel Tower",
+                  'date': "03/18/23",
                 },
                 {
-                  'personName': "Daniel Martinez",
-                  'comment': "Went camping in the Rockies",
-                  'date': "08/07/22",
-                },
-                {
-                  'personName': "Olivia Taylor",
-                  'comment': "Explored the Great Wall of China",
-                  'date': "01/05/23",
+                  'personName': "David Brown",
+                  'comment': "Hiked in Yosemite National Park",
+                  'date': "07/02/22",
                 },
               ],
             },
             {
-              'name': 'OREO SHAKE',
-              'price': 485,
-              'rating': 4,
-                        'image':
-            'assets/images/products/0_12.webp',
-              'discount': 15,
+              'name': 'Xtreme Duo Box',
+              'price': 1450,
+              'rating': 5,
+              'image': 'assets/images/products/1_18.png',
+              'discount': 13,
               'reg': 1034.21,
               'details':
-                  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo.",
+                  "The irresistible combo of 2 Signature Zingers + 2 pcs Hot & Crispy Chicken + 1 Large fries + 2 Regular drinks",
               'nutrition':
                   "reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?",
               'reviews': [
                 {
-                  'personName': "William White",
-                  'comment': "Took a road trip along the Pacific Coast Highway",
-                  'date': "02/22/23",
+                  'personName': "John Smith",
+                  'comment': "Visited the Grand Canyon",
+                  'date': "05/12/22",
                 },
                 {
-                  'personName': "Ava Harris",
-                  'comment': "Visited the Vatican City",
-                  'date': "05/28/22",
+                  'personName': "Alice Johnson",
+                  'comment': "Explored the Eiffel Tower",
+                  'date': "03/18/23",
                 },
                 {
-                  'personName': "James Anderson",
-                  'comment': "Went scuba diving in the Maldives",
-                  'date': "03/10/23",
-                },
-                {
-                  'personName': "Emma Clark",
-                  'comment': "Explored the Amazon Rainforest",
-                  'date': "07/19/22",
-                },
-                {
-                  'personName': "Liam Turner",
-                  'comment': "Attended a food festival in New Orleans",
-                  'date': "09/03/22",
-                },
-                {
-                  'personName': "Mia Parker",
-                  'comment': "Visited the Taj Mahal",
-                  'date': "06/14/22",
-                },
-                {
-                  'personName': "Benjamin Garcia",
-                  'comment': "Hiked in the Swiss Alps",
-                  'date': "04/08/23",
-                },
-                {
-                  'personName': "Charlotte Martinez",
-                  'comment': "Took a hot air balloon ride in Cappadocia",
-                  'date': "08/25/22",
-                },
-                {
-                  'personName': "Emily Wilson",
-                  'comment': "Took a cruise in the Caribbean",
-                  'date': "06/30/22",
+                  'personName': "David Brown",
+                  'comment': "Hiked in Yosemite National Park",
+                  'date': "07/02/22",
                 },
               ],
             },
@@ -1085,7 +1307,7 @@ class ApiData {
       'type': 'Restaurant',
       'image': "assets/images/shops/pizzahut.png",
       'products': [
-             //popular
+        //popular
         {
           'type': 'Popular',
           'items': [
@@ -1093,8 +1315,7 @@ class ApiData {
               'name': 'CHICKEN MUGHLAI BOTTEE',
               'price': 914,
               'rating': 5,
-              'image':
-                  'assets/images/products/0_1.webp',
+              'image': 'assets/images/products/0_1.webp',
               'discount': 13,
               'reg': 1034.21,
               'details':
@@ -1123,8 +1344,7 @@ class ApiData {
               'name': 'SPECIAL CLUB SANDWICH',
               'price': 587,
               'rating': 4,
-                         'image':
-               'assets/images/products/0_2.webp',
+              'image': 'assets/images/products/0_2.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -1158,8 +1378,7 @@ class ApiData {
               'name': 'QTR CRISPY BROAST',
               'price': 519,
               'rating': 3,
-                     'image':
-                 'assets/images/products/0_3.webp',
+              'image': 'assets/images/products/0_3.webp',
               'discount': 15,
               'reg': 1034.21,
               'details':
@@ -1216,15 +1435,14 @@ class ApiData {
             },
           ],
         },
-        
+
         //Noodles
         {
           'type': 'Noodles',
           'items': [
             {
               'name': 'CHICKEN CHOWMEIN',
-                         'image':
-                 'assets/images/products/0_4.webp',
+              'image': 'assets/images/products/0_4.webp',
               'price': 663,
               'rating': 4,
               'discount': 13,
@@ -1254,8 +1472,7 @@ class ApiData {
             {
               'name': 'BEEF CHILLI CHOWMEIN',
               'rating': 5,
-                     'image':
-         'assets/images/products/0_5.webp',
+              'image': 'assets/images/products/0_5.webp',
               'price': 761,
               'discount': 14,
               'reg': 1034.21,
@@ -1289,8 +1506,7 @@ class ApiData {
             {
               'name': 'Kids Chowmein',
               'rating': 2,
-                        'image':
-                 'assets/images/products/0_6.jpg',
+              'image': 'assets/images/products/0_6.jpg',
               'price': 424,
               'discount': 14,
               'reg': 1034.21,
@@ -1324,8 +1540,7 @@ class ApiData {
             {
               'name': 'VEGETABLE CHOWMEIN',
               'rating': 4,
-                            'image':
-           'assets/images/products/0_7.webp',
+              'image': 'assets/images/products/0_7.webp',
               'price': 587,
               'discount': 14,
               'reg': 1034.21,
@@ -1391,8 +1606,7 @@ class ApiData {
               'name': 'CHEEKO SHAKE',
               'price': 365,
               'rating': 5,
-                           'image':
-             'assets/images/products/0_8.webp',
+              'image': 'assets/images/products/0_8.webp',
               'discount': 13,
               'reg': 1034.21,
               'details':
@@ -1421,8 +1635,7 @@ class ApiData {
               'name': 'BOUNTY CHILLER',
               'price': 440,
               'rating': 4,
-                        'image':
-          'assets/images/products/0_9.webp',
+              'image': 'assets/images/products/0_9.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -1456,8 +1669,7 @@ class ApiData {
               'name': 'STRAWBERRY ICECREAM SHAKE',
               'price': 510,
               'rating': 3,
-                           'image':
-                'assets/images/products/0_10.webp',
+              'image': 'assets/images/products/0_10.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -1491,8 +1703,7 @@ class ApiData {
               'name': 'KIT KAT SHAKE',
               'price': 485,
               'rating': 3,
-                      'image':
-             'assets/images/products/0_11.webp',
+              'image': 'assets/images/products/0_11.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -1526,8 +1737,7 @@ class ApiData {
               'name': 'OREO SHAKE',
               'price': 485,
               'rating': 4,
-                        'image':
-            'assets/images/products/0_12.webp',
+              'image': 'assets/images/products/0_12.webp',
               'discount': 15,
               'reg': 1034.21,
               'details':
@@ -1593,7 +1803,7 @@ class ApiData {
       'type': 'Restaurant',
       'image': "assets/images/shops/mcdonald.png",
       'products': [
-             //popular
+        //popular
         {
           'type': 'Popular',
           'items': [
@@ -1601,8 +1811,7 @@ class ApiData {
               'name': 'CHICKEN MUGHLAI BOTTEE',
               'price': 914,
               'rating': 5,
-              'image':
-                  'assets/images/products/0_1.webp',
+              'image': 'assets/images/products/0_1.webp',
               'discount': 13,
               'reg': 1034.21,
               'details':
@@ -1631,8 +1840,7 @@ class ApiData {
               'name': 'SPECIAL CLUB SANDWICH',
               'price': 587,
               'rating': 4,
-                         'image':
-               'assets/images/products/0_2.webp',
+              'image': 'assets/images/products/0_2.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -1666,8 +1874,7 @@ class ApiData {
               'name': 'QTR CRISPY BROAST',
               'price': 519,
               'rating': 3,
-                     'image':
-                 'assets/images/products/0_3.webp',
+              'image': 'assets/images/products/0_3.webp',
               'discount': 15,
               'reg': 1034.21,
               'details':
@@ -1724,15 +1931,14 @@ class ApiData {
             },
           ],
         },
-        
+
         //Noodles
         {
           'type': 'Noodles',
           'items': [
             {
               'name': 'CHICKEN CHOWMEIN',
-                         'image':
-                 'assets/images/products/0_4.webp',
+              'image': 'assets/images/products/0_4.webp',
               'price': 663,
               'rating': 4,
               'discount': 13,
@@ -1762,8 +1968,7 @@ class ApiData {
             {
               'name': 'BEEF CHILLI CHOWMEIN',
               'rating': 5,
-                     'image':
-         'assets/images/products/0_5.webp',
+              'image': 'assets/images/products/0_5.webp',
               'price': 761,
               'discount': 14,
               'reg': 1034.21,
@@ -1797,8 +2002,7 @@ class ApiData {
             {
               'name': 'Kids Chowmein',
               'rating': 2,
-                        'image':
-                 'assets/images/products/0_6.jpg',
+              'image': 'assets/images/products/0_6.jpg',
               'price': 424,
               'discount': 14,
               'reg': 1034.21,
@@ -1832,8 +2036,7 @@ class ApiData {
             {
               'name': 'VEGETABLE CHOWMEIN',
               'rating': 4,
-                            'image':
-           'assets/images/products/0_7.webp',
+              'image': 'assets/images/products/0_7.webp',
               'price': 587,
               'discount': 14,
               'reg': 1034.21,
@@ -1899,8 +2102,7 @@ class ApiData {
               'name': 'CHEEKO SHAKE',
               'price': 365,
               'rating': 5,
-                           'image':
-             'assets/images/products/0_8.webp',
+              'image': 'assets/images/products/0_8.webp',
               'discount': 13,
               'reg': 1034.21,
               'details':
@@ -1929,8 +2131,7 @@ class ApiData {
               'name': 'BOUNTY CHILLER',
               'price': 440,
               'rating': 4,
-                        'image':
-          'assets/images/products/0_9.webp',
+              'image': 'assets/images/products/0_9.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -1964,8 +2165,7 @@ class ApiData {
               'name': 'STRAWBERRY ICECREAM SHAKE',
               'price': 510,
               'rating': 3,
-                           'image':
-                'assets/images/products/0_10.webp',
+              'image': 'assets/images/products/0_10.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -1999,8 +2199,7 @@ class ApiData {
               'name': 'KIT KAT SHAKE',
               'price': 485,
               'rating': 3,
-                      'image':
-             'assets/images/products/0_11.webp',
+              'image': 'assets/images/products/0_11.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -2034,8 +2233,7 @@ class ApiData {
               'name': 'OREO SHAKE',
               'price': 485,
               'rating': 4,
-                        'image':
-            'assets/images/products/0_12.webp',
+              'image': 'assets/images/products/0_12.webp',
               'discount': 15,
               'reg': 1034.21,
               'details':
@@ -2101,7 +2299,7 @@ class ApiData {
       'type': 'Restaurant',
       'image': "assets/images/shops/burgerking.png",
       'products': [
-               //popular
+        //popular
         {
           'type': 'Popular',
           'items': [
@@ -2109,8 +2307,7 @@ class ApiData {
               'name': 'CHICKEN MUGHLAI BOTTEE',
               'price': 914,
               'rating': 5,
-              'image':
-                  'assets/images/products/0_1.webp',
+              'image': 'assets/images/products/0_1.webp',
               'discount': 13,
               'reg': 1034.21,
               'details':
@@ -2139,8 +2336,7 @@ class ApiData {
               'name': 'SPECIAL CLUB SANDWICH',
               'price': 587,
               'rating': 4,
-                         'image':
-               'assets/images/products/0_2.webp',
+              'image': 'assets/images/products/0_2.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -2174,8 +2370,7 @@ class ApiData {
               'name': 'QTR CRISPY BROAST',
               'price': 519,
               'rating': 3,
-                     'image':
-                 'assets/images/products/0_3.webp',
+              'image': 'assets/images/products/0_3.webp',
               'discount': 15,
               'reg': 1034.21,
               'details':
@@ -2232,15 +2427,14 @@ class ApiData {
             },
           ],
         },
-        
+
         //Noodles
         {
           'type': 'Noodles',
           'items': [
             {
               'name': 'CHICKEN CHOWMEIN',
-                         'image':
-                 'assets/images/products/0_4.webp',
+              'image': 'assets/images/products/0_4.webp',
               'price': 663,
               'rating': 4,
               'discount': 13,
@@ -2270,8 +2464,7 @@ class ApiData {
             {
               'name': 'BEEF CHILLI CHOWMEIN',
               'rating': 5,
-                     'image':
-         'assets/images/products/0_5.webp',
+              'image': 'assets/images/products/0_5.webp',
               'price': 761,
               'discount': 14,
               'reg': 1034.21,
@@ -2305,8 +2498,7 @@ class ApiData {
             {
               'name': 'Kids Chowmein',
               'rating': 2,
-                        'image':
-                 'assets/images/products/0_6.jpg',
+              'image': 'assets/images/products/0_6.jpg',
               'price': 424,
               'discount': 14,
               'reg': 1034.21,
@@ -2340,8 +2532,7 @@ class ApiData {
             {
               'name': 'VEGETABLE CHOWMEIN',
               'rating': 4,
-                            'image':
-           'assets/images/products/0_7.webp',
+              'image': 'assets/images/products/0_7.webp',
               'price': 587,
               'discount': 14,
               'reg': 1034.21,
@@ -2407,8 +2598,7 @@ class ApiData {
               'name': 'CHEEKO SHAKE',
               'price': 365,
               'rating': 5,
-                           'image':
-             'assets/images/products/0_8.webp',
+              'image': 'assets/images/products/0_8.webp',
               'discount': 13,
               'reg': 1034.21,
               'details':
@@ -2437,8 +2627,7 @@ class ApiData {
               'name': 'BOUNTY CHILLER',
               'price': 440,
               'rating': 4,
-                        'image':
-          'assets/images/products/0_9.webp',
+              'image': 'assets/images/products/0_9.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -2472,8 +2661,7 @@ class ApiData {
               'name': 'STRAWBERRY ICECREAM SHAKE',
               'price': 510,
               'rating': 3,
-                           'image':
-                'assets/images/products/0_10.webp',
+              'image': 'assets/images/products/0_10.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -2507,8 +2695,7 @@ class ApiData {
               'name': 'KIT KAT SHAKE',
               'price': 485,
               'rating': 3,
-                      'image':
-             'assets/images/products/0_11.webp',
+              'image': 'assets/images/products/0_11.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -2542,8 +2729,7 @@ class ApiData {
               'name': 'OREO SHAKE',
               'price': 485,
               'rating': 4,
-                        'image':
-            'assets/images/products/0_12.webp',
+              'image': 'assets/images/products/0_12.webp',
               'discount': 15,
               'reg': 1034.21,
               'details':
@@ -2609,7 +2795,7 @@ class ApiData {
       'type': 'Restaurant',
       'image': "assets/images/shops/hardees2.png",
       'products': [
-             //popular
+        //popular
         {
           'type': 'Popular',
           'items': [
@@ -2617,8 +2803,7 @@ class ApiData {
               'name': 'CHICKEN MUGHLAI BOTTEE',
               'price': 914,
               'rating': 5,
-              'image':
-                  'assets/images/products/0_1.webp',
+              'image': 'assets/images/products/0_1.webp',
               'discount': 13,
               'reg': 1034.21,
               'details':
@@ -2647,8 +2832,7 @@ class ApiData {
               'name': 'SPECIAL CLUB SANDWICH',
               'price': 587,
               'rating': 4,
-                         'image':
-               'assets/images/products/0_2.webp',
+              'image': 'assets/images/products/0_2.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -2682,8 +2866,7 @@ class ApiData {
               'name': 'QTR CRISPY BROAST',
               'price': 519,
               'rating': 3,
-                     'image':
-                 'assets/images/products/0_3.webp',
+              'image': 'assets/images/products/0_3.webp',
               'discount': 15,
               'reg': 1034.21,
               'details':
@@ -2740,15 +2923,14 @@ class ApiData {
             },
           ],
         },
-        
+
         //Noodles
         {
           'type': 'Noodles',
           'items': [
             {
               'name': 'CHICKEN CHOWMEIN',
-                         'image':
-                 'assets/images/products/0_4.webp',
+              'image': 'assets/images/products/0_4.webp',
               'price': 663,
               'rating': 4,
               'discount': 13,
@@ -2778,8 +2960,7 @@ class ApiData {
             {
               'name': 'BEEF CHILLI CHOWMEIN',
               'rating': 5,
-                     'image':
-         'assets/images/products/0_5.webp',
+              'image': 'assets/images/products/0_5.webp',
               'price': 761,
               'discount': 14,
               'reg': 1034.21,
@@ -2813,8 +2994,7 @@ class ApiData {
             {
               'name': 'Kids Chowmein',
               'rating': 2,
-                        'image':
-                 'assets/images/products/0_6.jpg',
+              'image': 'assets/images/products/0_6.jpg',
               'price': 424,
               'discount': 14,
               'reg': 1034.21,
@@ -2848,8 +3028,7 @@ class ApiData {
             {
               'name': 'VEGETABLE CHOWMEIN',
               'rating': 4,
-                            'image':
-           'assets/images/products/0_7.webp',
+              'image': 'assets/images/products/0_7.webp',
               'price': 587,
               'discount': 14,
               'reg': 1034.21,
@@ -2915,8 +3094,7 @@ class ApiData {
               'name': 'CHEEKO SHAKE',
               'price': 365,
               'rating': 5,
-                           'image':
-             'assets/images/products/0_8.webp',
+              'image': 'assets/images/products/0_8.webp',
               'discount': 13,
               'reg': 1034.21,
               'details':
@@ -2945,8 +3123,7 @@ class ApiData {
               'name': 'BOUNTY CHILLER',
               'price': 440,
               'rating': 4,
-                        'image':
-          'assets/images/products/0_9.webp',
+              'image': 'assets/images/products/0_9.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -2980,8 +3157,7 @@ class ApiData {
               'name': 'STRAWBERRY ICECREAM SHAKE',
               'price': 510,
               'rating': 3,
-                           'image':
-                'assets/images/products/0_10.webp',
+              'image': 'assets/images/products/0_10.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -3015,8 +3191,7 @@ class ApiData {
               'name': 'KIT KAT SHAKE',
               'price': 485,
               'rating': 3,
-                      'image':
-             'assets/images/products/0_11.webp',
+              'image': 'assets/images/products/0_11.webp',
               'discount': 14,
               'reg': 1034.21,
               'details':
@@ -3050,8 +3225,7 @@ class ApiData {
               'name': 'OREO SHAKE',
               'price': 485,
               'rating': 4,
-                        'image':
-            'assets/images/products/0_12.webp',
+              'image': 'assets/images/products/0_12.webp',
               'discount': 15,
               'reg': 1034.21,
               'details':
