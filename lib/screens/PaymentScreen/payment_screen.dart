@@ -64,13 +64,8 @@ class _PaymentScreenState extends State<PaymentScreen> {
                         cursorOpacityAnimates: true,
                         // cursorHeight: 18,
                         keyboardType: TextInputType.name,
-                        autofocus: false,
-                        style: TextStyle(
-                          color: GlobalColors.secondaryBackground,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                        ),
-
+                        autofocus: true,
+                        style: ConstantStyles_paymentScreen.inputText,
                         decoration: InputDecoration(
                           border: InputBorder.none,
                           focusedBorder: UnderlineInputBorder(
@@ -104,6 +99,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                         style: ConstantStyles_paymentScreen.label,
                       ),
                       TextField(
+                        onSubmitted: (_) => FocusScope.of(context).nextFocus(),
                         maxLength: 16,
                         cursorColor: GlobalColors.secondaryBackground,
                         cursorRadius: Radius.circular(30),
@@ -112,12 +108,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                         // cursorHeight: 18,
                         keyboardType: TextInputType.number,
                         autofocus: false,
-                        style: TextStyle(
-                          color: GlobalColors.secondaryBackground,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                        ),
-
+                        style: ConstantStyles_paymentScreen.inputText,
                         decoration: InputDecoration(
                           counterText: "",
                           border: InputBorder.none,
@@ -166,12 +157,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             keyboardType: TextInputType.datetime,
 
                             autofocus: false,
-                            style: TextStyle(
-                              color: GlobalColors.secondaryBackground,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                            ),
-
+                            style: ConstantStyles_paymentScreen.inputText,
                             decoration: InputDecoration(
                               hintText: "MM/YY",
                               hintStyle: TextStyle(
@@ -221,12 +207,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             // cursorHeight: 18,
                             keyboardType: TextInputType.number,
                             autofocus: false,
-                            style: TextStyle(
-                              color: GlobalColors.secondaryBackground,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                            ),
-
+                            style: ConstantStyles_paymentScreen.inputText,
                             decoration: InputDecoration(
                               counterText: "",
                               border: InputBorder.none,
@@ -255,6 +236,9 @@ class _PaymentScreenState extends State<PaymentScreen> {
           Expanded(child: Container()),
           CustomBill(
             buttonText: "Make Payment",
+            onPressed: () {
+              print("object");
+            },
           ),
         ],
       ),
