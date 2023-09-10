@@ -38,7 +38,7 @@ class _AddressScreenState extends State<AddressScreen> {
 
       //Body
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 24, vertical: 30),
+        padding: EdgeInsets.only(left: 24, right: 24, top: 30, bottom: 15),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
