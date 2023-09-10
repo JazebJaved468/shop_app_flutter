@@ -5,6 +5,7 @@ import '../../data/data.dart';
 import '../../functions.dart';
 import '../../widgets/custom_back_button.dart';
 import '../../widgets/custom_bill_sheet.dart';
+import '../addressScreen/address_screen.dart';
 import 'constants/cart_constants.dart';
 
 class FullCartScreen extends StatefulWidget {
@@ -195,7 +196,15 @@ class _FullCartScreenState extends State<FullCartScreen> {
           ),
 
           // Bottom Sheet (Bill)
-          CustomBill(buttonText: "Proceed To checkout")
+          CustomBill(
+            buttonText: "Proceed To checkout",
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const AddressScreen()),
+              );
+            },
+          )
         ],
       ),
     );

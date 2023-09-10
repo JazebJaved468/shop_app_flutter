@@ -9,9 +9,10 @@ class CustomBill extends StatefulWidget {
   // final num subtotalAmount;
   // final num deliveryAmount;
   final String buttonText;
+  final void Function()? onPressed;
 
   /// final vars dene hain
-  const CustomBill({super.key, required this.buttonText});
+  const CustomBill({super.key, required this.buttonText, this.onPressed});
 
   @override
   State<CustomBill> createState() => _CustomBillState();
@@ -121,7 +122,7 @@ class _CustomBillState extends State<CustomBill> {
               text: widget.buttonText,
               backgroundColor: GlobalColors.primaryBackground,
               textColor: GlobalColors.primaryHeading,
-              width: mediaWidth * 1),
+              width: mediaWidth * 1, onPressed: widget.onPressed,),
         ],
       ),
     );

@@ -1,0 +1,26 @@
+import 'package:flutter/material.dart';
+
+import '../../data/data.dart';
+import '../../widgets/custom_back_button.dart';
+
+class PaymentScreen extends StatefulWidget {
+  const PaymentScreen({super.key});
+
+  @override
+  State<PaymentScreen> createState() => _PaymentScreenState();
+}
+
+class _PaymentScreenState extends State<PaymentScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      //Appbar
+      appBar: AppBar(
+        leading: CustomBackButton(),
+        title: Text("Add Card"),
+      ),
+
+      //Body
+    );
+  }
+}

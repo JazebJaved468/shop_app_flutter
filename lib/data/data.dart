@@ -3363,6 +3363,20 @@ class FavouriteData {
   ];
 }
 
+class PersonalInfo {
+  static String userName = "Jazeb";
+  static List addresses = [
+    {
+      'place': "Home",
+      'address': "36 green way, Sunamganj",
+    },
+    {
+      'place': "Office",
+      'address': "Medical road, Halal lab, Sunamganj",
+    },
+  ];
+}
+
 class Selection {
   static int shopIndex = 0;
   // static String shopName = ApiData.data[shopIndex]['name'];
@@ -3370,7 +3384,24 @@ class Selection {
   static List tempFilterData = ApiData.data[0]['products'][0]['items'];
   static int productIndex = 0;
   static int cartItemIndex = 0;
+  static int addressIndex = 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // List shopNames = ["Kaybees", "KFC", "Ginsoy", "Dynasty", "Kolachi", "Sakura"];

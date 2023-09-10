@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shopping_app/constants/global_constants.dart';
+import 'package:shopping_app/screens/addressScreen/address_screen.dart';
 import 'package:shopping_app/screens/cartScreen/constants/cart_constants.dart';
 import 'package:shopping_app/screens/cartScreen/full_cart_screen.dart';
 
@@ -413,7 +414,15 @@ class _CartScreenState extends State<CartScreen> {
           ),
 
           // Bottom Sheet (Bill)
-          CustomBill(buttonText: "Proceed To checkout")
+          CustomBill(
+            buttonText: "Proceed To checkout",
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const AddressScreen()),
+              );
+            },
+          ),
         ],
       ),
     );
