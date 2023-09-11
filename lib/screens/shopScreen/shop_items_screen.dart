@@ -28,18 +28,11 @@ class _ShopScreenState extends State<ShopScreen> {
   }
 
   updateTempListData() {
-    //here error (may be resolved)
-
-    // ConstantTexts_ShopScreen.itemData
     ApiData.data[Selection.shopIndex]['products'].forEach((product) {
       Selection.tempFilterData = ApiData.data[Selection.shopIndex]['products']
           [Selection.filterIndex]['items'];
       print(ConstantTexts_ShopScreen.tempData);
       setState(() {});
-      // Navigator.push(
-      //   context,
-      //   MaterialPageRoute(builder: (context) => ShopScreen()),
-      // );
     });
   }
 

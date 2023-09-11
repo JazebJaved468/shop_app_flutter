@@ -3375,6 +3375,32 @@ class PersonalInfo {
       'address': "Medical road, Halal lab, Sunamganj",
     },
   ];
+  static List orders = [
+    {
+      'type': 'Current',
+      'orders': [
+        {
+          'id': 765433,
+          'items': [
+            {
+              'shopIndex': 0,
+              'filterIndex': 0,
+              'productIndex': 4,
+              'name': "Bananas",
+              'price': 7.90,
+              'imgPath':
+                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCGcMjfGiON-64zr0YZw0cjqags4xBLOE8zg&usqp=CAU',
+              'quantity': 2,
+            },
+          ],
+        },
+      ],
+    },
+    {
+      'type': 'Past',
+      'orders': [],
+    }
+  ];
 }
 
 class Selection {
@@ -3385,6 +3411,8 @@ class Selection {
   static int productIndex = 0;
   static int cartItemIndex = 0;
   static int addressIndex = 0;
+  static int orderFilter = 0;
+  static List? tempOrderFilterData = PersonalInfo.orders[0]['order'];
 }
 
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:shopping_app/constants/global_constants.dart';
+import 'package:shopping_app/screens/orderScreen/order_screen.dart';
 import 'package:shopping_app/screens/paymentScreen/constants/payment_screen_constants.dart';
 import 'package:shopping_app/screens/addressScreen/address_screen.dart';
 import 'package:shopping_app/widgets/custom_bill_sheet.dart';
@@ -290,7 +291,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
               Future.delayed(Duration(seconds: 4), () {
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
-                      builder: (BuildContext context) => AddressScreen()),
+                      builder: (BuildContext context) => OrderScreen()),
                 );
               });
             },

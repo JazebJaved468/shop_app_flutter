@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/screens/orderScreen/order_screen.dart';
 import 'package:shopping_app/screens/paymentScreen/payment_screen.dart';
 import 'package:shopping_app/screens/addressScreen/address_screen.dart';
 import 'package:shopping_app/screens/cartScreen/cart_screen.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "Manrope",
         useMaterial3: true,
       ),
-      home: const PaymentScreen(),
+      home: const OrderScreen(),
     );
   }
 }
