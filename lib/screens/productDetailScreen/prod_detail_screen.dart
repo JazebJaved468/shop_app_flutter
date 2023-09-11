@@ -29,17 +29,17 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
     // Setting (Saving) Selected Product Index
     Selection.productIndex = widget.itemIndex;
 
-    print("shopIndex = ${Selection.shopIndex}");
-    print("filterIndex = ${Selection.filterIndex}");
-    print("productIndex = ${Selection.productIndex}");
+    // print("shopIndex = ${Selection.shopIndex}");
+    // print("filterIndex = ${Selection.filterIndex}");
+    // print("productIndex = ${Selection.productIndex}");
 
     //favourite
     bool isFavourite = isFavouriteAlready(
         shopIndex: Selection.shopIndex,
         filterIndex: Selection.filterIndex,
         productIndex: Selection.productIndex)[0];
-    print("isFAvourite = ${isFavourite}");
-    print("Favourites = ${FavouriteData.data}");
+    // print("isFAvourite = ${isFavourite}");
+    // print("Favourites = ${FavouriteData.data}");
 
     // Setting Variables
     var shop = ApiData.data[Selection.shopIndex];
@@ -198,7 +198,7 @@ class _ProdDetailScreenState extends State<ProdDetailScreen> {
                                     ),
                                   );
                                   isFavourite = !(isFavourite);
-                                  print(FavouriteData.data);
+                                  // print(FavouriteData.data);
                                 }
 
                                 setState(() {});

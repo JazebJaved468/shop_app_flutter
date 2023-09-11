@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:shopping_app/constants/global_constants.dart';
-import 'package:shopping_app/screens/PaymentScreen/constants/payment_screen_constants.dart';
+import 'package:shopping_app/screens/paymentScreen/constants/payment_screen_constants.dart';
+import 'package:shopping_app/screens/addressScreen/address_screen.dart';
 import 'package:shopping_app/widgets/custom_bill_sheet.dart';
 
 import '../../data/data.dart';
@@ -237,7 +239,60 @@ class _PaymentScreenState extends State<PaymentScreen> {
           CustomBill(
             buttonText: "Make Payment",
             onPressed: () {
-              print("object");
+              showDialog(
+                barrierDismissible: false,
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    contentPadding: EdgeInsets.zero,
+                    // backgroundColor: GlobalColors.yellow,
+                    shape: RoundedRectangleBorder(),
+                    // title: const Text(
+                    //   "Implementation of this feature will be done later",
+                    //   style:
+                    //       TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+                    // ),
+                    content: Container(
+                      padding: EdgeInsets.only(
+                          bottom: 30, top: 10, left: 30, right: 30),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          //Animation
+
+                          Container(
+                            // color: Colors.red,
+                            child: Lottie.asset(
+                              'assets/animations/paymentDone.json',
+                              height: 200,
+                              width: 200,
+                              repeat: false,
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+
+                          // Message
+                          Text(
+                            "Payment Successful",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              );
+
+              // Delay for 10 seconds and then navigate to another screen
+              Future.delayed(Duration(seconds: 4), () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => AddressScreen()),
+                );
+              });
             },
           ),
         ],

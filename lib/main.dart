@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/screens/PaymentScreen/payment_screen.dart';
+import 'package:shopping_app/screens/paymentScreen/payment_screen.dart';
 import 'package:shopping_app/screens/addressScreen/address_screen.dart';
 import 'package:shopping_app/screens/cartScreen/cart_screen.dart';
 import 'package:shopping_app/screens/cartScreen/full_cart_screen.dart';

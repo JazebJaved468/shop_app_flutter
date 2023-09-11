@@ -39,6 +39,7 @@ dependencies:
   circular_bottom_navigation: ^2.3.0
   smooth_page_indicator: ^1.1.0
   r_dotted_line_border: ^0.1.1
+  lottie: ^2.6.0
   # fluttertoast: ^8.2.2
 
 dev_dependencies:
@@ -71,6 +72,7 @@ flutter:
     - assets/images/products/
     - assets/images/shops/
     - assets/fonts/
+    - assets/animations/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

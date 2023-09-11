@@ -7,7 +7,7 @@ import 'package:shopping_app/screens/addressScreen/constants/address_screen_cons
 import 'package:shopping_app/widgets/custom_back_button.dart';
 import 'package:shopping_app/widgets/custom_main_button.dart';
 
-import '../PaymentScreen/payment_screen.dart';
+import '../paymentScreen/payment_screen.dart';
 
 class AddressScreen extends StatefulWidget {
   const AddressScreen({super.key});
