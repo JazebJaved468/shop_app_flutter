@@ -21,10 +21,10 @@ class _TrackOrderScreenState extends State<TrackOrderScreen> {
     return Scaffold(
       //title
       appBar: AppBar(
-        leading: CustomBackButton(),
-        title: Text(
+        leading: const CustomBackButton(),
+        title: const Text(
           "Track Order",
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w500,
           ),
@@ -32,125 +32,270 @@ class _TrackOrderScreenState extends State<TrackOrderScreen> {
       ),
 
       //body
-      body: Column(
+      body: Stack(
         children: [
-          // divider
-          Container(
-            margin: EdgeInsets.only(left: 24, right: 24, top: 0, bottom: 15),
-            width: mediaWidth * 1,
-            height: 1,
-            color: Color.fromARGB(255, 239, 241, 242),
-          ),
+          //background Widgets (w.r.t Bottom Sheet)
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // divider
+              Container(
+                margin: const EdgeInsets.only(
+                    left: 24, right: 24, top: 0, bottom: 15),
+                width: mediaWidth * 1,
+                height: 1,
+                color: const Color.fromARGB(255, 239, 241, 242),
+              ),
 
-          //map
-          Container(
-            width: mediaWidth * 0.84,
-            clipBehavior: Clip.hardEdge,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              // color: Colors.red,
-            ),
-            margin: EdgeInsets.only(left: 24, right: 24, top: 0, bottom: 15),
-            child: Stack(
-              clipBehavior: Clip.hardEdge,
-              children: [
-                Image(
-                  alignment: Alignment.topCenter,
-                  image: AssetImage("assets/images/map.PNG"),
-                  width: mediaWidth * 1,
-                  height: mediaHeight * 0.5,
-                ),
+              //map
+              Center(
+                child: Container(
+                  width: mediaWidth * 0.84,
+                  clipBehavior: Clip.hardEdge,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    // color: Colors.red,
+                  ),
+                  margin: const EdgeInsets.only(
+                      left: 24, right: 24, top: 0, bottom: 24),
+                  child: Stack(
+                    clipBehavior: Clip.hardEdge,
+                    children: [
+                      Image(
+                        alignment: Alignment.topCenter,
+                        image: const AssetImage("assets/images/map.PNG"),
+                        width: mediaWidth * 1,
+                        height: mediaHeight * 0.5,
+                      ),
 
-                Container(
-                  height: mediaHeight * 0.52,
-                  // color: Colors.green,
-                  width: mediaWidth * 1,
-                ),
+                      Container(
+                        height: mediaHeight * 0.52,
+                        // color: Colors.green,
+                        width: mediaWidth * 1,
+                      ),
 
-                //driver
-                Positioned(
-                  bottom: 0,
-                  child: Container(
-                    width: mediaWidth * 0.84,
-                    // height: 120,
-                    decoration: BoxDecoration(
-                      color: Color(0xffF8F9FB),
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    child: ListTile(
-                      //profile pic
-                      leading: Container(
-                        width: 45,
-                        height: 45,
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                                color: Color.fromARGB(64, 0, 0, 0),
-                                blurRadius: 25,
-                                spreadRadius: 2,
-                                blurStyle: BlurStyle.normal),
-                          ],
-                          color: Color(0xffEDEDED),
-                          borderRadius: BorderRadius.circular(50),
-                          border: Border.all(
-                            color: Color(0xffFFFFFF),
-                            width: 4,
+                      //driver
+                      Positioned(
+                        bottom: 0,
+                        child: Container(
+                          width: mediaWidth * 0.84,
+                          // height: 120,
+                          decoration: BoxDecoration(
+                            color: const  Color(0xffF8F9FB),
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          child: ListTile(
+                            //profile pic
+                            leading: Container(
+                              width: 45,
+                              height: 45,
+                              decoration: BoxDecoration(
+                                boxShadow: const [
+                                  BoxShadow(
+                                      color: Color.fromARGB(64, 0, 0, 0),
+                                      blurRadius: 25,
+                                      spreadRadius: 2,
+                                      blurStyle: BlurStyle.normal),
+                                ],
+                                color: const Color(0xffEDEDED),
+                                borderRadius: BorderRadius.circular(50),
+                                border: Border.all(
+                                  color: const Color(0xffFFFFFF),
+                                  width: 4,
+                                ),
+                              ),
+                              child: const Icon(
+                                Icons.person,
+                                size: 22,
+                              ),
+                            ),
+
+                            // label
+                            title: const Text(
+                              "Delivery Man",
+                              style: TextStyle(
+                                  color: Color.fromARGB(255, 130, 132, 135),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400),
+                            ),
+
+                            //name
+                            subtitle: Text(
+                              "Rakibul Hassan",
+                              style: TextStyle(
+                                color: GlobalColors.secondaryBackground,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+
+                            //chat
+                            trailing: Container(
+                              width: 45,
+                              height: 45,
+                              padding: const EdgeInsets.all(11),
+                              decoration: BoxDecoration(
+                                color: GlobalColors.primaryBackground,
+                                borderRadius: BorderRadius.circular(100),
+                              ),
+                              child: SvgPicture.asset(
+                                "assets/icons/chat.svg",
+                              ),
+                            ),
                           ),
                         ),
-                        child: Icon(
-                          Icons.person,
-                          size: 22,
-                        ),
                       ),
+                    ],
+                  ),
+                ),
+              ),
 
-                      // label
-                      title: Text(
-                        "Delivery Man",
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 130, 132, 135),
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400),
-                      ),
+              // time
+              Container(
+                margin: const EdgeInsets.only(
+                    left: 20, right: 20, top: 0, bottom: 0),
+                child: const ListTile(
+                  leading: Icon(
+                    Icons.access_time,
+                    size: 22,
+                    color: Color(0xff8891A5),
+                  ),
 
-                      //name
-                      subtitle: Text(
-                        "Rakibul Hassan",
-                        style: TextStyle(
-                          color: GlobalColors.secondaryBackground,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
+                  // label
+                  title: Text(
+                    "Delivery In",
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 130, 132, 135),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400),
+                  ),
 
-                      //chat
-                      trailing: Container(
-                        width: 45,
-                        height: 45,
-                        padding: EdgeInsets.all(11),
-                        decoration: BoxDecoration(
-                          color: GlobalColors.primaryBackground,
-                          borderRadius: BorderRadius.circular(100),
-                        ),
-                        child: SvgPicture.asset(
-                          "assets/icons/chat.svg",
-                        ),
-                      ),
+                  //duration
+                  subtitle: Text(
+                    "25 Min",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),
-                // Container(
-                //   padding: EdgeInsets.zero,
-                //   height: mediaHeight * 0.5,
-                //   color: Colors.red,
-                //   width: mediaWidth * 1,
-                //   child: Image(
-                //     alignment: Alignment.topCenter,
-                //     image: AssetImage("assets/images/map.PNG"),
-                //     width: mediaWidth * 1,
-                //   ),
-                // ),
-              ],
-            ),
+              ),
+
+              // address
+              Container(
+                margin: const EdgeInsets.only(
+                    left: 20, right: 20, top: 0, bottom: 15),
+                child: const ListTile(
+                  leading: Icon(
+                    Icons.location_on_outlined,
+                    size: 22,
+                    color: Color(0xff8891A5),
+                  ),
+
+                  // label
+                  title: Text(
+                    "Delivery Address",
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 130, 132, 135),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400),
+                  ),
+
+                  //location
+                  subtitle: Text(
+                    "37 New line, Sunamganj",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w700,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+
+          //draggable sheet
+          DraggableScrollableSheet(
+            initialChildSize: 0.1,
+            minChildSize: 0.1,
+            maxChildSize: 0.5,
+            builder: (context, scrollController) {
+              return Container(
+                padding:
+                    const  EdgeInsets.only(top: 10, left: 30, right: 30, bottom: 10),
+                margin: const  EdgeInsets.symmetric(horizontal: 6),
+                clipBehavior: Clip.hardEdge,
+                decoration: BoxDecoration(
+                    borderRadius:  const BorderRadius.vertical(
+                      top: Radius.circular(25),
+                    ),
+                    color: GlobalColors.bottomSheet),
+                child: SingleChildScrollView(
+                  controller: scrollController,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    // controller: scrollController,
+                    children: [
+                      //Handle Bar
+                      Center(
+                        child: Container(
+                          margin: const EdgeInsets.only(bottom: 26),
+                          decoration: BoxDecoration(
+                              color: const  Color(0xffB2BBCE),
+                              borderRadius: BorderRadius.circular(50)),
+                          width: 75,
+                          height: 6,
+                        ),
+                      ),
+                      Container(
+                        margin:  const EdgeInsets.only(bottom: 26),
+                        // color: Colors.yellow,
+                        child: const Row(
+                          children: [
+                            Text(
+                              "Order Details ",
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                            SizedBox(
+                              width: 6,
+                            ),
+                            Text(
+                              "(ID: #765433)",
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        height: 40,
+                        color: Colors.orange,
+                      ),
+                      Container(
+                        height: 40,
+                        color: Colors.green,
+                      ),
+                      Container(
+                        height: 40,
+                        color: Colors.pink,
+                      ),
+                      Container(
+                        height: 40,
+                        color: Colors.black,
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
           ),
         ],
       ),

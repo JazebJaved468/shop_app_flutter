@@ -145,3 +145,12 @@ num getDeliveryAmount() {
   num result = CartData.data.isNotEmpty ? 2.00 : 0.00;
   return result;
 }
+
+
+// Shifting cart items to orders list on successful payment
+void shiftCartToOrders(){
+   PersonalInfo.orders[0]['orders'].add({
+    'id' : '345',
+    'items' : CartData.data,
+   }); 
+}

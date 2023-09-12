@@ -37,10 +37,10 @@ class _OrderScreenState extends State<OrderScreen> {
     return Scaffold(
       //title
       appBar: AppBar(
-        leading: CustomBackButton(),
-        title: Text(
+        leading:  const CustomBackButton(),
+        title: const  Text(
           "Orders",
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w500,
           ),
@@ -52,7 +52,7 @@ class _OrderScreenState extends State<OrderScreen> {
         children: [
           //Filter
           Container(
-            margin: EdgeInsets.only(
+            margin:  const EdgeInsets.only(
               top: 10,
               bottom: 20,
             ),
@@ -96,7 +96,7 @@ class _OrderScreenState extends State<OrderScreen> {
                 ),
 
                 //Gap
-                SizedBox(
+              const    SizedBox(
                   width: 8,
                 ),
 
@@ -221,8 +221,8 @@ class _OrderScreenState extends State<OrderScreen> {
                     Selection.orderFilter == 0
                         ? "Your Current Orders list is empty. Place an order now to see it here!"
                         : "Your Past Orders history is empty. Start ordering now to track your past purchases!",
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 100, 107, 121),
+                    style:  const TextStyle(
+                      color:   Color.fromARGB(255, 100, 107, 121),
                     ),
                   ),
                 ],
@@ -239,14 +239,14 @@ class _OrderScreenState extends State<OrderScreen> {
                     PersonalInfo.orders[Selection.orderFilter]['orders'].length,
                 itemBuilder: (context, index) {
                   return Container(
-                    padding: EdgeInsets.only(
+                    padding: const  EdgeInsets.only(
                       top: 15,
                       left: 15,
                       right: 15,
                       bottom: 28,
                     ),
-                    margin: EdgeInsets.symmetric(horizontal: 20),
-                    decoration: BoxDecoration(
+                    margin:  const EdgeInsets.symmetric(horizontal: 20),
+                    decoration: const  BoxDecoration(
                       // color: Colors.red,
                       border: Border(
                         bottom: BorderSide(
@@ -268,7 +268,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                 // color: Colors.green,
                                 height: 180,
                               ),
-                              Image(
+                            const    Image(
                                 image: AssetImage("assets/images/truck.png"),
                                 height: 150,
                                 colorBlendMode: BlendMode.difference,
@@ -282,7 +282,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                         width: 45,
                                         height: 45,
                                         decoration: BoxDecoration(
-                                          boxShadow: [
+                                          boxShadow: const  [
                                             BoxShadow(
                                                 color:
                                                     Color.fromARGB(68, 0, 0, 0),
@@ -290,23 +290,23 @@ class _OrderScreenState extends State<OrderScreen> {
                                                 spreadRadius: 3,
                                                 blurStyle: BlurStyle.normal),
                                           ],
-                                          color: Color(0xffEDEDED),
+                                         color: const  Color(0xffEDEDED),
                                           borderRadius:
                                               BorderRadius.circular(50),
                                           border: Border.all(
-                                            color: Color(0xffFFFFFF),
+                                            color: const  Color(0xffFFFFFF),
                                             width: 4,
                                           ),
                                         ),
-                                        child: Icon(
+                                        child:  const Icon(
                                           Icons.person,
                                           size: 22,
                                         ),
                                       ),
-                                      SizedBox(
+                                       const SizedBox(
                                         height: 5,
                                       ),
-                                      Wrap(
+                                      const  Wrap(
                                         children: [
                                           Text(
                                             "Meet our rider, ",
@@ -333,10 +333,10 @@ class _OrderScreenState extends State<OrderScreen> {
                             ],
                           ),
                         ),
-                        SizedBox(
+                        const  SizedBox(
                           width: 11,
                         ),
-                        Container(
+                         Container(
                           // color: Colors.yellow,
                           width: mediaWidth * 0.35,
                           child: Column(
@@ -346,7 +346,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                 alignment: Alignment.centerRight,
                                 child: Wrap(
                                   children: [
-                                    Text(
+                                    const  Text(
                                       "ID: ",
                                       style: TextStyle(
                                         fontSize: 14,
@@ -365,7 +365,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                   ],
                                 ),
                               ),
-                              SizedBox(
+                             const   SizedBox(
                                 height: 15,
                               ),
                               Text(
@@ -384,7 +384,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                   fontWeight: FontWeight.w900,
                                 ),
                               ),
-                              SizedBox(
+                             const   SizedBox(
                                 height: 20,
                               ),
                               CustomMainButton(

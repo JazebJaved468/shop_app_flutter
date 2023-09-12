@@ -8,5 +8,6 @@ class GlobalColors {
   static Color productCardBackground = Color.fromARGB(255, 243, 243, 244);
   static Color bottomNavbar = Colors.transparent;
   static Color yellow = const Color(0xffF9B023);
+    static Color bottomSheet = Color.fromARGB(255, 224, 224, 225);
   // static Color favouriteBackground = Color.fromARGB(255, 249, 35, 96);
 }
