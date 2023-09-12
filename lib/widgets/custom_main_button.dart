@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../constants/global_constants.dart';
+
 class CustomMainButton extends StatelessWidget {
   final String text;
-  final Color backgroundColor;
+  final Color? backgroundColor;
   final Color? borderColor;
   final Color textColor;
   final double width;
@@ -21,6 +23,7 @@ class CustomMainButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     Color borderDefault = backgroundColor!;
     // Media Queries
     // var mediaWidth = MediaQuery.of(context).size.width;
     // var mediaHeight = MediaQuery.of(context).size.height;
@@ -31,13 +34,13 @@ class CustomMainButton extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: borderColor ?? backgroundColor,
+          color: borderColor ?? borderDefault,
           width: 1,
         ),
       ),
       child: TextButton(
         style: TextButton.styleFrom(
-          backgroundColor: backgroundColor,
+          backgroundColor: backgroundColor ??  GlobalColors.primaryBackground,
           shape: const RoundedRectangleBorder(),
         ),
         onPressed: onPressed,

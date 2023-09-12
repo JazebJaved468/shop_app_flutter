@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "Manrope",
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: const CartScreen(),
     );
   }
 }

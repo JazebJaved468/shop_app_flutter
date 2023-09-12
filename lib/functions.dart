@@ -148,31 +148,20 @@ num getDeliveryAmount() {
   return result;
 }
 
-List uniqueNumbers = [];
-
 // Generating a Unique 6 digit Id for orders
 int generateUniqueOrderID() {
   Random random = Random();
   int uniqueNumber = random.nextInt(900000) + 100000;
 
   // double checking
-  // List ordersList = PersonalInfo.orders[0]['orders'];
-  // for (var i = 0; i < ordersList.length; i++) {
-  //   if (uniqueNumber == ordersList[i]['id']) {
-  //     print("repeated");
-  //     uniqueNumber = generateUniqueOrderID();
-  //     break;
-  //   }
-  // }
-
-  for (var i = 0; i < uniqueNumbers.length; i++) {
-    if (uniqueNumber == uniqueNumbers[i]) {
-      print("$uniqueNumbers Repeated $i");
+  List ordersList = PersonalInfo.orders[0]['orders'];
+  for (var i = 0; i < ordersList.length; i++) {
+    if (uniqueNumber == ordersList[i]['id']) {
+      // print("repeated");
       uniqueNumber = generateUniqueOrderID();
       break;
     }
   }
-  uniqueNumbers.add(uniqueNumber);
 
   return uniqueNumber;
 }
@@ -180,8 +169,8 @@ int generateUniqueOrderID() {
 // Shifting cart items to orders list on successful payment
 void shiftCartToOrders() {
   PersonalInfo.orders[0]['orders'].add({
-    'id': '890345',
-    'items': CartData.data,
+    'id': generateUniqueOrderID(),
+    'items': List.from(CartData.data),
   });
 
   CartData.data.clear();

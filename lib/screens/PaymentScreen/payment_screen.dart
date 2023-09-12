@@ -282,8 +282,12 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 },
               );
 
-              //////////////////////////// NEW //////////////////////////////////////////////////////////////////
+//////////////////////////// NEW //////////////////////////////////////////////////////
+              // Copying cart data to orders list
               shiftCartToOrders();
+
+              // Clearing Cart
+              clearCart();
 
               // Delay for 10 seconds and then navigate to another screen
               Future.delayed(Duration(seconds: 4), () {

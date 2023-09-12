@@ -416,13 +416,19 @@ class _CartScreenState extends State<CartScreen> {
           // Bottom Sheet (Bill)
           CustomBill(
             buttonText: "Proceed To checkout",
-            onPressed: () async {
-              await Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const AddressScreen()),
-              );
-              setState(() {});
-            },
+            buttonBackgroundColor: CartData.data.isNotEmpty
+                ? GlobalColors.primaryBackground
+                : Color.fromARGB(255, 198, 198, 198),
+            onPressed: CartData.data.isEmpty
+                ? null //disabling the button when cart is empty
+                : () async {
+                    await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AddressScreen()),
+                    );
+                    setState(() {});
+                  },
           ),
         ],
       ),
