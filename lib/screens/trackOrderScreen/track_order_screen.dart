@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shopping_app/constants/global_constants.dart';
+import 'package:shopping_app/data/data.dart';
+import 'package:shopping_app/widgets/remaining_work_dialogue.dart';
 
 import '../../widgets/custom_back_button.dart';
 
@@ -61,11 +63,23 @@ class _TrackOrderScreenState extends State<TrackOrderScreen> {
                   child: Stack(
                     clipBehavior: Clip.hardEdge,
                     children: [
-                      Image(
-                        alignment: Alignment.topCenter,
-                        image: const AssetImage("assets/images/map.PNG"),
-                        width: mediaWidth * 1,
-                        height: mediaHeight * 0.5,
+                      GestureDetector(
+                        onTap: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) {
+                              return RemainingWorkDialogue(
+                                message: "No map integrated at backend",
+                              );
+                            },
+                          );
+                        },
+                        child: Image(
+                          alignment: Alignment.topCenter,
+                          image: const AssetImage("assets/images/map.PNG"),
+                          width: mediaWidth * 1,
+                          height: mediaHeight * 0.5,
+                        ),
                       ),
 
                       Container(
@@ -81,7 +95,7 @@ class _TrackOrderScreenState extends State<TrackOrderScreen> {
                           width: mediaWidth * 0.84,
                           // height: 120,
                           decoration: BoxDecoration(
-                            color: const  Color(0xffF8F9FB),
+                            color: const Color(0xffF8F9FB),
                             borderRadius: BorderRadius.circular(30),
                           ),
                           child: ListTile(
@@ -130,16 +144,29 @@ class _TrackOrderScreenState extends State<TrackOrderScreen> {
                             ),
 
                             //chat
-                            trailing: Container(
-                              width: 45,
-                              height: 45,
-                              padding: const EdgeInsets.all(11),
-                              decoration: BoxDecoration(
-                                color: GlobalColors.primaryBackground,
-                                borderRadius: BorderRadius.circular(100),
-                              ),
-                              child: SvgPicture.asset(
-                                "assets/icons/chat.svg",
+                            trailing: InkWell(
+                              onTap: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) {
+                                    return RemainingWorkDialogue(
+                                      message:
+                                          "Chat Feature Unavailable Right Now",
+                                    );
+                                  },
+                                );
+                              },
+                              child: Container(
+                                width: 45,
+                                height: 45,
+                                padding: const EdgeInsets.all(11),
+                                decoration: BoxDecoration(
+                                  color: GlobalColors.primaryBackground,
+                                  borderRadius: BorderRadius.circular(100),
+                                ),
+                                child: SvgPicture.asset(
+                                  "assets/icons/chat.svg",
+                                ),
                               ),
                             ),
                           ),
@@ -224,12 +251,12 @@ class _TrackOrderScreenState extends State<TrackOrderScreen> {
             maxChildSize: 0.5,
             builder: (context, scrollController) {
               return Container(
-                padding:
-                    const  EdgeInsets.only(top: 10, left: 30, right: 30, bottom: 10),
-                margin: const  EdgeInsets.symmetric(horizontal: 6),
+                padding: const EdgeInsets.only(
+                    top: 10, left: 30, right: 30, bottom: 10),
+                margin: const EdgeInsets.symmetric(horizontal: 6),
                 clipBehavior: Clip.hardEdge,
                 decoration: BoxDecoration(
-                    borderRadius:  const BorderRadius.vertical(
+                    borderRadius: const BorderRadius.vertical(
                       top: Radius.circular(25),
                     ),
                     color: GlobalColors.bottomSheet),
@@ -244,30 +271,30 @@ class _TrackOrderScreenState extends State<TrackOrderScreen> {
                         child: Container(
                           margin: const EdgeInsets.only(bottom: 26),
                           decoration: BoxDecoration(
-                              color: const  Color(0xffB2BBCE),
+                              color: const Color(0xffB2BBCE),
                               borderRadius: BorderRadius.circular(50)),
                           width: 75,
                           height: 6,
                         ),
                       ),
                       Container(
-                        margin:  const EdgeInsets.only(bottom: 26),
+                        margin: const EdgeInsets.only(bottom: 26),
                         // color: Colors.yellow,
-                        child: const Row(
+                        child: Row(
                           children: [
-                            Text(
+                            const Text(
                               "Order Details ",
                               style: TextStyle(
                                   fontSize: 14,
                                   color: Colors.black,
                                   fontWeight: FontWeight.w700),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 6,
                             ),
                             Text(
-                              "(ID: #765433)",
-                              style: TextStyle(
+                              "(ID: #${PersonalInfo.orders[Selection.orderFilter]['orders'][Selection.orderIndex]['id']})",
+                              style: const TextStyle(
                                   fontSize: 14,
                                   color: Colors.black,
                                   fontWeight: FontWeight.w400),
@@ -278,6 +305,8 @@ class _TrackOrderScreenState extends State<TrackOrderScreen> {
                       Container(
                         height: 40,
                         color: Colors.orange,
+                        child: Text(
+                            "No. of Items = ${PersonalInfo.orders[Selection.orderFilter]['orders'][Selection.orderIndex]['items'].length}"),
                       ),
                       Container(
                         height: 40,

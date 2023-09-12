@@ -6,6 +6,7 @@ import 'package:shopping_app/data/data.dart';
 import 'package:shopping_app/screens/addressScreen/constants/address_screen_constants.dart';
 import 'package:shopping_app/widgets/custom_back_button.dart';
 import 'package:shopping_app/widgets/custom_main_button.dart';
+import 'package:shopping_app/widgets/remaining_work_dialogue.dart';
 
 import '../paymentScreen/payment_screen.dart';
 
@@ -174,14 +175,9 @@ class _AddressScreenState extends State<AddressScreen> {
                 showDialog(
                   context: context,
                   builder: (context) {
-                    return AlertDialog(
-                      backgroundColor: GlobalColors.yellow,
-                      shape: RoundedRectangleBorder(),
-                      title: const Text(
-                        "Implementation of this feature will be done later",
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w700),
-                      ),
+                    return RemainingWorkDialogue(
+                      message:
+                          "Implementation of this feature will be done later",
                     );
                   },
                 );
@@ -245,12 +241,13 @@ class _AddressScreenState extends State<AddressScreen> {
               backgroundColor: GlobalColors.primaryBackground,
               textColor: GlobalColors.primaryHeading,
               width: double.infinity,
-              onPressed: () {
-                Navigator.push(
+              onPressed: () async {
+                await Navigator.push(
                   context,
                   MaterialPageRoute(
                       builder: (context) => const PaymentScreen()),
                 );
+                setState(() {});
               },
             )
           ],

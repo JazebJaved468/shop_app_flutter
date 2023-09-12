@@ -137,19 +137,20 @@ class _HomeBodyState extends State<HomeBody> {
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (BuildContext context, int index) {
                       return GestureDetector(
-                        onTap: () {
+                        onTap: () async {
                           Selection.shopIndex =
                               RecommendedData.data[index]['shopIndex'];
                           Selection.filterIndex =
                               RecommendedData.data[index]['filterIndex'];
                           Selection.productIndex =
                               RecommendedData.data[index]['productIndex'];
-                          Navigator.push(
+                          await Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => ProdDetailScreen(
                                     itemIndex: Selection.productIndex)),
                           );
+                          setState(() {});
                         },
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(14),

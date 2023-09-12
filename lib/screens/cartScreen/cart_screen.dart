@@ -416,11 +416,12 @@ class _CartScreenState extends State<CartScreen> {
           // Bottom Sheet (Bill)
           CustomBill(
             buttonText: "Proceed To checkout",
-            onPressed: () {
-              Navigator.push(
+            onPressed: () async {
+              await Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const AddressScreen()),
               );
+              setState(() {});
             },
           ),
         ],

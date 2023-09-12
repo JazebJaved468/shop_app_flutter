@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:shopping_app/functions.dart';
 
 import '../constants/global_constants.dart';
 import '../data/data.dart';

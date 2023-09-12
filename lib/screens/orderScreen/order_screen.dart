@@ -1,8 +1,9 @@
-import 'dart:ffi';
+// import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shopping_app/data/data.dart';
+import 'package:shopping_app/screens/homeScreen/home.dart';
 import 'package:shopping_app/widgets/custom_main_button.dart';
 
 import '../../constants/global_constants.dart';
@@ -35,10 +36,31 @@ class _OrderScreenState extends State<OrderScreen> {
     double mediaHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      //title
+      //Back Button
       appBar: AppBar(
-        leading:  const CustomBackButton(),
-        title: const  Text(
+        leading: Container(
+          margin: const EdgeInsets.only(left: 15),
+          child: CircleAvatar(
+            backgroundColor: const Color(0xffF8F9FB),
+            radius: 8,
+            child: IconButton(
+              icon: const Icon(
+                Icons.arrow_back_ios_new,
+                size: 14,
+              ),
+              onPressed: () {
+                // Redirecting To Home Screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomeScreen()),
+                );
+              },
+            ),
+          ),
+        ),
+
+        // title
+        title: const Text(
           "Orders",
           style: TextStyle(
             fontSize: 18,
@@ -52,7 +74,7 @@ class _OrderScreenState extends State<OrderScreen> {
         children: [
           //Filter
           Container(
-            margin:  const EdgeInsets.only(
+            margin: const EdgeInsets.only(
               top: 10,
               bottom: 20,
             ),
@@ -96,7 +118,7 @@ class _OrderScreenState extends State<OrderScreen> {
                 ),
 
                 //Gap
-              const    SizedBox(
+                const SizedBox(
                   width: 8,
                 ),
 
@@ -221,14 +243,15 @@ class _OrderScreenState extends State<OrderScreen> {
                     Selection.orderFilter == 0
                         ? "Your Current Orders list is empty. Place an order now to see it here!"
                         : "Your Past Orders history is empty. Start ordering now to track your past purchases!",
-                    style:  const TextStyle(
-                      color:   Color.fromARGB(255, 100, 107, 121),
+                    style: const TextStyle(
+                      color: Color.fromARGB(255, 100, 107, 121),
                     ),
                   ),
                 ],
               ),
             ),
           ),
+
           // Orders List
           Visibility(
             visible:
@@ -239,14 +262,14 @@ class _OrderScreenState extends State<OrderScreen> {
                     PersonalInfo.orders[Selection.orderFilter]['orders'].length,
                 itemBuilder: (context, index) {
                   return Container(
-                    padding: const  EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                       top: 15,
                       left: 15,
                       right: 15,
                       bottom: 28,
                     ),
-                    margin:  const EdgeInsets.symmetric(horizontal: 20),
-                    decoration: const  BoxDecoration(
+                    margin: const EdgeInsets.symmetric(horizontal: 20),
+                    decoration: const BoxDecoration(
                       // color: Colors.red,
                       border: Border(
                         bottom: BorderSide(
@@ -268,7 +291,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                 // color: Colors.green,
                                 height: 180,
                               ),
-                            const    Image(
+                              const Image(
                                 image: AssetImage("assets/images/truck.png"),
                                 height: 150,
                                 colorBlendMode: BlendMode.difference,
@@ -282,7 +305,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                         width: 45,
                                         height: 45,
                                         decoration: BoxDecoration(
-                                          boxShadow: const  [
+                                          boxShadow: const [
                                             BoxShadow(
                                                 color:
                                                     Color.fromARGB(68, 0, 0, 0),
@@ -290,23 +313,23 @@ class _OrderScreenState extends State<OrderScreen> {
                                                 spreadRadius: 3,
                                                 blurStyle: BlurStyle.normal),
                                           ],
-                                         color: const  Color(0xffEDEDED),
+                                          color: const Color(0xffEDEDED),
                                           borderRadius:
                                               BorderRadius.circular(50),
                                           border: Border.all(
-                                            color: const  Color(0xffFFFFFF),
+                                            color: const Color(0xffFFFFFF),
                                             width: 4,
                                           ),
                                         ),
-                                        child:  const Icon(
+                                        child: const Icon(
                                           Icons.person,
                                           size: 22,
                                         ),
                                       ),
-                                       const SizedBox(
+                                      const SizedBox(
                                         height: 5,
                                       ),
-                                      const  Wrap(
+                                      const Wrap(
                                         children: [
                                           Text(
                                             "Meet our rider, ",
@@ -333,10 +356,10 @@ class _OrderScreenState extends State<OrderScreen> {
                             ],
                           ),
                         ),
-                        const  SizedBox(
+                        const SizedBox(
                           width: 11,
                         ),
-                         Container(
+                        Container(
                           // color: Colors.yellow,
                           width: mediaWidth * 0.35,
                           child: Column(
@@ -346,7 +369,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                 alignment: Alignment.centerRight,
                                 child: Wrap(
                                   children: [
-                                    const  Text(
+                                    const Text(
                                       "ID: ",
                                       style: TextStyle(
                                         fontSize: 14,
@@ -365,7 +388,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                   ],
                                 ),
                               ),
-                             const   SizedBox(
+                              const SizedBox(
                                 height: 15,
                               ),
                               Text(
@@ -384,7 +407,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                   fontWeight: FontWeight.w900,
                                 ),
                               ),
-                             const   SizedBox(
+                              const SizedBox(
                                 height: 20,
                               ),
                               CustomMainButton(
@@ -394,6 +417,7 @@ class _OrderScreenState extends State<OrderScreen> {
                                 width: mediaWidth * 0.27,
                                 height: 54,
                                 onPressed: () {
+                                  Selection.orderIndex = index;
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:shopping_app/constants/global_constants.dart';
+import 'package:shopping_app/functions.dart';
 import 'package:shopping_app/screens/orderScreen/order_screen.dart';
 import 'package:shopping_app/screens/paymentScreen/constants/payment_screen_constants.dart';
 import 'package:shopping_app/screens/addressScreen/address_screen.dart';
@@ -246,13 +247,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 builder: (context) {
                   return AlertDialog(
                     contentPadding: EdgeInsets.zero,
-                    // backgroundColor: GlobalColors.yellow,
                     shape: RoundedRectangleBorder(),
-                    // title: const Text(
-                    //   "Implementation of this feature will be done later",
-                    //   style:
-                    //       TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
-                    // ),
                     content: Container(
                       padding: EdgeInsets.only(
                           bottom: 30, top: 10, left: 30, right: 30),
@@ -286,6 +281,9 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   );
                 },
               );
+
+              //////////////////////////// NEW //////////////////////////////////////////////////////////////////
+              shiftCartToOrders();
 
               // Delay for 10 seconds and then navigate to another screen
               Future.delayed(Duration(seconds: 4), () {

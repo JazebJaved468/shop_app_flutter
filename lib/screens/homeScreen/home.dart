@@ -4,6 +4,7 @@ import 'package:shopping_app/screens/categoryScreen/widgets/category_body.dart';
 import 'package:shopping_app/screens/favouriteScreen/widgets/favourite_body.dart';
 
 import 'package:shopping_app/screens/homeScreen/widgets/home_body.dart';
+import 'package:shopping_app/screens/orderScreen/order_screen.dart';
 
 import '../../constants/global_constants.dart';
 
@@ -20,6 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
     HomeBody(),
     CategoryBody(),
     FavouriteBody(),
+    OrderScreen(),
   ];
 
   @override
@@ -75,6 +77,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     Icons.favorite_outlined,
                   ),
                   label: "Favourites",
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.library_books_sharp,
+                  ),
+                  label: "Orders",
                 ),
               ],
             ),
