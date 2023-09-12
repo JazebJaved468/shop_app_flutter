@@ -9,6 +9,7 @@ import 'package:shopping_app/screens/homeScreen/home.dart';
 import 'package:shopping_app/screens/introScreen/intro_screen.dart';
 import 'package:shopping_app/screens/productDetailScreen/prod_detail_screen.dart';
 import 'package:shopping_app/screens/testscreens/testscreen.dart';
+import 'package:shopping_app/screens/trackOrderScreen/track_order_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "Manrope",
         useMaterial3: true,
       ),
-      home: const OrderScreen(),
+      home: const TrackOrderScreen(),
     );
   }
 }
