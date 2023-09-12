@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/screens/cartScreen/cart_screen.dart';
+// import 'package:shopping_app/screens/cartScreen/cart_screen.dart';
 
 import '../../../constants/global_constants.dart';
 import '../../../data/data.dart';
-import '../../../functions.dart';
+import '../../../functions/functions.dart';
 import '../constants/cart_constants.dart';
 
 class CustomCartItem extends StatefulWidget {
@@ -32,7 +32,7 @@ class _CustomCartItemState extends State<CustomCartItem> {
     // var mediaWidth = MediaQuery.of(context).size.width;
     // var mediaHeight = MediaQuery.of(context).size.height;
     return Container(
-      margin: EdgeInsets.only(bottom: 5),
+      margin: const  EdgeInsets.only(bottom: 5),
       // width: 50,
       // height: 40,
 

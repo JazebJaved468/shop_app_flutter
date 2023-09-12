@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../constants/global_constants.dart';
-import '../functions.dart';
+import '../functions/functions.dart';
 import '../screens/cartScreen/constants/cart_constants.dart';
 import 'custom_main_button.dart';
 

@@ -5,7 +5,7 @@ import 'package:shopping_app/screens/productDetailScreen/prod_detail_screen.dart
 import 'package:shopping_app/widgets/custom_rating_stars.dart';
 
 import '../../../constants/global_constants.dart';
-import '../../../functions.dart';
+import '../../../functions/functions.dart';
 import '../../../widgets/custom_cart_icon.dart';
 import '../../../widgets/custom_search_icon.dart';
 import '../../homeScreen/constants/home_constants.dart';

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shopping_app/constants/global_constants.dart';
 import 'package:shopping_app/data/data.dart';
-import 'package:shopping_app/functions.dart';
+import 'package:shopping_app/functions/functions.dart';
 import 'package:shopping_app/widgets/remaining_work_dialogue.dart';
 
 import '../../widgets/custom_back_button.dart';

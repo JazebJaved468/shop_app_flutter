@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:shopping_app/constants/global_constants.dart';
 import 'package:shopping_app/data/data.dart';
 import 'package:shopping_app/screens/productDetailScreen/prod_detail_screen.dart';
-import 'package:shopping_app/screens/shopScreen/widgets/custom_filter_options.dart';
+// import 'package:shopping_app/screens/shopScreen/widgets/custom_filter_options.dart';
 import 'package:shopping_app/widgets/add_to_cart_custom_button.dart';
 import 'package:shopping_app/widgets/custom_appbar_actions.dart';
 import 'package:shopping_app/widgets/custom_back_button.dart';
 
-import '../../functions.dart';
-import 'constants/shop_items_screen_constants.dart';
+import '../../functions/functions.dart';
+// import 'constants/shop_items_screen_constants.dart';
 // import 'constants/shop_items_screen_constants.dart';
 
 class ShopScreen extends StatefulWidget {
@@ -31,7 +31,7 @@ class _ShopScreenState extends State<ShopScreen> {
     ApiData.data[Selection.shopIndex]['products'].forEach((product) {
       Selection.tempFilterData = ApiData.data[Selection.shopIndex]['products']
           [Selection.filterIndex]['items'];
-      print(ConstantTexts_ShopScreen.tempData);
+      // print(ConstantTexts_ShopScreen.tempData);
       setState(() {});
     });
   }
@@ -39,10 +39,10 @@ class _ShopScreenState extends State<ShopScreen> {
   @override
   Widget build(BuildContext context) {
     // String shop = Selection.shopName;
-    print("grid build");
+    // print("grid build");
     // print(itemList);
-    print(
-        "ShopIndex = ${Selection.shopIndex} \n FilterIndex = ${Selection.filterIndex} \n ProductIndex = ${Selection.productIndex}");
+    // print(
+    //     "ShopIndex = ${Selection.shopIndex} \n FilterIndex = ${Selection.filterIndex} \n ProductIndex = ${Selection.productIndex}");
     // Selection.shopIndex = widget.shopIndex;
     // setState(() {});
     updateTempListData();
@@ -68,7 +68,7 @@ class _ShopScreenState extends State<ShopScreen> {
           Container(
             height: 70,
             // color: Colors.red,
-            padding: EdgeInsets.symmetric(vertical: 15),
+            padding: const  EdgeInsets.symmetric(vertical: 15),
             child: ListView.builder(
               itemCount: ApiData.data[Selection.shopIndex]['products'].length,
               scrollDirection: Axis.horizontal,
@@ -119,14 +119,14 @@ class _ShopScreenState extends State<ShopScreen> {
           //grid view
           Expanded(
             child: Container(
-              padding: EdgeInsets.only(left: 30, right: 30),
+              padding:  const EdgeInsets.only(left: 30, right: 30),
 
               // color: Colors.red,
               child: GridView.builder(
                 itemCount: Selection.tempFilterData.length,
 
                 // shrinkWrap: true,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const  SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   mainAxisSpacing: 18,
                   crossAxisSpacing: 18,
@@ -154,7 +154,7 @@ class _ShopScreenState extends State<ShopScreen> {
                     child: ClipRRect(
                         borderRadius: BorderRadius.circular(16),
                         child: Container(
-                          padding: EdgeInsets.symmetric(
+                          padding: const  EdgeInsets.symmetric(
                               horizontal: 14, vertical: 20),
                           color: GlobalColors.productCardBackground,
 

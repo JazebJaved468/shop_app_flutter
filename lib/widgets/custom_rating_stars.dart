@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/data/data.dart';
+// import 'package:shopping_app/data/data.dart';
 
 import '../constants/global_constants.dart';
 

@@ -8,7 +8,7 @@ import 'package:shopping_app/screens/cartScreen/full_cart_screen.dart';
 import 'package:shopping_app/widgets/custom_bill_sheet.dart';
 
 import '../../data/data.dart';
-import '../../functions.dart';
+import '../../functions/functions.dart';
 import '../productDetailScreen/prod_detail_screen.dart';
 
 class CartScreen extends StatefulWidget {
@@ -20,11 +20,12 @@ class CartScreen extends StatefulWidget {
 
 class _CartScreenState extends State<CartScreen> {
   //Setting Variables
-  int noOfItems = CartData.data.length;
+
   bool isEdittable = false;
 
   @override
   Widget build(BuildContext context) {
+    int noOfItems = CartData.data.length;
     // Media Queries
     var mediaWidth = MediaQuery.of(context).size.width;
     var mediaHeight = MediaQuery.of(context).size.height;
@@ -379,8 +380,8 @@ class _CartScreenState extends State<CartScreen> {
                                   },
                                   icon: Icon(
                                     Icons.cancel_outlined,
-                                    color: Colors.red,
-                                    // size: 14,
+                                    color: ConstantColors_Cart.deleteIcon,
+                                    // size: 22,
                                   ),
                                 ),
                               ),
@@ -407,7 +408,7 @@ class _CartScreenState extends State<CartScreen> {
                   visible: noOfItems > 3,
                   child: TextButton(
                     onPressed: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
                           builder: (context) => const FullCartScreen(),

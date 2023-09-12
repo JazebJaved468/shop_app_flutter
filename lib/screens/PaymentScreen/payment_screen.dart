@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:shopping_app/constants/global_constants.dart';
-import 'package:shopping_app/functions.dart';
+import 'package:shopping_app/functions/functions.dart';
 import 'package:shopping_app/screens/orderScreen/order_screen.dart';
 import 'package:shopping_app/screens/paymentScreen/constants/payment_screen_constants.dart';
-import 'package:shopping_app/screens/addressScreen/address_screen.dart';
+// import 'package:shopping_app/screens/addressScreen/address_screen.dart';
 import 'package:shopping_app/widgets/custom_bill_sheet.dart';
 
-import '../../data/data.dart';
+// import '../../data/data.dart';
 import '../../widgets/custom_back_button.dart';
 
 class PaymentScreen extends StatefulWidget {
@@ -28,10 +28,10 @@ class _PaymentScreenState extends State<PaymentScreen> {
           false, //removed overflow erro when keyboard launches for input fields
       //Appbar
       appBar: AppBar(
-        leading: CustomBackButton(),
-        title: Text(
+        leading: const  CustomBackButton(),
+        title: const  Text(
           "Add Card",
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w500,
           ),
@@ -43,7 +43,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
         // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            padding: EdgeInsets.only(top: 36, left: 22, right: 22),
+            padding: const  EdgeInsets.only(top: 36, left: 22, right: 22),
             width: mediaWidth * 1,
             height: mediaHeight * 0.5,
             // color: Colors.red,
@@ -51,7 +51,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
               children: [
                 // Name
                 Container(
-                  margin: EdgeInsets.only(
+                  margin: const  EdgeInsets.only(
                     bottom: 35,
                   ),
                   child: Column(
@@ -63,7 +63,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       ),
                       TextField(
                         cursorColor: GlobalColors.secondaryBackground,
-                        cursorRadius: Radius.circular(30),
+                        cursorRadius:  const Radius.circular(30),
 
                         cursorOpacityAnimates: true,
                         // cursorHeight: 18,
@@ -92,7 +92,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
                 // Card Number
                 Container(
-                  margin: EdgeInsets.only(
+                  margin: const  EdgeInsets.only(
                     bottom: 35,
                   ),
                   child: Column(
@@ -106,7 +106,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                         onSubmitted: (_) => FocusScope.of(context).nextFocus(),
                         maxLength: 16,
                         cursorColor: GlobalColors.secondaryBackground,
-                        cursorRadius: Radius.circular(30),
+                        cursorRadius: const  Radius.circular(30),
 
                         cursorOpacityAnimates: true,
                         // cursorHeight: 18,
@@ -141,7 +141,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     // Expiry Date
                     Container(
                       width: mediaWidth * 0.38,
-                      margin: EdgeInsets.only(
+                      margin: const  EdgeInsets.only(
                         bottom: 35,
                       ),
                       child: Column(
@@ -154,7 +154,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                           TextField(
                             maxLength: 5,
                             cursorColor: GlobalColors.secondaryBackground,
-                            cursorRadius: Radius.circular(30),
+                            cursorRadius:  const Radius.circular(30),
 
                             cursorOpacityAnimates: true,
                             // cursorHeight: 18,
@@ -191,7 +191,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     // CVC
                     Container(
                       width: mediaWidth * 0.38,
-                      margin: EdgeInsets.only(
+                      margin:  const EdgeInsets.only(
                         bottom: 35,
                       ),
                       child: Column(
@@ -205,7 +205,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             maxLength: 4,
 
                             cursorColor: GlobalColors.secondaryBackground,
-                            cursorRadius: Radius.circular(30),
+                            cursorRadius:  const Radius.circular(30),
 
                             cursorOpacityAnimates: true,
                             // cursorHeight: 18,
@@ -247,9 +247,9 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 builder: (context) {
                   return AlertDialog(
                     contentPadding: EdgeInsets.zero,
-                    shape: RoundedRectangleBorder(),
+                    shape:  const RoundedRectangleBorder(),
                     content: Container(
-                      padding: EdgeInsets.only(
+                      padding:  const EdgeInsets.only(
                           bottom: 30, top: 10, left: 30, right: 30),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
@@ -268,7 +268,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                           ),
 
                           // Message
-                          Text(
+                           const Text(
                             "Payment Successful",
                             style: TextStyle(
                               fontSize: 18,
@@ -290,10 +290,10 @@ class _PaymentScreenState extends State<PaymentScreen> {
               clearCart();
 
               // Delay for 10 seconds and then navigate to another screen
-              Future.delayed(Duration(seconds: 4), () {
+             Future.delayed( const Duration(seconds: 4), () {
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
-                      builder: (BuildContext context) => OrderScreen()),
+                      builder: (BuildContext context) =>  const OrderScreen()),
                 );
               });
             },

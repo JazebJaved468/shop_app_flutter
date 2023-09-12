@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:shopping_app/functions.dart';
+// import 'package:shopping_app/functions.dart';
 
 import '../constants/global_constants.dart';
 import '../data/data.dart';
 import '../screens/cartScreen/cart_screen.dart';
-import '../screens/cartScreen/full_cart_screen.dart';
+// import '../screens/cartScreen/full_cart_screen.dart';
 import '../screens/homeScreen/constants/home_constants.dart';
 
-class CustomCartIcon extends StatelessWidget {
+class CustomCartIcon extends StatefulWidget {
   final Color? iconColor;
   final Color? strokeColor;
   const CustomCartIcon({super.key, this.iconColor, this.strokeColor});
 
+  @override
+  State<CustomCartIcon> createState() => _CustomCartIconState();
+}
+
+class _CustomCartIconState extends State<CustomCartIcon> {
   @override
   Widget build(BuildContext context) {
     return //cart icon
@@ -25,25 +30,27 @@ class CustomCartIcon extends StatelessWidget {
         ),
         IconButton(
           alignment: Alignment.center,
-          onPressed: () {
-            Navigator.push(
+          onPressed: () async {
+            await Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) => const CartScreen(),
               ),
             );
+            setState(() {});
           },
           icon: SvgPicture.asset(
             ConstantSVGPaths_Home.cartIconSVG,
             // ignore: deprecated_member_use
-            color: iconColor ?? GlobalColors.primaryHeading,
+            color: widget.iconColor ?? GlobalColors.primaryHeading,
           ),
         ),
         Positioned(
           top: 8,
           right: 5,
           child: CircleAvatar(
-            backgroundColor: strokeColor ?? GlobalColors.primaryBackground,
+            backgroundColor:
+                widget.strokeColor ?? GlobalColors.primaryBackground,
             radius: 9,
             child: CircleAvatar(
               backgroundColor: GlobalColors.yellow,

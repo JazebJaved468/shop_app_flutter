@@ -1,13 +1,13 @@
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
-class Screen2 extends StatelessWidget {
-  const Screen2({super.key});
+// class Screen2 extends StatelessWidget {
+//   const Screen2({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blueAccent,
-      child: Center(child: Text("CAtegry")),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       color: Colors.blueAccent,
+//       child: Center(child: Text("CAtegry")),
+//     );
+//   }
+// }

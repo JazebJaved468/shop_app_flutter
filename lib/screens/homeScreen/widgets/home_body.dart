@@ -6,12 +6,12 @@ import 'package:shopping_app/constants/global_constants.dart';
 import 'package:shopping_app/screens/homeScreen/constants/home_constants.dart';
 import 'package:shopping_app/screens/homeScreen/widgets/custom_discount_cards.dart';
 import 'package:shopping_app/screens/homeScreen/widgets/custom_drop_down.dart';
-import 'package:shopping_app/screens/homeScreen/widgets/custom_recommended_products.dart';
+// import 'package:shopping_app/screens/homeScreen/widgets/custom_recommended_products.dart';
 import 'package:shopping_app/screens/productDetailScreen/prod_detail_screen.dart';
 import 'package:shopping_app/widgets/custom_cart_icon.dart';
 
 import '../../../data/data.dart';
-import '../../../functions.dart';
+import '../../../functions/functions.dart';
 import '../../../widgets/add_to_cart_custom_button.dart';
 
 class HomeBody extends StatefulWidget {
@@ -29,7 +29,7 @@ class _HomeBodyState extends State<HomeBody> {
         // greetings
         Container(
           height: 80,
-          padding: EdgeInsets.only(left: 14, right: 5),
+          padding: const  EdgeInsets.only(left: 14, right: 5),
           color: GlobalColors.primaryBackground,
           child: Row(children: [
             Text(ConstantTexts_Home.greeting,
@@ -184,18 +184,18 @@ class _HomeBodyState extends State<HomeBody> {
 
                                 //line
                                 Container(
-                                  margin: EdgeInsets.only(
+                                  margin:  const EdgeInsets.only(
                                     left: 20,
                                     right: 20,
                                   ),
                                   width: 100,
                                   height: 2,
-                                  color: Color(0xffE0E2EE),
+                                  color: const  Color(0xffE0E2EE),
                                 ),
 
                                 Container(
                                   // color: Colors.redAccent,
-                                  padding: EdgeInsets.only(
+                                  padding: const  EdgeInsets.only(
                                       left: 16, right: 16, bottom: 14, top: 8),
                                   child: Column(
                                       crossAxisAlignment:
@@ -220,7 +220,7 @@ class _HomeBodyState extends State<HomeBody> {
                                             fontWeight: FontWeight.w300,
                                           ),
                                         ),
-                                        SizedBox(
+                                       const   SizedBox(
                                           height: 14,
                                         ),
                                         ClipRRect(
@@ -232,7 +232,7 @@ class _HomeBodyState extends State<HomeBody> {
                                               children: [
                                                 Container(
                                                   // color: Colors.pink,
-                                                  margin: EdgeInsets.only(
+                                                  margin: const  EdgeInsets.only(
                                                       left: 12,
                                                       top: 3,
                                                       bottom: 3,

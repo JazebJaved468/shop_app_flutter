@@ -3341,7 +3341,7 @@ class CartData {
     //   'name': "Bananas",
     //   'price': 7.90,
     //   'imgPath':
-    //       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCGcMjfGiON-64zr0YZw0cjqags4xBLOE8zg&usqp=CAU',
+    //       'assets/images/products/0_1.webp',
     //   'quantity': 2,
     // },
   ];

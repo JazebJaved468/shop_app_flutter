@@ -6,7 +6,7 @@ import 'package:shopping_app/widgets/custom_rating_stars.dart';
 
 import '../../constants/global_constants.dart';
 import '../../data/data.dart';
-import '../../functions.dart';
+import '../../functions/functions.dart';
 import '../../widgets/custom_appbar_actions.dart';
 import '../../widgets/custom_back_button.dart';
 // import '../shopScreen/constants/shop_items_screen_constants.dart';

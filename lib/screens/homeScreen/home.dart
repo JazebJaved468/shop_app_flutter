@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shopping_app/screens/categoryScreen/widgets/category_body.dart';
 import 'package:shopping_app/screens/favouriteScreen/widgets/favourite_body.dart';
 
@@ -18,10 +18,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
   List pages = [
-    HomeBody(),
-    CategoryBody(),
-    FavouriteBody(),
-    OrderScreen(),
+    const HomeBody(),
+    const CategoryBody(),
+    const FavouriteBody(),
+    const OrderScreen(),
   ];
 
   @override

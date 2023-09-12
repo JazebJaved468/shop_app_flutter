@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../constants/global_constants.dart';
 import '../../data/data.dart';
-import '../../functions.dart';
+import '../../functions/functions.dart';
 import '../../widgets/custom_back_button.dart';
 import '../../widgets/custom_bill_sheet.dart';
 import '../addressScreen/address_screen.dart';
@@ -17,11 +17,13 @@ class FullCartScreen extends StatefulWidget {
 
 class _FullCartScreenState extends State<FullCartScreen> {
   //Setting Variables
-  int noOfItems = CartData.data.length;
+
+  bool isEdittable = false;
   int val = 0;
 
   @override
   Widget build(BuildContext context) {
+    int noOfItems = CartData.data.length;
     // Media Queries
     var mediaWidth = MediaQuery.of(context).size.width;
     // var mediaHeight = MediaQuery.of(context).size.height;
@@ -98,67 +100,95 @@ class _FullCartScreenState extends State<FullCartScreen> {
                     ),
 
                     // Quantity Increase Decrease Buttons
-                    trailing: Container(
-                      // color: Colors.red,
-                      width: 110,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          // Subtract
-                          CircleAvatar(
-                            backgroundColor: GlobalColors.productCardBackground,
-                            foregroundColor: GlobalColors.secondaryBackground,
-                            radius: 18,
+                    trailing: isEdittable == false
+                        ? Container(
+                            // color: Colors.red,
+                            width: 110,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                // Subtract
+                                CircleAvatar(
+                                  backgroundColor:
+                                      GlobalColors.productCardBackground,
+                                  foregroundColor:
+                                      GlobalColors.secondaryBackground,
+                                  radius: 18,
+                                  child: IconButton(
+                                    onPressed: () {
+                                      Selection.cartItemIndex = cartItemIndex;
+                                      var selectedItem = CartData
+                                          .data[Selection.cartItemIndex];
+                                      selectedItem['quantity'] > 1
+                                          ? selectedItem['quantity']--
+                                          : selectedItem['quantity'];
+                                      setState(() {});
+                                    },
+                                    icon: Icon(
+                                      Icons.horizontal_rule_rounded,
+                                      size: 14,
+                                      color: GlobalColors.secondaryBackground,
+                                    ),
+                                  ),
+                                ),
+
+                                //value
+                                Text(
+                                  "${CartData.data[cartItemIndex]['quantity']}",
+                                  style: TextStyle(
+                                      color: GlobalColors.secondaryBackground,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w500),
+                                ),
+
+                                // add
+                                CircleAvatar(
+                                  backgroundColor:
+                                      GlobalColors.productCardBackground,
+                                  foregroundColor:
+                                      GlobalColors.secondaryBackground,
+                                  radius: 18,
+                                  child: IconButton(
+                                    onPressed: () {
+                                      Selection.cartItemIndex = cartItemIndex;
+                                      var selectedItem = CartData
+                                          .data[Selection.cartItemIndex];
+                                      selectedItem['quantity']++;
+                                      setState(() {});
+                                    },
+                                    icon: Icon(
+                                      Icons.add,
+                                      size: 14,
+                                      color: GlobalColors.secondaryBackground,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                        : Container(
                             child: IconButton(
                               onPressed: () {
-                                Selection.cartItemIndex = cartItemIndex;
-                                var selectedItem =
-                                    CartData.data[Selection.cartItemIndex];
-                                selectedItem['quantity'] > 1
-                                    ? selectedItem['quantity']--
-                                    : selectedItem['quantity'];
+                                CartData.data
+                                    .remove(CartData.data[cartItemIndex]);
+                                // showing Message
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                    content: Text('Item removed from Cart.'),
+                                    duration: Duration(
+                                        seconds:
+                                            1), // How long the SnackBar will be displayed
+                                  ),
+                                );
                                 setState(() {});
                               },
                               icon: Icon(
-                                Icons.horizontal_rule_rounded,
-                                size: 14,
-                                color: GlobalColors.secondaryBackground,
+                                Icons.cancel_outlined,
+                                color: ConstantColors_Cart.deleteIcon,
+                                // size: 14,
                               ),
                             ),
                           ),
-
-                          //value
-                          Text(
-                            "${CartData.data[cartItemIndex]['quantity']}",
-                            style: TextStyle(
-                                color: GlobalColors.secondaryBackground,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500),
-                          ),
-
-                          // add
-                          CircleAvatar(
-                            backgroundColor: GlobalColors.productCardBackground,
-                            foregroundColor: GlobalColors.secondaryBackground,
-                            radius: 18,
-                            child: IconButton(
-                              onPressed: () {
-                                Selection.cartItemIndex = cartItemIndex;
-                                var selectedItem =
-                                    CartData.data[Selection.cartItemIndex];
-                                selectedItem['quantity']++;
-                                setState(() {});
-                              },
-                              icon: Icon(
-                                Icons.add,
-                                size: 14,
-                                color: GlobalColors.secondaryBackground,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
                   ),
                 );
               },
@@ -175,11 +205,11 @@ class _FullCartScreenState extends State<FullCartScreen> {
             margin: const EdgeInsets.symmetric(horizontal: 10),
             child: TextButton(
               onPressed: () {
-                val++;
+                isEdittable = !(isEdittable);
                 setState(() {});
               },
               child: Text(
-                "Edit",
+                isEdittable ? "Cancel" : "Edit",
                 style: TextStyle(
                   color: Color(0xff2A4BA0),
                   fontSize: 12,

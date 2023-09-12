@@ -4,10 +4,11 @@ import 'package:shopping_app/screens/productDetailScreen/constants/prod_detail_s
 
 class ConstantColors_Cart {
   static Color darkYellow = GlobalColors.yellow;
-  static Color lightYellow = Color(0xffFFC83A);
-  static Color cartItemBorder = Color(0xffEBEBFB);
+  static Color lightYellow = const Color(0xffFFC83A);
+  static Color cartItemBorder = const Color(0xffEBEBFB);
   static Color bottomSheet = ConstantColors_ProdDetail.bottomSheet;
-  static Color amountLabel = Color(0xff616A7D);
+  static Color amountLabel = const Color(0xff616A7D);
+  static Color deleteIcon = Color.fromARGB(255, 254, 130, 122);
 }
 
 // class CartData {

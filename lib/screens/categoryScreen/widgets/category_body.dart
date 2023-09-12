@@ -11,7 +11,7 @@ import 'package:shopping_app/screens/shopScreen/shop_items_screen.dart';
 import 'package:shopping_app/widgets/custom_cart_icon.dart';
 import 'package:shopping_app/widgets/custom_search_icon.dart';
 
-import '../../../functions.dart';
+import '../../../functions/functions.dart';
 
 class CategoryBody extends StatefulWidget {
   const CategoryBody({super.key});
