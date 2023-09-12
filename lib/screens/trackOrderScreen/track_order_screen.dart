@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shopping_app/constants/global_constants.dart';
 import 'package:shopping_app/data/data.dart';
+import 'package:shopping_app/functions.dart';
 import 'package:shopping_app/widgets/remaining_work_dialogue.dart';
 
 import '../../widgets/custom_back_button.dart';
@@ -14,6 +15,19 @@ class TrackOrderScreen extends StatefulWidget {
 }
 
 class _TrackOrderScreenState extends State<TrackOrderScreen> {
+  //Setting label margins
+  double sheetLabelsBottomMargin = 8;
+  double sheetLabelsTopMargin = 15;
+
+  // storing order Items Path
+  var orderItems = PersonalInfo.orders[Selection.orderFilter]['orders']
+      [Selection.orderIndex]['items'];
+
+  // Getting Order Subtotal
+  num orderSubtotalCharges = getOrderSubtotal();
+
+  // Getting Order Delivery Charges
+  num orderDeliveryCharges = getOrderDeliveryAmount();
   @override
   Widget build(BuildContext context) {
     // Media Queries
@@ -248,7 +262,7 @@ class _TrackOrderScreenState extends State<TrackOrderScreen> {
           DraggableScrollableSheet(
             initialChildSize: 0.1,
             minChildSize: 0.1,
-            maxChildSize: 0.5,
+            maxChildSize: 0.8,
             builder: (context, scrollController) {
               return Container(
                 padding: const EdgeInsets.only(
@@ -277,17 +291,21 @@ class _TrackOrderScreenState extends State<TrackOrderScreen> {
                           height: 6,
                         ),
                       ),
+
+                      //order details line
                       Container(
-                        margin: const EdgeInsets.only(bottom: 26),
+                        margin:
+                            EdgeInsets.only(bottom: sheetLabelsBottomMargin),
                         // color: Colors.yellow,
                         child: Row(
                           children: [
                             const Text(
                               "Order Details ",
                               style: TextStyle(
-                                  fontSize: 14,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w700),
+                                fontSize: 14,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w700,
+                              ),
                             ),
                             const SizedBox(
                               width: 6,
@@ -302,23 +320,317 @@ class _TrackOrderScreenState extends State<TrackOrderScreen> {
                           ],
                         ),
                       ),
+
+                      // Customer Name
                       Container(
-                        height: 40,
-                        color: Colors.orange,
-                        child: Text(
-                            "No. of Items = ${PersonalInfo.orders[Selection.orderFilter]['orders'][Selection.orderIndex]['items'].length}"),
+                        margin: EdgeInsets.only(
+                          bottom: sheetLabelsBottomMargin,
+                          top: sheetLabelsTopMargin,
+                        ),
+                        // color: Colors.yellow,
+                        child: Row(
+                          children: [
+                            const Text(
+                              "Customer Name: ",
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 6,
+                            ),
+                            Text(
+                              "Muhammad Jazeb Javed",
+                              style: const TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ],
+                        ),
                       ),
+
+                      // Customer Number
                       Container(
-                        height: 40,
-                        color: Colors.green,
+                        margin:
+                            EdgeInsets.only(bottom: sheetLabelsBottomMargin),
+                        // color: Colors.yellow,
+                        child: Row(
+                          children: [
+                            const Text(
+                              "Customer Contact: ",
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 6,
+                            ),
+                            Text(
+                              "0307 0075922",
+                              style: const TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ],
+                        ),
                       ),
+
+                      // Customer Address
                       Container(
-                        height: 40,
-                        color: Colors.pink,
+                        margin:
+                            EdgeInsets.only(bottom: sheetLabelsBottomMargin),
+
+                        // color: Colors.yellow,
+                        child: Row(
+                          children: [
+                            const Text(
+                              "Customer Address: ",
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 6,
+                            ),
+                            Container(
+                              width: mediaWidth * 0.4,
+                              child: Text(
+                                "Medical road, Halal lab, Sunamganj",
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
+
+                      // No. Of items
                       Container(
-                        height: 40,
-                        color: Colors.black,
+                        margin: EdgeInsets.only(
+                          bottom: sheetLabelsBottomMargin,
+                          top: sheetLabelsTopMargin,
+                        ),
+
+                        // color: Colors.yellow,
+                        child: Row(
+                          children: [
+                            const Text(
+                              "No. Of items: ",
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 6,
+                            ),
+                            Container(
+                              width: mediaWidth * 0.4,
+                              child: Text(
+                                "${PersonalInfo.orders[Selection.orderFilter]['orders'][Selection.orderIndex]['items'].length}",
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      // SubTotal
+                      Container(
+                        margin: EdgeInsets.only(
+                          bottom: sheetLabelsBottomMargin,
+                          top: sheetLabelsTopMargin,
+                        ),
+
+                        // color: Colors.yellow,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Text(
+                              "Sub-Total: ",
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 6,
+                            ),
+                            Container(
+                              width: mediaWidth * 0.4,
+                              child: Text(
+                                "${orderSubtotalCharges.toStringAsFixed(2)}",
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      // Delivery Charges
+                      Container(
+                        margin:
+                            EdgeInsets.only(bottom: sheetLabelsBottomMargin),
+
+                        // color: Colors.yellow,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Text(
+                              "Delivery Charges: ",
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 6,
+                            ),
+                            Container(
+                              width: mediaWidth * 0.4,
+                              child: Text(
+                                "${orderDeliveryCharges.toStringAsFixed(2)}",
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      // Total
+                      Container(
+                        margin:
+                            EdgeInsets.only(bottom: sheetLabelsBottomMargin),
+
+                        // color: Colors.yellow,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Text(
+                              "Total: ",
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 6,
+                            ),
+                            Container(
+                              width: mediaWidth * 0.4,
+                              child: Text(
+                                "${(orderSubtotalCharges + orderDeliveryCharges).toStringAsFixed(2)}",
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      // Items
+                      Center(
+                        child: Container(
+                          margin: EdgeInsets.only(
+                            bottom: sheetLabelsBottomMargin,
+                            top: 40,
+                          ),
+                          child: Text(
+                            "ITEM(S)",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          // decoration: BoxDecoration(
+                          //     color: const Color(0xffB2BBCE),
+                          //     borderRadius: BorderRadius.circular(50)),
+                          // width: 75,
+                          // height: 6,
+                        ),
+                      ),
+
+                      // items table
+                      Container(
+                        height: orderItems.length * (20.0 + 8 + 5),
+                        decoration: BoxDecoration(
+                            color: const Color.fromARGB(255, 233, 233, 233),
+                            borderRadius: BorderRadius.circular(5)),
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        margin: EdgeInsets.only(top: 5),
+                        child: ListView.builder(
+                          itemCount: orderItems.length,
+                          itemBuilder: (context, index) {
+                            return Container(
+                              decoration: BoxDecoration(
+                                border: Border(
+                                  bottom: BorderSide(
+                                    color: Colors.black,
+                                    width: 0.5,
+                                  ),
+                                ),
+                                // color: Colors.red,
+                              ),
+                              height: 20,
+                              margin: EdgeInsets.only(
+                                top: 8,
+                                bottom: 3,
+                              ),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    width: mediaWidth * 0.45,
+                                    child: Text(
+                                      "${toSentenceCase(orderItems[index]['name'])}",
+                                      style: TextStyle(
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ),
+                                  ),
+                                  Text("x ${orderItems[index]['quantity']}"),
+                                ],
+                              ),
+                            );
+                          },
+                        ),
                       ),
                     ],
                   ),

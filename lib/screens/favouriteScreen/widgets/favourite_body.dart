@@ -149,6 +149,7 @@ class _FavouriteBodyState extends State<FavouriteBody> {
                       },
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           //Image
                           ClipRRect(
@@ -157,7 +158,7 @@ class _FavouriteBodyState extends State<FavouriteBody> {
                               image: AssetImage(
                                 FavouriteData.data[index]['imgPath'],
                               ),
-                              width: mediaWidth * 0.4,
+                              width: mediaWidth * 0.35,
                               height: 140,
                               fit: BoxFit.cover,
                             ),
@@ -176,9 +177,10 @@ class _FavouriteBodyState extends State<FavouriteBody> {
                                 Text(
                                   "${toSentenceCase(FavouriteData.data[index]['name'])}",
                                   style: TextStyle(
-                                      color: GlobalColors.secondaryBackground,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w700),
+                                    color: GlobalColors.secondaryBackground,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700,
+                                  ),
                                 ),
 
                                 //stars
@@ -187,10 +189,38 @@ class _FavouriteBodyState extends State<FavouriteBody> {
                                 ),
 
                                 //Gap
-                                const SizedBox(
-                                  height: 38,
-                                ),
+                                // const SizedBox(
+                                //   height: 38,
+                                // ),
+                                //
 
+                                // Heart Icon Button
+                                Align(
+                                  alignment: Alignment.centerRight,
+                                  child: IconButton(
+                                    onPressed: () {
+                                      FavouriteData.data
+                                          .remove(FavouriteData.data[index]);
+                                      // showing Message
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        const SnackBar(
+                                          content: Text(
+                                              'Item removed from favourites.'),
+                                          duration: Duration(
+                                              seconds:
+                                                  1), // How long the SnackBar will be displayed
+                                        ),
+                                      );
+                                      setState(() {});
+                                    },
+                                    icon: Icon(
+                                      Icons.favorite,
+                                      color: Colors.red,
+                                      size: 26,
+                                    ),
+                                  ),
+                                ),
                                 //Price
                                 Text(
                                   "\$${FavouriteData.data[index]['price'].toStringAsFixed(2)}",
@@ -210,7 +240,17 @@ class _FavouriteBodyState extends State<FavouriteBody> {
                                 ),
                               ],
                             ),
-                          )
+                          ),
+
+                          // // Heart Icon Button
+                          // IconButton(
+                          //   onPressed: () {},
+                          //   icon: Icon(
+                          //     Icons.favorite,
+                          //     color: Colors.red,
+                          //     size: 26,
+                          //   ),
+                          // ),
                         ],
                       ),
                     ),

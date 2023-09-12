@@ -3379,21 +3379,21 @@ class PersonalInfo {
     {
       'type': 'Current',
       'orders': [
-        {
-          'id': 765433,
-          'items': [
-            {
-              'shopIndex': 0,
-              'filterIndex': 0,
-              'productIndex': 4,
-              'name': "Bananas",
-              'price': 7.90,
-              // 'imgPath':
-              //     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCGcMjfGiON-64zr0YZw0cjqags4xBLOE8zg&usqp=CAU',
-              'quantity': 2,
-            },
-          ],
-        },
+        // {
+        //   'id': 765433,
+        //   'items': [
+        //     {
+        //       'shopIndex': 0,
+        //       'filterIndex': 0,
+        //       'productIndex': 4,
+        //       'name': "Bananas",
+        //       'price': 7.90,
+        //       // 'imgPath':
+        //       //     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCGcMjfGiON-64zr0YZw0cjqags4xBLOE8zg&usqp=CAU',
+        //       'quantity': 2,
+        //     },
+        //   ],
+        // },
       ],
     },
     {
@@ -3413,7 +3413,7 @@ class Selection {
   static int addressIndex = 0;
   static int orderFilter = 0;
   static List? tempOrderFilterData = PersonalInfo.orders[0]['order'];
-  static int orderIndex = 0 ;
+  static int orderIndex = 0;
 }
 
 

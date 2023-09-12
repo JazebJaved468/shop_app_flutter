@@ -144,7 +144,7 @@ num getSubtotal() {
 
 // Calculating Delivery Amount
 num getDeliveryAmount() {
-  num result = CartData.data.isNotEmpty ? 2.00 : 0.00;
+  num result = CartData.data.isNotEmpty ? 50.00 : 0.00;
   return result;
 }
 
@@ -180,3 +180,20 @@ void shiftCartToOrders() {
 void clearCart() {
   CartData.data.clear();
 }
+
+// Getting Order Subtotal Charges
+num getOrderSubtotal() {
+  num result = 0;
+   PersonalInfo.orders[Selection.orderFilter]['orders']
+      [Selection.orderIndex]['items'].forEach((item) {
+    result += item['price'] * item['quantity'];
+  });
+  return result;
+}
+
+// Getting Order Delivery Charges
+num getOrderDeliveryAmount() {
+  num result = 50.00 ;
+  return result;
+}
+

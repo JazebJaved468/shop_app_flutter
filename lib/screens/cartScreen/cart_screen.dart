@@ -21,6 +21,7 @@ class CartScreen extends StatefulWidget {
 class _CartScreenState extends State<CartScreen> {
   //Setting Variables
   int noOfItems = CartData.data.length;
+  bool isEdittable = false;
 
   @override
   Widget build(BuildContext context) {
@@ -241,6 +242,8 @@ class _CartScreenState extends State<CartScreen> {
                     child: Container(
                       margin: const EdgeInsets.only(bottom: 5),
                       decoration: BoxDecoration(
+                        // new
+                        // color: isEdittable ? Colors.red : Colors.transparent,
                         // color: Colors.grey,
                         border: Border(
                           bottom: BorderSide(
@@ -285,71 +288,102 @@ class _CartScreenState extends State<CartScreen> {
                         ),
 
                         // Quantity Increase Decrease Buttons
-                        trailing: Container(
-                          // color: Colors.red,
-                          width: 110,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              // Subtract
-                              CircleAvatar(
-                                backgroundColor:
-                                    GlobalColors.productCardBackground,
-                                foregroundColor:
-                                    GlobalColors.secondaryBackground,
-                                radius: 18,
+                        trailing: isEdittable == false
+                            ? Container(
+                                // color: Colors.red,
+                                width: 110,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    // Subtract
+                                    CircleAvatar(
+                                      backgroundColor:
+                                          GlobalColors.productCardBackground,
+                                      foregroundColor:
+                                          GlobalColors.secondaryBackground,
+                                      radius: 18,
+                                      child: IconButton(
+                                        onPressed: () {
+                                          Selection.cartItemIndex =
+                                              cartItemIndex;
+                                          var selectedItem = CartData
+                                              .data[Selection.cartItemIndex];
+                                          selectedItem['quantity'] > 1
+                                              ? selectedItem['quantity']--
+                                              : selectedItem['quantity'];
+                                          setState(() {});
+                                        },
+                                        icon: Icon(
+                                          Icons.horizontal_rule_rounded,
+                                          size: 14,
+                                          color:
+                                              GlobalColors.secondaryBackground,
+                                        ),
+                                      ),
+                                    ),
+
+                                    //value
+                                    Text(
+                                      "${CartData.data[cartItemIndex]['quantity']}",
+                                      style: TextStyle(
+                                          color:
+                                              GlobalColors.secondaryBackground,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+
+                                    // add
+                                    CircleAvatar(
+                                      backgroundColor:
+                                          GlobalColors.productCardBackground,
+                                      foregroundColor:
+                                          GlobalColors.secondaryBackground,
+                                      radius: 18,
+                                      child: IconButton(
+                                        onPressed: () {
+                                          Selection.cartItemIndex =
+                                              cartItemIndex;
+                                          var selectedItem = CartData
+                                              .data[Selection.cartItemIndex];
+                                          selectedItem['quantity']++;
+                                          setState(() {});
+                                        },
+                                        icon: Icon(
+                                          Icons.add,
+                                          size: 14,
+                                          color:
+                                              GlobalColors.secondaryBackground,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            : Container(
                                 child: IconButton(
                                   onPressed: () {
-                                    Selection.cartItemIndex = cartItemIndex;
-                                    var selectedItem =
-                                        CartData.data[Selection.cartItemIndex];
-                                    selectedItem['quantity'] > 1
-                                        ? selectedItem['quantity']--
-                                        : selectedItem['quantity'];
+                                    CartData.data
+                                        .remove(CartData.data[cartItemIndex]);
+                                    // showing Message
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      const SnackBar(
+                                        content:
+                                            Text('Item removed from Cart.'),
+                                        duration: Duration(
+                                            seconds:
+                                                1), // How long the SnackBar will be displayed
+                                      ),
+                                    );
                                     setState(() {});
                                   },
                                   icon: Icon(
-                                    Icons.horizontal_rule_rounded,
-                                    size: 14,
-                                    color: GlobalColors.secondaryBackground,
+                                    Icons.cancel_outlined,
+                                    color: Colors.red,
+                                    // size: 14,
                                   ),
                                 ),
                               ),
-
-                              //value
-                              Text(
-                                "${CartData.data[cartItemIndex]['quantity']}",
-                                style: TextStyle(
-                                    color: GlobalColors.secondaryBackground,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500),
-                              ),
-
-                              // add
-                              CircleAvatar(
-                                backgroundColor:
-                                    GlobalColors.productCardBackground,
-                                foregroundColor:
-                                    GlobalColors.secondaryBackground,
-                                radius: 18,
-                                child: IconButton(
-                                  onPressed: () {
-                                    Selection.cartItemIndex = cartItemIndex;
-                                    var selectedItem =
-                                        CartData.data[Selection.cartItemIndex];
-                                    selectedItem['quantity']++;
-                                    setState(() {});
-                                  },
-                                  icon: Icon(
-                                    Icons.add,
-                                    size: 14,
-                                    color: GlobalColors.secondaryBackground,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
                       ),
                     ),
                   );
@@ -368,6 +402,7 @@ class _CartScreenState extends State<CartScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                // show more
                 Visibility(
                   visible: noOfItems > 3,
                   child: TextButton(
@@ -390,13 +425,18 @@ class _CartScreenState extends State<CartScreen> {
                     ),
                   ),
                 ),
+
+                //edit
                 Visibility(
                   visible: CartData.data.isNotEmpty,
                   child: TextButton(
-                    onPressed: () {},
-                    child: const Text(
-                      "Edit",
-                      style: TextStyle(
+                    onPressed: () {
+                      isEdittable = !(isEdittable);
+                      setState(() {});
+                    },
+                    child: Text(
+                      isEdittable ? "Cancel" : "Edit",
+                      style: const TextStyle(
                         color: Color(0xff2A4BA0),
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
