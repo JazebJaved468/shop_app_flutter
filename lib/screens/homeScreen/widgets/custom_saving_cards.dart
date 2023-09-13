@@ -54,8 +54,7 @@ class CustomSavingCards extends StatelessWidget {
                 children: [
                   //1st Card
                   Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 24, vertical: 36),
+                    padding: const EdgeInsets.only(left: 24, top: 34),
                     // margin: EdgeInsets.only(left: 25),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
@@ -100,8 +99,7 @@ class CustomSavingCards extends StatelessWidget {
 
                   //2nd Card
                   Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 24, vertical: 36),
+                    padding: const EdgeInsets.only(left: 24, top: 34),
                     // margin: EdgeInsets.only(left: 25),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),

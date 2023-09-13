@@ -132,6 +132,94 @@ class ApiData {
                 },
               ],
             },
+            {
+              'name': 'Chinese Platter',
+              'price': 1300,
+              'rating': 4,
+              'image': 'assets/images/products/0_13.webp',
+              'discount': 15,
+              'reg': 1547.38,
+              'details':
+                  "Serves 02 Egg Fried Rice, Chicken Chowmein, Any single Gravy & 2 Drinks.",
+              'nutrition':
+                  "reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?",
+              'reviews': [
+                {
+                  'personName': "William White",
+                  'comment': "Took a road trip along the Pacific Coast Highway",
+                  'date': "02/22/23",
+                },
+                {
+                  'personName': "Ava Harris",
+                  'comment': "Visited the Vatican City",
+                  'date': "05/28/22",
+                },
+                {
+                  'personName': "James Anderson",
+                  'comment': "Went scuba diving in the Maldives",
+                  'date': "03/10/23",
+                },
+                {
+                  'personName': "Emma Clark",
+                  'comment': "Explored the Amazon Rainforest",
+                  'date': "07/19/22",
+                },
+                {
+                  'personName': "Liam Turner",
+                  'comment': "Attended a food festival in New Orleans",
+                  'date': "09/03/22",
+                },
+                {
+                  'personName': "Mia Parker",
+                  'comment': "Visited the Taj Mahal",
+                  'date': "06/14/22",
+                },
+              ],
+            },
+            {
+              'name': 'KAYBEES TREATBOX',
+              'price': 1850,
+              'rating': 4,
+              'image': 'assets/images/products/0_14.webp',
+              'discount': 15,
+              'reg': 2183.40,
+              'details':
+                  "Savor a Special Club Sandwich, Crispy Chicken Burger, Classic Chicken Burger, 3 Dips, Fries, and 3 Drinks of your Choice",
+              'nutrition':
+                  "reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?",
+              'reviews': [
+                {
+                  'personName': "William White",
+                  'comment': "Took a road trip along the Pacific Coast Highway",
+                  'date': "02/22/23",
+                },
+                {
+                  'personName': "Ava Harris",
+                  'comment': "Visited the Vatican City",
+                  'date': "05/28/22",
+                },
+                {
+                  'personName': "James Anderson",
+                  'comment': "Went scuba diving in the Maldives",
+                  'date': "03/10/23",
+                },
+                {
+                  'personName': "Emma Clark",
+                  'comment': "Explored the Amazon Rainforest",
+                  'date': "07/19/22",
+                },
+                {
+                  'personName': "Liam Turner",
+                  'comment': "Attended a food festival in New Orleans",
+                  'date': "09/03/22",
+                },
+                {
+                  'personName': "Mia Parker",
+                  'comment': "Visited the Taj Mahal",
+                  'date': "06/14/22",
+                },
+              ],
+            },
           ],
         },
 
@@ -3328,6 +3416,43 @@ class RecommendedData {
       'name': ApiData.data[1]['products'][1]['items'][3]['name'],
       'price': ApiData.data[1]['products'][1]['items'][3]['price'],
       'imgPath': ApiData.data[1]['products'][1]['items'][3]['image'],
+    },
+  ];
+}
+
+class DealsData {
+  static List data = [
+    {
+      'shopIndex': 1,
+      'filterIndex': 0,
+      'productIndex': 3,
+      'name': ApiData.data[1]['products'][0]['items'][3]['name'],
+      'price': ApiData.data[1]['products'][0]['items'][3]['price'],
+      'imgPath': ApiData.data[1]['products'][0]['items'][3]['image'],
+    },
+    {
+      'shopIndex': 1,
+      'filterIndex': 1,
+      'productIndex': 8,
+      'name': ApiData.data[1]['products'][1]['items'][8]['name'],
+      'price': ApiData.data[1]['products'][1]['items'][8]['price'],
+      'imgPath': ApiData.data[1]['products'][1]['items'][8]['image'],
+    },
+    {
+      'shopIndex': 0,
+      'filterIndex': 0,
+      'productIndex': 3,
+      'name': ApiData.data[0]['products'][0]['items'][3]['name'],
+      'price': ApiData.data[0]['products'][0]['items'][3]['price'],
+      'imgPath': ApiData.data[0]['products'][0]['items'][3]['image'],
+    },
+    {
+      'shopIndex': 0,
+      'filterIndex': 0,
+      'productIndex': 4,
+      'name': ApiData.data[0]['products'][0]['items'][4]['name'],
+      'price': ApiData.data[0]['products'][0]['items'][4]['price'],
+      'imgPath': ApiData.data[0]['products'][0]['items'][4]['image'],
     },
   ];
 }
