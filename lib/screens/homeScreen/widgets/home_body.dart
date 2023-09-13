@@ -6,6 +6,7 @@ import 'package:shopping_app/constants/global_constants.dart';
 import 'package:shopping_app/screens/homeScreen/constants/home_constants.dart';
 import 'package:shopping_app/screens/homeScreen/widgets/custom_discount_cards.dart';
 import 'package:shopping_app/screens/homeScreen/widgets/custom_drop_down.dart';
+import 'package:shopping_app/screens/homeScreen/widgets/custom_saving_cards.dart';
 // import 'package:shopping_app/screens/homeScreen/widgets/custom_recommended_products.dart';
 import 'package:shopping_app/screens/productDetailScreen/prod_detail_screen.dart';
 import 'package:shopping_app/widgets/custom_cart_icon.dart';
@@ -109,6 +110,7 @@ class _HomeBodyState extends State<HomeBody> {
               children: [
                 // Discount Cards
                 const CustomDiscountCards(),
+
                 const SizedBox(
                   height: 30,
                 ),
@@ -125,6 +127,7 @@ class _HomeBodyState extends State<HomeBody> {
                     ),
                   ),
                 ),
+
                 const SizedBox(
                   height: 12,
                 ),
@@ -315,9 +318,14 @@ class _HomeBodyState extends State<HomeBody> {
                     //   );
                     // },
                   ),
-                )
+                ),
 
-                //extrass  //extrass  //extrass  //extrass  //extrass  //extrass
+                const SizedBox(
+                  height: 30,
+                ),
+
+                //Save Rupees and time cards
+                CustomSavingCards(),
               ],
             ),
           ),
