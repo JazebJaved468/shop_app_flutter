@@ -29,7 +29,7 @@ class _HomeBodyState extends State<HomeBody> {
         // greetings
         Container(
           height: 80,
-          padding: const  EdgeInsets.only(left: 14, right: 5),
+          padding: const EdgeInsets.only(left: 14, right: 5),
           color: GlobalColors.primaryBackground,
           child: Row(children: [
             Text(ConstantTexts_Home.greeting,
@@ -102,7 +102,7 @@ class _HomeBodyState extends State<HomeBody> {
         // discount cards and recommended products
         Expanded(
           child: Container(
-            padding: const EdgeInsets.only(left: 25),
+            padding: const EdgeInsets.only(left: 0),
             child: ListView(
               // crossAxisAlignment: CrossAxisAlignment.start,
               shrinkWrap: true,
@@ -114,12 +114,15 @@ class _HomeBodyState extends State<HomeBody> {
                 ),
 
                 // Recommended
-                Text(
-                  "Recommended",
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.w400,
-                    color: GlobalColors.primaryTitle,
+                Container(
+                  margin: EdgeInsets.only(left: 25),
+                  child: Text(
+                    "Recommended",
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.w400,
+                      color: GlobalColors.primaryTitle,
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -131,7 +134,7 @@ class _HomeBodyState extends State<HomeBody> {
                 Container(
                   height: 229,
                   // color: Colors.red,
-                  child: ListView.separated(
+                  child: ListView.builder(
                     itemCount: RecommendedData.data.length,
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
@@ -152,169 +155,165 @@ class _HomeBodyState extends State<HomeBody> {
                           );
                           setState(() {});
                         },
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(14),
-                          child: Container(
-                            width: 150,
+                        child: Container(
+                          margin: EdgeInsets.only(left: 25),
+                          decoration: BoxDecoration(
                             color: GlobalColors.productCardBackground,
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                // image container
-                                Container(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 24),
-                                  // color: Colors.yellowAccent,
-                                  child: Center(
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(10),
-                                      child: Image(
-                                        image: AssetImage(
-                                          RecommendedData.data[index]
-                                              ['imgPath'],
-                                        ),
-                                        width: 80,
-                                        height: 80,
-                                        fit: BoxFit.cover,
+                            borderRadius: BorderRadius.circular(14),
+                          ),
+                          width: 150,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              // image container
+                              Container(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 24),
+                                // color: Colors.yellowAccent,
+                                child: Center(
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(10),
+                                    child: Image(
+                                      image: AssetImage(
+                                        RecommendedData.data[index]['imgPath'],
                                       ),
+                                      width: 80,
+                                      height: 80,
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
                                 ),
+                              ),
 
-                                //line
-                                Container(
-                                  margin:  const EdgeInsets.only(
-                                    left: 20,
-                                    right: 20,
-                                  ),
-                                  width: 100,
-                                  height: 2,
-                                  color: const  Color(0xffE0E2EE),
+                              //line
+                              Container(
+                                margin: const EdgeInsets.only(
+                                  left: 20,
+                                  right: 20,
                                 ),
+                                width: 100,
+                                height: 2,
+                                color: const Color(0xffE0E2EE),
+                              ),
 
-                                Container(
-                                  // color: Colors.redAccent,
-                                  padding: const  EdgeInsets.only(
-                                      left: 16, right: 16, bottom: 14, top: 8),
-                                  child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        //title
-                                        Text(
-                                          "${RecommendedData.data[index]['name']}",
-                                          style: TextStyle(
-                                              color: GlobalColors.primaryTitle,
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w700,
-                                              overflow: TextOverflow.ellipsis),
-                                        ),
-
-                                        //type
-                                        Text(
-                                          "Fast Food",
-                                          style: TextStyle(
+                              Container(
+                                // color: Colors.redAccent,
+                                padding: const EdgeInsets.only(
+                                    left: 16, right: 16, bottom: 14, top: 8),
+                                child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      //title
+                                      Text(
+                                        "${RecommendedData.data[index]['name']}",
+                                        style: TextStyle(
                                             color: GlobalColors.primaryTitle,
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.w300,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w700,
+                                            overflow: TextOverflow.ellipsis),
+                                      ),
+
+                                      //type
+                                      Text(
+                                        "Fast Food",
+                                        style: TextStyle(
+                                          color: GlobalColors.primaryTitle,
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w300,
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        height: 14,
+                                      ),
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.circular(20),
+                                        child: Container(
+                                          color: Colors.white,
+                                          child: Row(
+                                            children: [
+                                              Container(
+                                                // color: Colors.pink,
+                                                margin: const EdgeInsets.only(
+                                                    left: 12,
+                                                    top: 3,
+                                                    bottom: 3,
+                                                    right: 20),
+                                                child: Row(
+                                                  children: [
+                                                    Text(
+                                                      "Unit ",
+                                                      style: TextStyle(
+                                                          color: GlobalColors
+                                                              .primaryTitle,
+                                                          fontSize: 11,
+                                                          fontWeight:
+                                                              FontWeight.w300),
+                                                    ),
+                                                    Text(
+                                                      "\$${RecommendedData.data[index]['price']}",
+                                                      style: TextStyle(
+                                                          color: GlobalColors
+                                                              .primaryTitle,
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                              FontWeight.w500),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              AddToCartIcon(
+                                                onPressed: () {
+                                                  Selection.shopIndex =
+                                                      RecommendedData
+                                                              .data[index]
+                                                          ['shopIndex'];
+                                                  Selection.filterIndex =
+                                                      RecommendedData
+                                                              .data[index]
+                                                          ['filterIndex'];
+                                                  Selection.productIndex =
+                                                      RecommendedData
+                                                              .data[index]
+                                                          ['productIndex'];
+                                                  setState(() {});
+                                                  addToCart(
+                                                      shopIndex:
+                                                          Selection.shopIndex,
+                                                      filterIndex:
+                                                          Selection.filterIndex,
+                                                      productIndex: Selection
+                                                          .productIndex);
+                                                  // showing Message
+                                                  ScaffoldMessenger.of(context)
+                                                      .showSnackBar(
+                                                    const SnackBar(
+                                                      content: Text(
+                                                          'Item added to cart...'),
+                                                      duration: Duration(
+                                                          seconds:
+                                                              1), // How long the SnackBar will be displayed
+                                                    ),
+                                                  );
+                                                },
+                                              ),
+                                            ],
                                           ),
                                         ),
-                                       const   SizedBox(
-                                          height: 14,
-                                        ),
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(20),
-                                          child: Container(
-                                            color: Colors.white,
-                                            child: Row(
-                                              children: [
-                                                Container(
-                                                  // color: Colors.pink,
-                                                  margin: const  EdgeInsets.only(
-                                                      left: 12,
-                                                      top: 3,
-                                                      bottom: 3,
-                                                      right: 20),
-                                                  child: Row(
-                                                    children: [
-                                                      Text(
-                                                        "Unit ",
-                                                        style: TextStyle(
-                                                            color: GlobalColors
-                                                                .primaryTitle,
-                                                            fontSize: 11,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .w300),
-                                                      ),
-                                                      Text(
-                                                        "\$${RecommendedData.data[index]['price']}",
-                                                        style: TextStyle(
-                                                            color: GlobalColors
-                                                                .primaryTitle,
-                                                            fontSize: 14,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .w500),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                                AddToCartIcon(
-                                                  onPressed: () {
-                                                    Selection.shopIndex =
-                                                        RecommendedData
-                                                                .data[index]
-                                                            ['shopIndex'];
-                                                    Selection.filterIndex =
-                                                        RecommendedData
-                                                                .data[index]
-                                                            ['filterIndex'];
-                                                    Selection.productIndex =
-                                                        RecommendedData
-                                                                .data[index]
-                                                            ['productIndex'];
-                                                    setState(() {});
-                                                    addToCart(
-                                                        shopIndex:
-                                                            Selection.shopIndex,
-                                                        filterIndex: Selection
-                                                            .filterIndex,
-                                                        productIndex: Selection
-                                                            .productIndex);
-                                                    // showing Message
-                                                    ScaffoldMessenger.of(
-                                                            context)
-                                                        .showSnackBar(
-                                                      const SnackBar(
-                                                        content: Text(
-                                                            'Item added to cart...'),
-                                                        duration: Duration(
-                                                            seconds:
-                                                                1), // How long the SnackBar will be displayed
-                                                      ),
-                                                    );
-                                                  },
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        )
-                                      ]),
-                                ),
-                              ],
-                            ),
+                                      )
+                                    ]),
+                              ),
+                            ],
                           ),
                         ),
                       );
                     },
-                    separatorBuilder: (context, index) {
-                      return const SizedBox(
-                        width: 18,
-                      );
-                    },
+                    // separatorBuilder: (context, index) {
+                    //   return const SizedBox(
+                    //     width: 18,
+                    //   );
+                    // },
                   ),
                 )
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/screens/homeScreen/home.dart';
 import 'package:shopping_app/screens/introScreen/intro_screen.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "Manrope",
         useMaterial3: true,
       ),
-      home: const IntroScreen(),
+      home: const HomeScreen(),
     );
   }
 }
