@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_app/constants/global_constants.dart';
 import 'package:shopping_app/screens/homeScreen/constants/home_constants.dart';
 
@@ -31,13 +32,20 @@ class CustomDiscountCards extends StatelessWidget {
                 children: [
                   ClipRRect(
                     borderRadius: BorderRadius.circular(10),
-                    child: Image(
-                      image: AssetImage(
-                          ConstantTexts_Home.discountCardsData[index]['image']),
+                    child: SvgPicture.asset(
+                      'assets/images/imageOutline.svg',
                       width: 85,
                       height: 85,
                       fit: BoxFit.cover,
                     ),
+                    // To be used when real image is available
+                    // Image(
+                    //   image: AssetImage(
+                    //       ConstantTexts_Home.discountCardsData[index]['image']),
+                    //   width: 85,
+                    //   height: 85,
+                    //   fit: BoxFit.cover,
+                    // ),
                   ),
                   const SizedBox(
                     width: 25,

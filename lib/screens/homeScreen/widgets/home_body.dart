@@ -115,7 +115,7 @@ class _HomeBodyState extends State<HomeBody> {
                   height: 30,
                 ),
 
-                // Recommended
+                // Recommended Heading
                 Container(
                   margin: EdgeInsets.only(left: 25),
                   child: Text(
@@ -133,7 +133,6 @@ class _HomeBodyState extends State<HomeBody> {
                 ),
 
                 // Recommended Products
-
                 Container(
                   height: 229,
                   // color: Colors.red,
@@ -235,14 +234,17 @@ class _HomeBodyState extends State<HomeBody> {
                                         child: Container(
                                           color: Colors.white,
                                           child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
                                             children: [
                                               Container(
+                                                width: 78,
                                                 // color: Colors.pink,
                                                 margin: const EdgeInsets.only(
                                                     left: 12,
                                                     top: 3,
                                                     bottom: 3,
-                                                    right: 20),
+                                                    right: 0),
                                                 child: Row(
                                                   children: [
                                                     Text(
@@ -326,6 +328,214 @@ class _HomeBodyState extends State<HomeBody> {
 
                 //Save Rupees and time cards
                 CustomSavingCards(),
+
+                const SizedBox(
+                  height: 30,
+                ),
+
+                //Deals Heading
+                Container(
+                  margin: EdgeInsets.only(left: 25),
+                  child: Text(
+                    "Budget Deals",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                      color: GlobalColors.primaryTitle,
+                    ),
+                  ),
+                ),
+
+                const SizedBox(
+                  height: 12,
+                ),
+
+                // Deals Products
+                Container(
+                  height: 229,
+                  // color: Colors.red,
+                  child: ListView.builder(
+                    itemCount: DealsData.data.length,
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (BuildContext context, int index) {
+                      return GestureDetector(
+                        onTap: () async {
+                          Selection.shopIndex =
+                              DealsData.data[index]['shopIndex'];
+                          Selection.filterIndex =
+                              DealsData.data[index]['filterIndex'];
+                          Selection.productIndex =
+                              DealsData.data[index]['productIndex'];
+                          await Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ProdDetailScreen(
+                                    itemIndex: Selection.productIndex)),
+                          );
+                          setState(() {});
+                        },
+                        child: Container(
+                          margin: EdgeInsets.only(left: 25),
+                          decoration: BoxDecoration(
+                            color: GlobalColors.productCardBackground,
+                            borderRadius: BorderRadius.circular(14),
+                          ),
+                          width: 150,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              // image container
+                              Container(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 24),
+                                // color: Colors.yellowAccent,
+                                child: Center(
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(10),
+                                    child: Image(
+                                      image: AssetImage(
+                                        DealsData.data[index]['imgPath'],
+                                      ),
+                                      width: 80,
+                                      height: 80,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
+
+                              //line
+                              Container(
+                                margin: const EdgeInsets.only(
+                                  left: 20,
+                                  right: 20,
+                                ),
+                                width: 100,
+                                height: 2,
+                                color: const Color(0xffE0E2EE),
+                              ),
+
+                              Container(
+                                // color: Colors.redAccent,
+                                padding: const EdgeInsets.only(
+                                    left: 16, right: 16, bottom: 14, top: 8),
+                                child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      //title
+                                      Text(
+                                        "${DealsData.data[index]['name']}",
+                                        style: TextStyle(
+                                            color: GlobalColors.primaryTitle,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w700,
+                                            overflow: TextOverflow.ellipsis),
+                                      ),
+
+                                      //type
+                                      Text(
+                                        "Fast Food",
+                                        style: TextStyle(
+                                          color: GlobalColors.primaryTitle,
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w300,
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        height: 14,
+                                      ),
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.circular(20),
+                                        child: Container(
+                                          // width: 140,
+                                          color: Colors.white,
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Container(
+                                                // color: Colors.pink,
+                                                width: 78,
+                                                margin: const EdgeInsets.only(
+                                                    left: 12,
+                                                    top: 3,
+                                                    bottom: 3,
+                                                    right: 0),
+                                                child: Row(
+                                                  children: [
+                                                    Text(
+                                                      "Unit ",
+                                                      style: TextStyle(
+                                                          color: GlobalColors
+                                                              .primaryTitle,
+                                                          fontSize: 11,
+                                                          fontWeight:
+                                                              FontWeight.w300),
+                                                    ),
+                                                    Text(
+                                                      "\$${DealsData.data[index]['price']}",
+                                                      style: TextStyle(
+                                                          color: GlobalColors
+                                                              .primaryTitle,
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                              FontWeight.w500),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              AddToCartIcon(
+                                                onPressed: () {
+                                                  Selection.shopIndex =
+                                                      DealsData.data[index]
+                                                          ['shopIndex'];
+                                                  Selection.filterIndex =
+                                                      DealsData.data[index]
+                                                          ['filterIndex'];
+                                                  Selection.productIndex =
+                                                      DealsData.data[index]
+                                                          ['productIndex'];
+                                                  setState(() {});
+                                                  addToCart(
+                                                      shopIndex:
+                                                          Selection.shopIndex,
+                                                      filterIndex:
+                                                          Selection.filterIndex,
+                                                      productIndex: Selection
+                                                          .productIndex);
+                                                  // showing Message
+                                                  ScaffoldMessenger.of(context)
+                                                      .showSnackBar(
+                                                    const SnackBar(
+                                                      content: Text(
+                                                          'Item added to cart...'),
+                                                      duration: Duration(
+                                                          seconds:
+                                                              1), // How long the SnackBar will be displayed
+                                                    ),
+                                                  );
+                                                },
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      )
+                                    ]),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+
+                const SizedBox(
+                  height: 30,
+                ),
               ],
             ),
           ),

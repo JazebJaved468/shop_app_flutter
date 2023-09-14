@@ -81,7 +81,7 @@ class _AddressScreenState extends State<AddressScreen> {
                           top: 17,
                           left: 20,
                           right: 20,
-                          bottom: 22,
+                          bottom: 20,
                         ),
                         // clipBehavior: Clip.antiAliasWithSaveLayer,
                         decoration: BoxDecoration(
