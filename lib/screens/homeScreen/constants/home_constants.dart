@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:shopping_app/constants/global_constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -40,30 +40,7 @@ class ConstantTexts_Home {
   static String dropDownDeliveryLabel = "DELIVERY TO";
   static String dropDownTimeLabel = "WITHIN";
   static String searchHintText = 'Search Products or store';
-  static List<BottomNavigationBarItem> bottomNavbarOptions = const [
-    BottomNavigationBarItem(
-      icon: Icon(
-        Icons.home,
-      ),
-      label: "Home",
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(
-        Icons.category,
-      ),
-      label: "Categories",
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(Icons.favorite_outlined),
-      label: "Favourites",
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(
-        FontAwesomeIcons.a,
-      ),
-      label: "More",
-    ),
-  ];
+
   static List discountCardsData = [
     {
       // 'image': "assets/images/discount/img1.jpg",
