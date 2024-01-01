@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Order kro',
+      title: 'Quick Crave',
       theme: ThemeData(
         fontFamily: "Manrope",
         useMaterial3: true,
